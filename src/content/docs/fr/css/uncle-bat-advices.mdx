@@ -1,0 +1,40 @@
+---
+title: Conseils de Tonton Bat
+description: "DEV Recap est pensé comme un support clair et synthétique : un outil pratique pour réviser, enseigner ou s’inspirer."
+weight: 0
+---
+
+_Avant de commencer à écrire un fichier CSS, pensez a réinitialiser votre page via le CSS en utilisant ce code là :_
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: underline;     /* applique un soulignement sur les liens */
+  text-decoration-thickness: 1px; /* rendre le soulignement plus épais */
+  text-underline-offset: 3px;     /* décaler le soulignement vers le bas */
+}
+
+a:after {
+  content: " ↗";
+}
+```
+
+## Explication
+
+Le `body` permet d’appliquer le code sur la page complète
+Afin de ne pas avoir un décalage d’origine sur votre page, réinitialiser le `margin` et le `padding` en les mettant à `0` .
+
+Le `text-decoration` permet de supprimer l’underline, trait sous le texte, qui permet de différencier un lien dans un texte.
+
+### Exemple sans les optimisations CSS
+
+![Exemple d'une page web sans les optimisations CSS](/assets/webp/css/without-code.webp)
+
+### Exemple avec les optimisations CSS
+
+![Exemple d'une page web sans les optimisations CSS](/assets/webp/css/with-code.webp)

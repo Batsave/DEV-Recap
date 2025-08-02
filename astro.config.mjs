@@ -57,6 +57,15 @@ export default defineConfig({
             { label: "Ajouter une image", link: "/html/add-picture" },
           ],
         },
+        {
+          label: "CSS",
+          items: [
+            {
+              label: "Les conseils de Tonton Bat",
+              link: "/css/uncle-bat-advices",
+            },
+          ],
+        },
       ],
     }),
   ],
