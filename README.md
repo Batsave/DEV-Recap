@@ -1,10 +1,10 @@
-# 📘 UIX Recap – Documentation collaborative
+# 📘 DEV Recap – Documentation collaborative
 
-Bienvenue dans **UIX Recap** ! 🎨
+Bienvenue dans **DEV Recap** ! 🎨
 
-Ce projet est un site de documentation qui reprend une **grande partie des bases du design UX/UI**, réalisé initialement dans le cadre de ma formation.
+Ce projet est un site de documentation qui reprend une **grande partie des bases du developpement web**, réalisé initialement dans le cadre de ma formation.
 
-👉 L’objectif est simple : fournir un **récapitulatif clair, pratique et accessible** à tous les étudiants et passionnés qui souhaitent apprendre ou réviser rapidement les fondamentaux de l’UX/UI.
+👉 L’objectif est simple : fournir un **récapitulatif clair, pratique et accessible** à tous les étudiants et passionnés qui souhaitent apprendre ou réviser rapidement les fondamentaux du developpement web.
 
 > 🔧 Le site est construit avec **Astro + Starlight** pour garantir **rapidité**, **accessibilité** et **simplicité d’édition**.
 
@@ -12,7 +12,7 @@ Ce projet est un site de documentation qui reprend une **grande partie des bases
 
 ## 🚀 Objectifs du projet
 
-✨ Centraliser les **notions essentielles** en UX/UI.  
+✨ Centraliser les **notions essentielles** en developpement web.  
 ✨ Offrir une ressource **gratuite, ouverte et partageable**.  
 ✨ Favoriser l’**amélioration continue** grâce à vos contributions.
 
@@ -34,8 +34,8 @@ Parfait ! 🎉 Vous pouvez contribuer de deux façons principales :
 
 ```bash
 # 1. Forkez le repo puis clonez-le en local
-git clone https://github.com/ton-compte/nom-du-repo.git
-cd nom-du-repo
+git clone https://github.com/Batsave/DEV-Recap.git
+cd DEV-Recap
 
 # 2. Installez les dépendances
 npm install
@@ -58,7 +58,7 @@ npm run dev
 ├── src/
 │   ├── assets/          # Illustrations utilisées dans la doc
 │   ├── content/
-│   │   ├── docs/        # Documentation UX/UI (Markdown & MDX)
+│   │   ├── docs/        # Documentation Dev (Markdown & MDX)
 │   └── content.config.ts
 ├── astro.config.mjs     # Configuration Astro/Starlight
 ├── package.json         # Dépendances & scripts
@@ -93,7 +93,7 @@ Chaque fichier Markdown correspond à une page de contenu.
 ## 📢 Conclusion
 
 Ce projet est pensé comme un **manuel vivant**.  
-L’UX/UI évolue vite, et grâce à vos contributions, nous pouvons maintenir une ressource **fiable, complète et collaborative** au service de tous.
+le Developpement Web évolue vite, et grâce à vos contributions, nous pouvons maintenir une ressource **fiable, complète et collaborative** au service de tous.
 
 > 💡 **Astuce :** même une petite correction (fautes, typo, lien manquant) est une contribution précieuse.
 
@@ -101,7 +101,7 @@ L’UX/UI évolue vite, et grâce à vos contributions, nous pouvons maintenir u
 
 ## 📝 Crédits & Utilisation
 
-- Ce site a été réalisé initialement dans le cadre de ma **formation en UX/UI Design**.
+- Ce site a été réalisé initialement dans le cadre de ma **formation en developpement web**.
 - Il a pour but d’être un **outil pédagogique** : un récapitulatif clair, simple et réutilisable par les étudiants, enseignants ou toute personne souhaitant apprendre les bases.
 - Les contenus sont issus de mes notes de cours, de synthèses personnelles et de ressources ouvertes.
 
