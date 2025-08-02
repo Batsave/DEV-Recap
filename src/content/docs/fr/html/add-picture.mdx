@@ -1,0 +1,122 @@
+---
+title: Ajouter des images
+description: "Pour afficher une image dans une page HTML, on utilise la balise auto-fermante <img/>."
+weight: 6
+---
+
+## La balise `<img />`
+
+Pour afficher une image dans une page HTML, on utilise la balise **auto-fermante** `<img />`.
+
+### Syntaxe de base :
+
+```html
+<img src="chemin/vers/image.jpg" alt="description de l’image" />
+```
+
+---
+
+## L’attribut `src`
+
+Définit la **source** de l’image.
+
+Il peut être :
+
+### Une URL **absolue**
+
+```html
+<img src="https://placekitten.com/408/287" alt="Un chat gris mignon" />
+```
+
+### Une URL **relative à la racine** du site (commence par `/`)
+
+```html
+<img src="/images/my-favorite-cat.jpeg" alt="Mon chat préféré" />
+```
+
+### Une URL **relative au fichier HTML actuel**
+
+```html
+<img src="./pictures/my-avatar.png" alt="Avatar de profil" />
+```
+
+---
+
+## L’attribut `alt` (texte alternatif)
+
+Indispensable pour :
+
+- [x] L’**accessibilité** (lecteurs d’écran)
+- [x] Le **référencement** (SEO)
+- [x] En cas d’échec du chargement de l’image
+
+### Bonnes pratiques pour `alt` :
+
+- Sois **clair et précis**
+- Décris **le contenu**, pas le type (“image de…” → à éviter)
+- Ne surcharge pas avec des **mots-clés SEO**
+- Si l’image est **purement décorative** : `alt=""`
+
+### Exemple :
+
+```html
+<img src="machu.jpg" alt="Le Machu Picchu au Pérou au lever du soleil" />
+```
+
+---
+
+## Largeur et hauteur
+
+Tu peux définir la **taille d’affichage** de l’image avec `width` et `height`.
+
+### Exemple :
+
+```html
+<img src="photo.jpg" width="300" height="400" />
+```
+
+> [!CAUTION] Attention
+> Si tu précises **un seul** attribut, l’autre sera **calculé automatiquement**.
+> Ne change pas le ratio d’origine de l’image, sinon elle sera **déformée**.
+
+### Conseil :
+
+> Ne charge pas une image de 4000×3000 px pour l’afficher en 300×200 px.
+>
+> Optimise tes images à la **bonne taille** avant de les insérer !
+
+---
+
+## As-tu vraiment besoin d’une image ?
+
+- Si elle est **purement décorative**, utilise du CSS (ex : `background-image`) plutôt qu’une balise `<img />`.
+- Le HTML est réservé à l’**information structurée**.
+
+---
+
+## Exemple complet :
+
+```html
+<img
+  src="https://placekitten.com/300/300"
+  alt="Chat gris assis dans un panier"
+  width="300"
+/>
+```
+
+---
+
+## En résumé
+
+| Élément            | Rôle                                  |
+| ------------------ | ------------------------------------- |
+| `<img />`          | Afficher une image                    |
+| `src`              | Définir la source de l’image          |
+| `alt`              | Décrire l’image (accessibilité + SEO) |
+| `width` / `height` | Définir la taille d’affichage         |
+| `alt=""`           | Pour les images décoratives           |
+
+---
+
+> [!TIP] Astuce bonus
+> Pour tester facilement, utilise des services comme `https://placekitten.com/` ou `https://picsum.photos/` pour générer des images placeholders temporaires.

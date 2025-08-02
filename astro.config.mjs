@@ -54,6 +54,7 @@ export default defineConfig({
             { label: "Titres et textes", link: "/html/titles-and-texts" },
             { label: "Liens hypertextes", link: "/html/hypertexts-links" },
             { label: "Structure HTML", link: "/html/html-structure" },
+            { label: "Ajouter une image", link: "/html/add-picture" },
           ],
         },
       ],
