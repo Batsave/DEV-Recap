@@ -47,16 +47,10 @@ export default defineConfig({
         { label: "Accueil", link: "/" },
 
         {
-          label: "Marketing",
+          label: "HTML",
           items: [
-            { label: "Introduction", link: "/marketing/" },
-            { label: "Landing Pages", link: "/marketing/landing-page" },
-            { label: "SEO", link: "/marketing/seo" },
-            {
-              label: "Stratégie Social Media",
-              link: "/marketing/strategy-social-media",
-            },
-            { label: "RGPD", link: "/marketing/rgpd" },
+            { label: "Introduction", link: "/html/" },
+            { label: "Balises Meta", link: "/html/meta-tags" },
           ],
         },
       ],

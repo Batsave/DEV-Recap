@@ -1,0 +1,168 @@
+---
+title: Introduction au HTML
+description: "HTML (HyperText Markup Language) est un langage de balisage utilisé pour créer la structure d'une page web."
+weight: 1
+---
+
+import SrtPlayer from "../../../../components/jsx/SrtPlayer.jsx";
+
+> [!INFO] Information
+> Disponible en podcast audio. (Généré par IA avec NoteBook LM by Google)
+
+<SrtPlayer
+  client:only="react"
+  audioSrc="/podcasts/marketing/index.m4a"
+  srtUrl="/podcasts/marketing/index.srt"
+/>
+
+## C’est quoi le HTML ?
+
+HTML (HyperText Markup Language) est un **langage de balisage** utilisé pour créer la **structure** d'une page web.
+
+Il ne “fait” rien tout seul, mais il permet de **décrire** ce qu’est un élément : un **titre**, un **paragraphe**, une **image**, un **lien**, etc.
+
+> [!CAUTION] Attention
+> **Ce n’est pas** un langage de programmation, mais un langage de **description**.
+
+---
+
+## Structure de base d’un document HTML
+
+Chaque page HTML commence par une **structure standard** :
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ma première page HTML</title>
+  </head>
+  <body>
+    <h1>Bienvenue sur mon site !</h1>
+    <p>Ceci est mon tout premier paragraphe.</p>
+  </body>
+</html>
+```
+
+### Détail des parties :
+
+- `<!DOCTYPE html>` → informe le navigateur qu'on utilise HTML5.
+- `<html lang="fr"></html>` → indique que la page est en français.
+- `<head></head>` → informations **invisibles** pour l’utilisateur (titre, encodage, etc.)
+- `<body></body>` → le **contenu visible** de la page.
+
+---
+
+## Les balises HTML essentielles
+
+### Titres
+
+```html
+<h1>Titre principal</h1>
+<h2>Sous-titre</h2>
+```
+
+Il existe 6 niveaux : `<h1>` (le plus important) à `<h6>`.
+
+### Paragraphes
+
+```html
+<p>Ceci est un paragraphe.</p>
+```
+
+### Texte enrichi
+
+```html
+<strong>important</strong> → gras <em>emphase</em> → italique
+```
+
+### Images
+
+```html
+<img src="image.jpg" alt="description" width="300" />
+```
+
+- `src` → chemin vers l’image
+- `alt` → texte alternatif
+- `width` → largeur en pixels
+
+### Liens
+
+```html
+<a href="https://google.com">Visiter Google</a>
+```
+
+---
+
+## Listes
+
+### Liste à puces (non ordonnée)
+
+```html
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+```
+
+### Liste numérotée (ordonnée)
+
+```html
+<ol>
+  <li>Pizza</li>
+  <li>Pâtes</li>
+</ol>
+```
+
+---
+
+## Boutons et attributs
+
+```html
+<button>Envoyer</button> <button disabled>Indisponible</button>
+```
+
+> Attributs = informations supplémentaires sur une balise
+>
+> Exemples : `href`, `src`, `alt`, `disabled`, `width`, etc.
+
+---
+
+## Types de balises
+
+| Type       | Exemples           | Comportement           |
+| ---------- | ------------------ | ---------------------- |
+| **Block**  | `<h1>`, `<p>`      | Prend toute la largeur |
+| **Inline** | `<strong>`, `<em>` | Reste dans le texte    |
+
+---
+
+## Balises auto-fermantes
+
+Certaines balises ne contiennent pas de contenu, elles sont **auto-fermantes** :
+
+```html
+<br />
+<!-- retour à la ligne -->
+<hr />
+<!-- ligne horizontale -->
+<img src="..." />
+```
+
+---
+
+## Commentaires
+
+```html
+<!-- Ceci est un commentaire -->
+```
+
+Utile pour t’y retrouver dans ton code. Les navigateurs les ignorent.
+
+---
+
+## Lier plusieurs pages
+
+```html
+<a href="index.html">Accueil</a> <a href="about.html">À propos</a>
+```

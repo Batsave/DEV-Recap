@@ -1,0 +1,94 @@
+---
+title: Balises META
+description: "Bases du marketing, stratégies et outils de mise en œuvre."
+weight: 2
+---
+
+## C’est quoi les Balises META ?
+
+C’est quoi les Balises META ?
+Les balises META sont des éléments HTML placés dans l’en‑tête (<head></head>) d’une page web.
+Elles ne s’affichent pas directement à l’écran, mais transmettent des informations essentielles :
+
+- aux navigateurs (encodage, affichage mobile, cache…),
+- aux moteurs de recherche (SEO, indexation),
+- aux réseaux sociaux (aperçus Open Graph, Twitter Cards),
+- aux appareils et applications (PWA, mobile, iOS/Android).
+
+En résumé, elles servent à décrire la page et à contrôler son comportement pour les utilisateurs comme pour les robots.
+
+## Balises standard (HTML & navigateur)
+
+| Balise        | Description                               | Exemple                                                                  |
+| ------------- | ----------------------------------------- | ------------------------------------------------------------------------ |
+| `charset`     | Définit l'encodage du document            | `<meta charset="UTF-8">`                                                 |
+| `viewport`    | Contrôle le zoom et la taille sur mobile  | `<meta name="viewport" content="width=device-width, initial-scale=1.0">` |
+| `description` | Résumé de la page pour le SEO             | `<meta name="description" content="Cours complet HTML pour débutants.">` |
+| `keywords`    | Mots-clés (SEO – peu utilisé aujourd’hui) | `<meta name="keywords" content="html, web, tutoriel">`                   |
+| `author`      | Auteur du document                        | `<meta name="author" content="Baptiste Save">`                           |
+| `robots`      | Indique aux moteurs s'ils doivent indexer | `<meta name="robots" content="index, follow">`                           |
+| `generator`   | Logiciel utilisé pour créer la page       | `<meta name="generator" content="Notepad++">`                            |
+
+---
+
+## Balises http-equiv (équivalent des en-têtes HTTP)
+
+| Balise            | Description                                              | Exemple                                                               |
+| ----------------- | -------------------------------------------------------- | --------------------------------------------------------------------- |
+| `refresh`         | Recharge ou redirige la page                             | `<meta http-equiv="refresh" content="5; url=https://example.com">`    |
+| `content-type`    | Spécifie le type MIME (souvent redondant avec `charset`) | `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">` |
+| `default-style`   | Définit une feuille de style par défaut                  | `<meta http-equiv="default-style" content="main">`                    |
+| `x-ua-compatible` | Force une version d’Internet Explorer (obsolète)         | `<meta http-equiv="X-UA-Compatible" content="IE=edge">`               |
+| `cache-control`   | Contrôle du cache navigateur                             | `<meta http-equiv="cache-control" content="no-cache">`                |
+| `pragma`          | Autre méthode de désactiver le cache                     | `<meta http-equiv="pragma" content="no-cache">`                       |
+
+---
+
+## Open Graph (réseaux sociaux – Facebook, LinkedIn...)
+
+| Balise           | Description                                  | Exemple                                                                 |
+| ---------------- | -------------------------------------------- | ----------------------------------------------------------------------- |
+| `og:title`       | Titre affiché dans les aperçus               | `<meta property="og:title" content="Cours HTML Complet">`               |
+| `og:description` | Description pour les partages                | `<meta property="og:description" content="Apprends les bases du HTML">` |
+| `og:type`        | Type de contenu (`website`, `article`, etc.) | `<meta property="og:type" content="website">`                           |
+| `og:url`         | URL canonique de la page                     | `<meta property="og:url" content="https://mon-site.fr/html">`           |
+| `og:image`       | Image de l’aperçu                            | `<meta property="og:image" content="https://mon-site.fr/img/html.jpg">` |
+
+---
+
+## Twitter Cards (aperçus sur Twitter)
+
+| Balise                | Description                                            | Exemple                                                                  |
+| --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `twitter:card`        | Type de carte (`summary`, `summary_large_image`, etc.) | `<meta name="twitter:card" content="summary_large_image">`               |
+| `twitter:title`       | Titre de l’aperçu Twitter                              | `<meta name="twitter:title" content="HTML en 5 minutes">`                |
+| `twitter:description` | Description                                            | `<meta name="twitter:description" content="Un cours simple et rapide.">` |
+| `twitter:image`       | Image pour Twitter                                     | `<meta name="twitter:image" content="https://mon-site.fr/cover.jpg">`    |
+| `twitter:site`        | Nom du compte Twitter                                  | `<meta name="twitter:site" content="@batsave">`                          |
+
+---
+
+## Autres meta utiles
+
+| Balise                                  | Description                                     | Exemple                                                                           |
+| --------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------------- |
+| `theme-color`                           | Couleur d’accentuation (sur mobile, navigateur) | `<meta name="theme-color" content="#6B2DD7">`                                     |
+| `copyright`                             | Informations légales                            | `<meta name="copyright" content="© 2025 Baptiste Save">`                          |
+| `application-name`                      | Nom de l’application (PWA)                      | `<meta name="application-name" content="Trakrr">`                                 |
+| `apple-mobile-web-app-capable`          | Active le mode plein écran sur iOS              | `<meta name="apple-mobile-web-app-capable" content="yes">`                        |
+| `apple-mobile-web-app-status-bar-style` | Style de la barre d’état iOS                    | `<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">` |
+
+---
+
+## Bonus : Meta tags SEO recommandés
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Un guide HTML simple et complet pour débutants."
+/>
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Baptiste Save" />
+```
