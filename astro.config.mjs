@@ -52,6 +52,8 @@ export default defineConfig({
             { label: "Introduction", link: "/html/" },
             { label: "Balises Meta", link: "/html/meta-tags" },
             { label: "Titres et textes", link: "/html/titles-and-texts" },
+            { label: "Liens hypertextes", link: "/html/hypertexts-links" },
+            { label: "Structure HTML", link: "/html/html-structure" },
           ],
         },
       ],

@@ -1,0 +1,192 @@
+---
+title: Structure HTML
+description: "La plupart des sites web suivent une structure similaire : un header (en-tête), une navigation, un contenu principal, des sections, des articles, un aside (contenu complémentaire) et un footer (pied de page)."
+weight: 5
+---
+
+La plupart des sites web suivent une structure similaire : un **header** (en-tête), une **navigation**, un **contenu principal**, des **sections**, des **articles**, un **aside** (contenu complémentaire) et un **footer** (pied de page).
+
+## Pourquoi utiliser des balises sémantiques ?
+
+- Améliore le **référencement (SEO)**
+- Rend les pages **accessibles** aux lecteurs d'écran
+- Clarifie la structure du code
+
+---
+
+## `<header>`
+
+Utilisé pour l'en-tête visible d'une page, d’un article ou d’une section.
+
+> À ne pas confondre avec `<head>` qui contient les métadonnées techniques du document.
+
+Exemple :
+
+```html
+<header>
+  <h1>Bienvenue sur Le Monde des Chats</h1>
+  <p>Le premier site sur vos animaux favoris</p>
+</header>
+```
+
+---
+
+## `<nav>`
+
+Utilisé pour la **navigation principale** du site. Souvent placée dans le `<header>`.
+
+Exemple :
+
+```html
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+```
+
+---
+
+## `<main>`
+
+Contient le **contenu principal** unique d'une page. Une seule balise `<main>` par page.
+
+Exemple :
+
+```html
+<main>
+  <h1>Blog</h1>
+  <section>
+    <h2>Articles récents</h2>
+  </section>
+</main>
+```
+
+---
+
+## `<article>`
+
+Utilisé pour un **contenu autonome** : article de blog, fiche produit, etc.
+
+Exemple :
+
+```html
+<article>
+  <header>
+    <h2>Qui sont les chats ?</h2>
+  </header>
+  <p>
+    Les <strong>chats</strong> sont des <em>félins</em> domestiques très
+    populaires...
+  </p>
+</article>
+```
+
+---
+
+## `<section>`
+
+Conteneur de contenu **regroupé thématiquement**. Doit contenir un titre (`<h2>`, `<h3>`, etc.)
+
+Exemple :
+
+```html
+<section>
+  <h2>Poèmes sur les chats</h2>
+  <p>Voici quelques poèmes célèbres...</p>
+</section>
+```
+
+---
+
+## `<aside>`
+
+Pour du contenu **complémentaire ou optionnel** : pub, encadré, commentaires...
+
+Exemple :
+
+```html
+<aside>
+  <header>
+    <h2>Commentaires</h2>
+  </header>
+  <article>
+    <header><h3>Laurent</h3></header>
+    <p>J'adore les chats !</p>
+  </article>
+</aside>
+```
+
+---
+
+## `<footer>`
+
+Pied de page d’un document, d’un article ou d’une section.
+
+Exemple global :
+
+```html
+<footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+    </ul>
+  </nav>
+  <p>Contact : <a href="mailto:email@example.com">email@example.com</a></p>
+  <p>© 2025</p>
+</footer>
+```
+
+---
+
+## Autres balises utiles
+
+### `<br>`
+
+Saut de ligne **à l’intérieur d’un paragraphe** :
+
+```html
+<p>Ligne 1<br />Ligne 2</p>
+```
+
+### `<hr>`
+
+Séparateur horizontal, utile pour marquer un **changement de sujet** :
+
+```html
+<hr />
+```
+
+### `<div>` et `<span>`
+
+Conteneurs **non sémantiques** :
+
+- `<div>` = block (groupe de contenu)
+- `<span>` = inline (court morceau de texte)
+
+À utiliser **en dernier recours** si aucune autre balise sémantique ne convient.
+
+---
+
+## Récapitulatif
+
+| Balise             | Rôle                                     |
+| ------------------ | ---------------------------------------- |
+| `<header>`         | En-tête de page, section ou article      |
+| `<nav>`            | Zone de navigation                       |
+| `<main>`           | Contenu principal unique                 |
+| `<article>`        | Contenu autonome                         |
+| `<section>`        | Partie d’un contenu liée à un thème      |
+| `<aside>`          | Contenu secondaire (commentaires, pub)   |
+| `<footer>`         | Pied de page                             |
+| `<br>`             | Saut de ligne                            |
+| `<hr>`             | Séparateur thématique                    |
+| `<div>` / `<span>` | Conteneurs neutres (à styliser avec CSS) |
+
+---
+
+> [!TIP] Tips
+> **Bonne pratique** : Commence toujours par une bonne structure HTML avant de penser au style avec le CSS.

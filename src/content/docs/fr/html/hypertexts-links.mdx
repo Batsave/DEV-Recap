@@ -1,0 +1,159 @@
+---
+title: Lien Hypertextes
+description: "Un lien hypertexte permet de naviguer d'une page à une autre en cliquant dessus."
+weight: 4
+---
+
+## Qu’est-ce qu’un lien hypertexte ?
+
+Un **lien hypertexte** permet de **naviguer d'une page à une autre** en cliquant dessus. C’est l’une des **bases du web**, ce qui permet de relier les pages entre elles.
+
+Le mot “hypertexte” a été introduit par Ted Nelson en 1965.
+
+Le HTML (HyperText Markup Language) en est l’une des premières applications concrètes à grande échelle.
+
+---
+
+## La balise `<a>`
+
+Pour créer un lien, on utilise la balise `<a>` (comme “anchor”, ancre).
+
+### Exemple simple :
+
+```html
+<a href="page.html">Aller à la page</a>
+```
+
+- **`href`** : définit l’adresse du lien (le "chemin")
+- Le texte entre `<a>` et `</a>` est ce qui est cliquable
+
+---
+
+## Types de liens
+
+### 1. Lien vers une page **interne** :
+
+```html
+<a href="about.html">À propos</a>
+```
+
+### 2. Lien vers une page **externe** :
+
+```html
+<a href="https://wildcodeschool.com">Wild Code School</a>
+```
+
+### 3. Lien vers un fichier dans un **dossier parent** :
+
+```html
+<a href="../home.html">Retour à l’accueil</a>
+```
+
+### 4. Lien depuis la **racine du site** :
+
+```html
+<a href="/pages/contact.html">Contact</a>
+```
+
+---
+
+## Les liens d’ancrage (vers une section de la page)
+
+### Étape 1 : donner un `id` à l’élément cible
+
+```html
+<h2 id="citation">Citation sur les chats</h2>
+```
+
+### Étape 2 : créer un lien avec `#id`
+
+```html
+<a href="#citation">Voir la citation</a>
+```
+
+---
+
+## Mail & Téléphone
+
+### Lien pour envoyer un **email** :
+
+```html
+<a href="mailto:bob@example.com">Envoyer un email</a>
+```
+
+### Lien pour appeler un **numéro de téléphone** :
+
+```html
+<a href="tel:+3361020304">Appeler maintenant</a>
+```
+
+> Très utile sur mobile : un clic = un appel ou un email.
+
+---
+
+## Attributs supplémentaires utiles
+
+### `title` → info au survol + accessibilité
+
+```html
+<a href="..." title="Accédez à notre page Facebook">Page Facebook</a>
+```
+
+> Les lecteurs d’écran peuvent lire ce titre pour donner plus de contexte.
+
+---
+
+### `target="_blank"` → ouvrir dans un **nouvel onglet**
+
+```html
+<a href="https://example.com" target="_blank">Visiter le site</a>
+```
+
+---
+
+### `download` → lien de **téléchargement**
+
+```html
+<a href="cv.pdf" download="cv-bob-smith.pdf">Télécharger mon CV</a>
+```
+
+> Le fichier sera téléchargé avec le nom indiqué.
+
+---
+
+## Bonnes pratiques
+
+### Texte du lien = clair et descriptif
+
+Mauvais :
+
+```html
+<a href="...">Cliquez ici</a>
+```
+
+Meilleur :
+
+```html
+<a href="...">Voir notre page Facebook</a>
+```
+
+### Toujours vérifier le bon usage des chemins :
+
+- `.` → dossier courant
+- `..` → remonter d’un dossier
+- `/` → racine du site
+
+---
+
+## Résumé express
+
+| Type de lien     | Syntaxe                                                  |
+| ---------------- | -------------------------------------------------------- |
+| Page interne     | `<a href="page.html">Lien</a>`                           |
+| Page externe     | `<a href="https://...">Lien</a>`                         |
+| Vers une section | `<a href="#id">Lien</a>` + `<h2 id="id">Titre</h2>`      |
+| Mail             | `<a href="mailto:mail@example.com">Envoyer un email</a>` |
+| Téléphone        | `<a href="tel:+33...">Appeler</a>`                       |
+| Nouveau onglet   | `target="_blank"`                                        |
+| Téléchargement   | `download="nom-fichier"`                                 |
+| Info au survol   | `title="Texte"`                                          |
