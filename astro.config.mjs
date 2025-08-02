@@ -16,7 +16,7 @@ export default defineConfig({
     react(),
     starlight({
       title: "DEV Récap",
-      description: "Récapitulatif de l'essentiel UI/UX",
+      description: "Récapitulatif du développement web",
       favicon: "/favicon.svg",
       logo: {
         src: "./public/assets/svg/logo.svg",
