@@ -51,6 +51,7 @@ export default defineConfig({
           items: [
             { label: "Introduction", link: "/html/" },
             { label: "Balises Meta", link: "/html/meta-tags" },
+            { label: "Titres et textes", link: "/html/titles-and-texts" },
           ],
         },
       ],

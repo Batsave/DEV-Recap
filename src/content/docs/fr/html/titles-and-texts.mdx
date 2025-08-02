@@ -1,0 +1,161 @@
+---
+title: Titres et textes
+description: "Apprendre à structurer et mettre en valeur du texte avec les balises HTML."
+weight: 3
+---
+
+## Les balises de titrage (`<h1>` à `<h6>`)
+
+Il existe **6 niveaux de titres** en HTML, de `<h1>` à `<h6>`.
+
+- `<h1>` est utilisé pour **le titre principal** de la page
+- `<h2>` pour les **sous-titres**
+- `<h3>` à `<h6>` pour les titres de niveau inférieur (sous-sections)
+
+### Exemple :
+
+```html
+<!-- Titre principal -->
+<h1>Apprendre le HTML en s'amusant</h1>
+
+<!-- Chapitre -->
+<h2>Chapitre 1 : Les balises de base</h2>
+
+<!-- Sous-section -->
+<h3>1.1 Les différentes balises</h3>
+```
+
+### Règles à respecter :
+
+- **Un seul `<h1>`** par page.
+- **Pas de saut de niveau** (ne pas passer de `<h1>` à `<h3>` directement).
+- Utilise une **hiérarchie logique** pour améliorer le SEO et l’accessibilité (notamment pour les lecteurs d’écran).
+
+---
+
+## Exemple à structurer :
+
+Tu peux t’exercer avec ce texte sur les chats, à structurer avec les bonnes balises :
+
+```html
+<h1>Qui sont les chats ?</h1>
+<p>
+  Les <strong>chats</strong> sont les membres de la famille des <em>félins</em>,
+  et ils partagent de nombreuses caractéristiques avec leurs cousins : les
+  lions, les tigres et les panthères.
+</p>
+
+<h2>Quelle est l'histoire des chats ?</h2>
+
+<h3>Les premiers chats domestiques</h3>
+<p>
+  Les chats sont originaires d'Afrique, d'Asie et d'Europe, et ils ont été
+  domestiqués il y a environ 9 000 ans...
+</p>
+
+<h3>La domestication des chats en Europe</h3>
+<p>Les chats ont été introduits en Europe au Moyen Âge...</p>
+
+<h2>Quelles sont les caractéristiques des chats ?</h2>
+<p>
+  Ils sont <em>très flexibles</em>, peuvent sauter jusqu’à cinq fois leur
+  hauteur, et courir à <abbr title="kilomètres">km</abbr>/<abbr title="heure"
+    >h</abbr
+  >.
+</p>
+```
+
+---
+
+## Mettre du texte en valeur
+
+### `<strong>` = importance (gras)
+
+Pour signaler que **le mot est important**.
+
+```html
+<strong>chats</strong>
+```
+
+### `<em>` = emphase (italique)
+
+Pour insister sur un mot.
+
+```html
+<em>félins</em>
+```
+
+> [!INFO] Information
+> Ces balises sont sémantiques, donc accessibles et bonnes pour le référencement.
+
+---
+
+## Les balises à éviter pour le style
+
+- `<b>` = gras
+- `<i>` = italique
+- `<u>` = souligné
+
+> [!CAUTION] Attention
+> Ces balises ne donnent **aucun sens** au texte. Utilise plutôt du **CSS** pour gérer l’apparence (gras, italique, souligné).
+
+---
+
+## Citations
+
+### Bloc de citation :
+
+```html
+<blockquote cite="https://fr.wikipedia.org/wiki/Chat">
+  Les chats sont les membres de la famille des félins...
+</blockquote>
+```
+
+---
+
+## Abréviations
+
+Utilise `<abbr>` pour afficher une explication au survol :
+
+```html
+<abbr title="kilomètres">km</abbr> <abbr title="heures">h</abbr>
+```
+
+---
+
+## Afficher du code
+
+Pour afficher du code dans une page HTML :
+
+```html
+<pre>
+  <code>
+&lt;h1&gt;Hello, world&lt;/h1&gt;
+&lt;p&gt;Bienvenue sur mon site&lt;/p&gt;
+  </code>
+</pre>
+```
+
+> Le bloc `<pre></pre>` garde les retours à la ligne et les espaces. Le bloc `<code></code>` indique qu’il s’agit de code.
+>
+> Les caractères spéciaux doivent être encodés :
+
+- `&` → `&amp;`
+- `<` → `&lt;`
+- `>` → `&gt;`
+- `"` → `&quot;`
+
+---
+
+## Récapitulatif
+
+| Action                            | Balise recommandée            | À éviter                |
+| --------------------------------- | ----------------------------- | ----------------------- |
+| Titre principal                   | `<h1>`                        | Jamais plus d’un        |
+| Sous-titre                        | `<h2>` à `<h6>`               | Ne pas sauter de niveau |
+| Mettre en gras sémantiquement     | `<strong>`                    | `<b>`                   |
+| Mettre en italique sémantiquement | `<em>`                        | `<i>`                   |
+| Souligner                         | ❌ via CSS uniquement         | `<u>`                   |
+| Citation                          | `<blockquote>`                | -                       |
+| Abréviation                       | `<abbr>`                      | -                       |
+| Code HTML visible                 | `<pre><code>...</code></pre>` | -                       |
