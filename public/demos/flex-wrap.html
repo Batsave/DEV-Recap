@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Démo Flex-Wrap</title>
+  <style>
+    :root {
+      --bg-body: #ffffff;
+      --bg-card: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+      --item-bg: #2563eb;
+      --item-color: #ffffff;
+      --active: #1d4ed8;
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0f172a;
+      --bg-card: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --item-bg: #3b82f6;
+      --item-color: #f8fafc;
+      --active: #60a5fa;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg-body);
+      color: var(--text);
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      background: var(--bg-card);
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-body);
+      color: var(--text);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--border);
+    }
+
+    button.active {
+      background: var(--active);
+      color: var(--item-color);
+      border-color: var(--active);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: nowrap; /* valeur par défaut */
+      gap: 0.5rem;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 120px;
+      transition: all 0.3s ease;
+    }
+
+    .item {
+      background: var(--item-bg);
+      color: var(--item-color);
+      font-weight: 500;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      transition: transform 0.2s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="buttons">
+      <button class="active" onclick="setWrap('nowrap', this)">nowrap</button>
+      <button onclick="setWrap('wrap', this)">wrap</button>
+      <button onclick="setWrap('wrap-reverse', this)">wrap-reverse</button>
+    </div>
+
+    <div class="container" id="flexbox">
+      <div class="item">Item One</div>
+      <div class="item">Item Two</div>
+      <div class="item">Item Three</div>
+      <div class="item">Item Four</div>
+      <div class="item">Item Five</div>
+      <div class="item">Item Six</div>
+    </div>
+  </div>
+
+  <script>
+    function setWrap(value, btn) {
+      const container = document.getElementById("flexbox");
+      container.style.flexWrap = value;
+
+      document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    }
+  </script>
+</body>
+</html>
