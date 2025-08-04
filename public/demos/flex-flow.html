@@ -2,7 +2,7 @@
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>Démo Flex-Wrap</title>
+  <title>Démo Flex-Flow</title>
   <style>
     :root {
       --bg-body: #ffffff;
@@ -41,7 +41,7 @@
 
     .demo {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 220px 1fr;
       gap: 1.5rem;
       align-items: start;
     }
@@ -79,15 +79,15 @@
     /* --- Container rendu --- */
     .container {
       display: flex;
-      flex-wrap: nowrap; /* valeur par défaut */
+      flex-flow: row nowrap; /* valeur par défaut */
       gap: 0.5rem;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 1rem;
-      min-height: 140px;
+      min-height: 160px;
       transition: all 0.3s ease;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
       background: var(--bg-card);
     }
 
@@ -125,9 +125,10 @@
     <div class="demo">
       <!-- Colonne gauche : boutons -->
       <div class="buttons">
-        <button class="active" onclick="setWrap('nowrap', this)">flex-wrap: nowrap</button>
-        <button onclick="setWrap('wrap', this)">flex-wrap: wrap</button>
-        <button onclick="setWrap('wrap-reverse', this)">flex-wrap: wrap-reverse</button>
+        <button class="active" onclick="setFlow('row nowrap', this)">flex-flow: row nowrap</button>
+        <button onclick="setFlow('row-reverse nowrap', this)">flex-flow: row-reverse nowrap</button>
+        <button onclick="setFlow('column wrap-reverse', this)">flex-flow: column wrap-reverse</button>
+        <button onclick="setFlow('column wrap', this)">flex-flow: column wrap</button>
       </div>
 
       <!-- Colonne droite : rendu -->
@@ -144,14 +145,14 @@
     <!-- Code affiché -->
     <pre id="code">.container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-flow: row nowrap;
 }</pre>
   </div>
 
   <script>
-    function setWrap(value, btn) {
+    function setFlow(value, btn) {
       const container = document.getElementById("flexbox");
-      container.style.flexWrap = value;
+      container.style.flexFlow = value;
 
       // reset boutons actifs
       document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
@@ -160,7 +161,7 @@
       // mettre à jour le code affiché
       document.getElementById("code").textContent = `.container {
   display: flex;
-  flex-wrap: ${value};
+  flex-flow: ${value};
 }`;
     }
   </script>
