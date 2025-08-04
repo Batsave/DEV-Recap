@@ -2,27 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <title>Exemple Grid Responsive</title>
   <style>
+    /* Style global similaire aux intégrations MDN */
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    .example {
+      border: 1px solid #d1d5db; /* gris clair */
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fafafa;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 1rem;
     }
+
     .grid div {
-      background: #4f46e5;
+      background: #2563eb; /* bleu mdn-like */
       color: white;
-      padding: 2rem;
+      font-weight: bold;
       text-align: center;
-      border-radius: 8px;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    /* Responsive text */
+    @media (max-width: 500px) {
+      .grid div {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="grid">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
+  <div class="example">
+    <div class="grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
   </div>
 </body>
 </html>
