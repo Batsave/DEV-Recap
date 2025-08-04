@@ -91,15 +91,17 @@
       background: var(--item-bg);
       color: var(--item-color);
       font-weight: 600;
-      padding: 0.6rem;
       border-radius: 6px;
-      flex: 0 0 100px; /* largeur de base */
+      flex: 0 0 100px; /* base fixe */
       text-align: center;
       transition: flex-grow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     #growItem {
-      flex-grow: 0; /* modifié par JS */
+      flex-grow: 0;
     }
 
     pre {
@@ -118,25 +120,27 @@
 <body>
   <div class="card">
     <div class="demo">
+      <!-- Boutons -->
       <div class="buttons">
-        <button class="active" onclick="setGrow(0, this)">Item 3: flex-grow 0</button>
-        <button onclick="setGrow(1, this)">Item 3: flex-grow 1</button>
-        <button onclick="setGrow(2, this)">Item 3: flex-grow 2</button>
-        <button onclick="setGrow(3, this)">Item 3: flex-grow 3</button>
+        <button class="active" onclick="setGrow(0, this)">flex-grow: 0 (par défaut)</button>
+        <button onclick="setGrow(1, this)">flex-grow: 1</button>
+        <button onclick="setGrow(2, this)">flex-grow: 2</button>
+        <button onclick="setGrow(3, this)">flex-grow: 3</button>
       </div>
 
+      <!-- Rendu -->
       <div class="container" id="flexbox">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item" id="growItem">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
+        <div class="item">Item 1</div>
+        <div class="item" id="growItem">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
       </div>
     </div>
 
+    <!-- Code affiché -->
     <pre id="code">#growItem {
   flex: 0 0 100px;
-  flex-grow: 0; /* valeur par défaut */
+  flex-grow: 0;
 }</pre>
   </div>
 
