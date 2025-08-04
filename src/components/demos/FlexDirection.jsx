@@ -20,9 +20,9 @@ export default function FlexDirectionDemo() {
           ))}
         </div>
         <div className="container" style={{ flexDirection: direction, justifyContent: "center", alignItems: "center" }}>
-          <div className="item">Item 1</div>
-          <div className="item">Item 2</div>
-          <div className="item">Item 3</div>
+          <p className="item">Item 1</p>
+          <p className="item">Item 2</p>
+          <p className="item">Item 3</p>
         </div>
       </div>
       <pre>{`.container {

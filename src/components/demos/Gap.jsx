@@ -21,7 +21,7 @@ export default function GapDemo() {
         </div>
         <div className="container" style={{ gap }}>
           {Array.from({ length: 5 }, (_, i) => (
-            <div className="item" key={i}>Item {i + 1}</div>
+            <p className="item" key={i}>Item {i + 1}</p>
           ))}
         </div>
       </div>

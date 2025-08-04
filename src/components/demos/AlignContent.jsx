@@ -22,7 +22,7 @@ export default function AlignContentDemo() {
         </div>
         <div className="container" style={{ flexWrap: "wrap", alignContent }}>
           {Array.from({ length: 6 }, (_, i) => (
-            <div className="item" key={i}>Item {i + 1}</div>
+            <p className="item" key={i}>Item {i + 1}</p>
           ))}
         </div>
       </div>

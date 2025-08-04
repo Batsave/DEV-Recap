@@ -21,7 +21,7 @@ export default function FlexFlowDemo() {
         </div>
         <div className="container" style={{ flexFlow: flow }}>
           {Array.from({ length: 6 }, (_, i) => (
-            <div className="item" key={i}>Item {i + 1}</div>
+            <p className="item" key={i}>Item {i + 1}</p>
           ))}
         </div>
       </div>

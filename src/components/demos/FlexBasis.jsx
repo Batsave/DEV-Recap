@@ -20,9 +20,9 @@ export default function FlexBasisDemo() {
           ))}
         </div>
         <div className="container">
-          <div className="item">Item 1</div>
-          <div className="item" style={{ flexBasis: basis }}>Item 2</div>
-          <div className="item">Item 3</div>
+          <p className="item">Item 1</p>
+          <p className="item" style={{ flexBasis: basis }}>Item 2</p>
+          <p className="item">Item 3</p>
         </div>
       </div>
       <pre>{`#basisItem {

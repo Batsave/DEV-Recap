@@ -21,9 +21,9 @@ export default function AlignItemsDemo() {
           ))}
         </div>
         <div className="container" style={{ alignItems, justifyContent: "center" }}>
-          <div className="item baseline-text">Item 1</div>
-          <div className="item">Item 2</div>
-          <div className="item baseline-text">Item 3</div>
+          <p className="item baseline-text">Item 1</p>
+          <p className="item">Item 2</p>
+          <p className="item baseline-text">Item 3</p>
         </div>
       </div>
       <pre>{`.container {

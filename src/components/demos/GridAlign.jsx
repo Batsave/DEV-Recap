@@ -12,9 +12,9 @@ export default function GridAlignDemo() {
         alignItems: "start",
         gap: "1rem"
       }}>
-        <div className="item">1</div>
-        <div className="item">2</div>
-        <div className="item" style={{ alignSelf: "end" }}>3</div>
+        <p className="item">1</p>
+        <p className="item">2</p>
+        <p className="item" style={{ alignSelf: "end" }}>3</p>
       </div>
     </div>
   );

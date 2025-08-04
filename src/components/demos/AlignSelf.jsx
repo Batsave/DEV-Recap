@@ -21,10 +21,10 @@ export default function AlignSelfDemo() {
           ))}
         </div>
         <div className="container" style={{ alignItems: "center" }}>
-          <div className="item">Item 1</div>
-          <div className="item">Item 2</div>
-          <div className="item" style={{ alignSelf }}>Item 3</div>
-          <div className="item">Item 4</div>
+          <p className="item">Item 1</p>
+          <p className="item">Item 2</p>
+          <p className="item" style={{ alignSelf }}>Item 3</p>
+          <p className="item">Item 4</p>
         </div>
       </div>
       <pre>{`#selfItem {

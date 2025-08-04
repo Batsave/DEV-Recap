@@ -18,9 +18,9 @@ export default function OrderDemo() {
           <button onClick={() => setOrder("item3", 5)}>Item 3 → 5</button>
         </div>
         <div className="container" style={{ justifyContent: "flex-start", alignItems: "center" }}>
-          <div className="item" style={{ order: orders.item1 }}>Item 1</div>
-          <div className="item" style={{ order: orders.item2 }}>Item 2</div>
-          <div className="item" style={{ order: orders.item3 }}>Item 3</div>
+          <p className="item" style={{ order: orders.item1 }}>Item 1</p>
+          <p className="item" style={{ order: orders.item2 }}>Item 2</p>
+          <p className="item" style={{ order: orders.item3 }}>Item 3</p>
         </div>
       </div>
       <pre>{`.item {
