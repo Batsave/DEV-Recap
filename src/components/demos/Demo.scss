@@ -20,18 +20,18 @@ html[data-theme="dark"] {
   --code-bg: #1f2937;
 }
 
-body {
-  margin: 0;
+.card {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
   font-family: system-ui, sans-serif;
   background: var(--bg-body);
   color: var(--text);
   padding: 0;
-}
-
-.card {
-  padding: 16px;
-  max-width: 900px;
-  margin: auto;
+  border-radius: 8px;
+  border: solid 1px var(--border);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .demo {
