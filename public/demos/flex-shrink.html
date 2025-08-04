@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Démo Flex-Shrink</title>
+  <style>
+     :root {
+      --bg-body: #ffffff;
+      --bg-card: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+      --item-bg: #374151;
+      --item-color: #ffffff;
+      --active: #374151;
+      --code-bg: #f3f4f6;
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0f172a;
+      --bg-card: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --item-bg: #3b82f6;
+      --item-color: #f8fafc;
+      --active: #60a5fa;
+      --code-bg: #1f2937;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg-body);
+      color: var(--text);
+      padding: 0;
+    }
+
+    .card {
+      padding: 16px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .demo {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    button {
+      padding: 0.6rem 0.9rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--border);
+    }
+
+    button.active {
+      background: var(--active);
+      color: var(--item-color);
+      border-color: var(--active);
+    }
+
+    .container {
+      display: flex;
+      gap: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      background: var(--bg-card);
+      width: 400px; /* volontairement étroit */
+      overflow: hidden;
+    }
+
+    .item {
+      background: var(--item-bg);
+      color: var(--item-color);
+      font-weight: 600;
+      border-radius: 6px;
+      flex: 0 0 150px; /* base fixe */
+      text-align: center;
+      transition: flex-shrink 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #shrinkItem {
+      flex-shrink: 1; /* valeur par défaut */
+    }
+
+    pre {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      background: var(--code-bg);
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="demo">
+      <!-- Boutons -->
+      <div class="buttons">
+        <button class="active" onclick="setShrink(1, this)">flex-shrink: 1 (défaut)</button>
+        <button onclick="setShrink(0, this)">flex-shrink: 0 (ne rétrécit pas)</button>
+        <button onclick="setShrink(2, this)">flex-shrink: 2 (rétrécit plus vite)</button>
+        <button onclick="setShrink(3, this)">flex-shrink: 3</button>
+      </div>
+
+      <!-- Rendu -->
+      <div class="container" id="flexbox">
+        <div class="item">Item 1</div>
+        <div class="item" id="shrinkItem">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Code affiché -->
+    <pre id="code">#shrinkItem {
+  flex: 0 0 150px;
+  flex-shrink: 1; /* valeur par défaut */
+}</pre>
+  </div>
+
+  <script>
+    function setShrink(value, btn) {
+      const item = document.getElementById("shrinkItem");
+      item.style.flexShrink = value;
+
+      document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      document.getElementById("code").textContent = `#shrinkItem {
+  flex: 0 0 150px;
+  flex-shrink: ${value};
+}`;
+    }
+  </script>
+</body>
+</html>
