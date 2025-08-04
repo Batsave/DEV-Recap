@@ -59,18 +59,9 @@ export default defineConfig({
         },
         {
           label: "CSS",
-          items: [
-            {
-              label: "Les conseils de Tonton Bat",
-              link: "/css/uncle-bat-advices",
-            },
-            {
-              label: "Media Queries",
-              link: "/css/media-queries",
-            },
-            
-
-          ],
+          autogenerate: {
+            dir: "/css",
+          },
         },
       ],
     }),
