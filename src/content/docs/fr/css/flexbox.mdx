@@ -5,6 +5,22 @@ sidebar:
   position: 0
 ---
 
+import FlexDirection from "~/components/demos/FlexDirection.jsx";
+import FlexWrap from "~/components/demos/FlexWrap.jsx";
+import FlexWrap from "~/components/demos/FlexWrap.jsx";
+import FlexFlow from "~/components/demos/FlexFlow.jsx";
+import JustifyContent from "~/components/demos/JustifyContent.jsx";
+import AlignItems from "~/components/demos/AlignItems.jsx";
+import AlignContent from "~/components/demos/AlignContent.jsx";
+import Gap from "~/components/demos/Gap.jsx";
+import Order from "~/components/demos/Order.jsx";
+import FlexGrow from "~/components/demos/FlexGrow.jsx";
+import FlexShrink from "~/components/demos/FlexShrink.jsx";
+import FlexBasis from "~/components/demos/FlexBasis.jsx";
+import AlignSelf from "~/components/demos/AlignSelf.jsx"
+
+
+
 C'est ainsi qu'on définit un container flex : il est **block** par défaut ou **inline** selon la valeur donnée.  
 Cela crée un **contexte flex** pour tous les descendants directs.
 
@@ -30,12 +46,7 @@ La propriété `flex-direction` établit l’axe principal du container.
 | `column`         | De haut en bas.                                                             |
 | `column-reverse` | Comme `column`, mais du bas vers le haut.                                   |
 
-<iframe 
-  src="/demos/flex-direction.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<FlexDirection />
 
 ---
 
@@ -49,12 +60,7 @@ Définit si le container comprend une seule ligne ou plusieurs.
 | `wrap`         | Multi-lignes, retour automatique à la ligne.                                |
 | `wrap-reverse` | Multi-lignes inversées (bas vers haut ou droite vers gauche).               |
 
-<iframe 
-  src="/demos/flex-wrap.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<FlexWrap />
 
 ---
 
@@ -64,12 +70,7 @@ Raccourci combinant `flex-direction` et `flex-wrap`.
 
 Par défaut : `row nowrap`.
 
-<iframe 
-  src="/demos/flex-flow.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<FlexFlow />
 
 ---
 
@@ -85,12 +86,7 @@ Définit l’alignement **le long de l’axe principal**.
 | `space-between` | Répartition sur toute la ligne (1er au start, dernier à l’end).             |
 | `space-around`  | Espacement égal autour de chaque item.                                      |
 
-<iframe 
-  src="/demos/justify-content.html" 
-  height="424" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 424px;">
-</iframe>
+<JustifyContent />
 
 ---
 
@@ -106,12 +102,7 @@ Aligne les items le long de l’axe secondaire (cross-axis).
 | `baseline`   | Alignement sur la ligne de base du texte.                                   |
 | `stretch`    | (par défaut) Étire les items pour remplir le container.                     |
 
-<iframe 
-  src="/demos/align-items.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 440px;">
-</iframe>
+<AlignItems />
 
 ---
 
@@ -120,12 +111,7 @@ Aligne les items le long de l’axe secondaire (cross-axis).
 Aligne les **lignes** d’un container flex lorsqu’il y a plusieurs lignes.  
 ⚠️ Sans effet si le container n’a qu’une seule ligne.
 
-<iframe 
-  src="/demos/align-content.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 480px;">
-</iframe>
+<AlignContent />
 
 ---
 
@@ -133,12 +119,7 @@ Aligne les **lignes** d’un container flex lorsqu’il y a plusieurs lignes.
 
 La propriété `gap` définit les **espaces entre les items**.
 
-<iframe 
-  src="/demos/gap.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<Gap />
 
 ---
 
@@ -146,12 +127,7 @@ La propriété `gap` définit les **espaces entre les items**.
 
 Contrôle l’ordre d’affichage des items flex indépendamment du DOM.
 
-<iframe 
-  src="/demos/order.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<Order />
 
 ---
 
@@ -159,12 +135,7 @@ Contrôle l’ordre d’affichage des items flex indépendamment du DOM.
 
 Définit la capacité d’un item à **grandir**.
 
-<iframe 
-  src="/demos/flex-grow.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<FlexGrow />
 
 ---
 
@@ -185,12 +156,7 @@ Définit la capacité d’un item à **rétrécir**.
 
 Définit la **taille initiale** d’un élément avant distribution de l’espace.
 
-<iframe 
-  src="/demos/flex-basis.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 424px;">
-</iframe>
+<FlexBasis />
 
 ---
 
@@ -198,12 +164,7 @@ Définit la **taille initiale** d’un élément avant distribution de l’espac
 
 Permet à un **item individuel** d’écraser la valeur de `align-items`.
 
-<iframe 
-  src="/demos/align-self.html" 
-  height="400" 
-  width="100%" 
-  style="border:1px solid #ddd; border-radius:8px; height: 424px;">
-</iframe>
+<AlignSelf />
 
 ---
 
