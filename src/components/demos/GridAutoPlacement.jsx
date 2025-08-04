@@ -10,9 +10,7 @@ export default function GridAutoPlacementDemo() {
 
   return (
     <div className="card">
-      <h3>Auto-placement & Gap</h3>
       <div className="demo">
-        {/* Colonne gauche : boutons */}
         <div className="buttons">
           <p><strong>grid-auto-flow</strong></p>
           {flowOptions.map((opt) => (
@@ -36,8 +34,6 @@ export default function GridAutoPlacementDemo() {
             </button>
           ))}
         </div>
-
-        {/* Colonne droite : rendu */}
         <div
           className="container"
           style={{
@@ -53,8 +49,6 @@ export default function GridAutoPlacementDemo() {
           ))}
         </div>
       </div>
-
-      {/* Code affiché */}
       <pre>{`.container {
   display: grid;
   grid-template-columns: repeat(3, 100px);

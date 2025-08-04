@@ -4,7 +4,6 @@ import "./Demo.scss";
 export default function GridTemplateDemo() {
   return (
     <div className="card">
-      <h3>Grid Template Columns & Rows</h3>
       <div className="container"
         style={{
           display: "grid",
