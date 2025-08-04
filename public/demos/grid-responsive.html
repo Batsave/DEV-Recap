@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light"> <!-- sera remplacé par dark si besoin -->
 <head>
   <meta charset="UTF-8">
   <title>Exemple Grid Responsive</title>
   <style>
+    /* Thème clair par défaut */
     :root {
       --bg-body: #fff;
       --bg-example: #fafafa;
@@ -12,14 +13,13 @@
       --item-color: #fff;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-body: #1b1b1b;       /* gris très foncé */
-        --bg-example: #1e293b;    /* gris foncé */
-        --border: #334155;        /* gris bleu */
-        --item-bg: #3b82f6;       /* bleu clair */
-        --item-color: #f8fafc;    /* quasi blanc */
-      }
+    /* Thème sombre via data-theme */
+    html[data-theme="dark"] {
+      --bg-body: #1b1b1b;     /* gris très foncé */
+      --bg-example: #1e293b;  /* gris foncé */
+      --border: #334155;      /* gris bleu */
+      --item-bg: #3b82f6;     /* bleu clair */
+      --item-color: #f8fafc;  /* quasi blanc */
     }
 
     /* Style global similaire aux intégrations MDN */
