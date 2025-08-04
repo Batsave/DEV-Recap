@@ -26,7 +26,7 @@
       --code-bg: #1f2937;
     }
 
-     body {
+    body {
       margin: 0;
       font-family: system-ui, sans-serif;
       background: var(--bg-body);
@@ -85,28 +85,21 @@
       min-height: 120px;
       transition: all 0.3s ease;
       background: var(--bg-card);
-      justify-content: flex-start;
-      align-items: center;
     }
 
     .item {
       background: var(--item-bg);
       color: var(--item-color);
       font-weight: 600;
-      padding: 0.6rem 1rem;
+      padding: 0.6rem;
       border-radius: 6px;
-      white-space: nowrap;
-      flex: 0 1 auto;
-      transition: transform 0.2s ease, flex-grow 0.3s ease;
+      flex: 0 0 100px; /* largeur de base */
+      text-align: center;
+      transition: flex-grow 0.3s ease;
     }
 
-    /* On force Item 2 à avoir une base étroite → permet de voir l'effet du grow */
     #growItem {
-      flex-basis: 50px;
-    }
-
-    .item:hover {
-      transform: scale(1.05);
+      flex-grow: 0; /* modifié par JS */
     }
 
     pre {
@@ -126,22 +119,24 @@
   <div class="card">
     <div class="demo">
       <div class="buttons">
-        <button class="active" onclick="setGrow(0, this)">Item 2: flex-grow 0 (default)</button>
-        <button onclick="setGrow(1, this)">Item 2: flex-grow 1</button>
-        <button onclick="setGrow(2, this)">Item 2: flex-grow 2</button>
-        <button onclick="setGrow(3, this)">Item 2: flex-grow 3</button>
+        <button class="active" onclick="setGrow(0, this)">Item 3: flex-grow 0</button>
+        <button onclick="setGrow(1, this)">Item 3: flex-grow 1</button>
+        <button onclick="setGrow(2, this)">Item 3: flex-grow 2</button>
+        <button onclick="setGrow(3, this)">Item 3: flex-grow 3</button>
       </div>
 
       <div class="container" id="flexbox">
-        <div class="item">Item 1</div>
-        <div class="item" id="growItem">Item 2</div>
-        <div class="item">Item 3</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item" id="growItem">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
       </div>
     </div>
 
     <pre id="code">#growItem {
+  flex: 0 0 100px;
   flex-grow: 0; /* valeur par défaut */
-  flex-basis: 50px;
 }</pre>
   </div>
 
@@ -154,8 +149,8 @@
       btn.classList.add("active");
 
       document.getElementById("code").textContent = `#growItem {
+  flex: 0 0 100px;
   flex-grow: ${value};
-  flex-basis: 50px;
 }`;
     }
   </script>
