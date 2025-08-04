@@ -2,7 +2,7 @@
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <title>Démo Flex-Basis</title>
+  <title>Démo Align-Self</title>
   <style>
      :root {
       --bg-body: #ffffff;
@@ -78,33 +78,32 @@
 
     .container {
       display: flex;
+      align-items: center; /* valeur par défaut */
       gap: 0.5rem;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 1rem;
-      width: 100%;
+      min-height: 150px;
       height: 100%;
       box-sizing: border-box;
       transition: all 0.3s ease;
       background: var(--bg-card);
-      justify-content: flex-start;
     }
 
     .item {
       background: var(--item-bg);
       color: var(--item-color);
       font-weight: 600;
+      padding: 0.6rem 1rem;
       border-radius: 6px;
-      flex: 0 0 100px; /* base par défaut */
-      text-align: center;
-      transition: flex-basis 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      transition: all 0.3s ease;
     }
 
-    #basisItem {
-      flex-basis: 100px;
+    /* Item spécial */
+    #selfItem {
+      align-self: auto; /* par défaut */
     }
 
     pre {
@@ -125,39 +124,39 @@
     <div class="demo">
       <!-- Boutons -->
       <div class="buttons">
-        <button class="active" onclick="setBasis('50px', this)">50px</button>
-        <button onclick="setBasis('100px', this)">100px</button>
-        <button onclick="setBasis('150px', this)">150px</button>
-        <button onclick="setBasis('200px', this)">200px</button>
-        <button onclick="setBasis('auto', this)">auto</button>
+        <button class="active" onclick="setAlign('auto', this)">auto (hérite de align-items)</button>
+        <button onclick="setAlign('flex-start', this)">flex-start</button>
+        <button onclick="setAlign('flex-end', this)">flex-end</button>
+        <button onclick="setAlign('center', this)">center</button>
+        <button onclick="setAlign('baseline', this)">baseline</button>
+        <button onclick="setAlign('stretch', this)">stretch</button>
       </div>
 
       <!-- Rendu -->
       <div class="container" id="flexbox">
         <div class="item">Item 1</div>
-        <div class="item" id="basisItem">Item 2</div>
-        <div class="item">Item 3</div>
+        <div class="item">Item 2</div>
+        <div class="item" id="selfItem">Item 3</div>
+        <div class="item">Item 4</div>
       </div>
     </div>
 
     <!-- Code affiché -->
-    <pre id="code">#basisItem {
-  flex: 0 0 100px;
-  flex-basis: 100px;
+    <pre id="code">#selfItem {
+  align-self: auto; /* hérite de align-items: center */
 }</pre>
   </div>
 
   <script>
-    function setBasis(value, btn) {
-      const item = document.getElementById("basisItem");
-      item.style.flexBasis = value;
+    function setAlign(value, btn) {
+      const item = document.getElementById("selfItem");
+      item.style.alignSelf = value;
 
       document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      document.getElementById("code").textContent = `#basisItem {
-  flex: 0 0 ${value};
-  flex-basis: ${value};
+      document.getElementById("code").textContent = `#selfItem {
+  align-self: ${value};
 }`;
     }
   </script>
