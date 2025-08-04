@@ -60,7 +60,7 @@ export default defineConfig({
         {
           label: "CSS",
           autogenerate: {
-            dir: "/css",
+            directory: "/css",
           },
         },
       ],
