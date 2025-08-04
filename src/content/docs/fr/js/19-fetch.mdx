@@ -1,0 +1,86 @@
+---
+title: Fetch de données
+description: "Utiliser fetch en JavaScript pour récupérer des données depuis une API."
+sidebar:
+  position: 18
+---
+
+## Qu'est-ce que `fetch` ?
+
+La méthode `fetch()` permet de faire des requêtes HTTP pour **récupérer ou envoyer des données**.  
+Elle retourne une **Promise**, ce qui la rend asynchrone.
+
+---
+
+## Exemple simple
+
+```js
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Erreur :", error));
+```
+
+---
+
+## Avec async/await
+
+```js
+async function getPost() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (e) {
+    console.error("Erreur :", e);
+  }
+}
+
+getPost();
+```
+
+---
+
+## Envoyer des données (POST)
+
+```js
+async function createPost() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: "Nouveau post",
+        body: "Contenu de l'article",
+        userId: 1
+      })
+    });
+
+    let data = await response.json();
+    console.log("Créé :", data);
+  } catch (e) {
+    console.error("Erreur :", e);
+  }
+}
+
+createPost();
+```
+
+---
+
+## Points importants
+
+- `fetch` retourne toujours une **Promise**.  
+- `response.json()` transforme la réponse en **objet JavaScript**.  
+- Il faut gérer les erreurs avec `try/catch` ou `.catch()`.  
+- `fetch` ne lance pas d'erreur en cas de statut HTTP 404 ou 500 → il faut vérifier `response.ok`.  
+
+```js
+let response = await fetch("https://jsonplaceholder.typicode.com/404");
+
+if (!response.ok) {
+  console.error("Erreur HTTP :", response.status);
+}
+```

@@ -1,0 +1,54 @@
+---
+title: Async / Await
+description: "Simplifier l’écriture de code asynchrone avec async et await."
+sidebar:
+  position: 14
+---
+
+## Fonction async
+
+Une fonction `async` retourne toujours une Promise.
+
+```js
+async function saluer() {
+  return "Bonjour";
+}
+
+saluer().then(msg => console.log(msg)); // Bonjour
+```
+
+---
+
+## Await
+
+`await` attend qu’une Promise soit résolue avant de continuer.
+
+```js
+function attendre(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demarrer() {
+  console.log("Attente...");
+  await attendre(2000);
+  console.log("Terminé après 2 secondes");
+}
+
+demarrer();
+```
+
+---
+
+## Gestion des erreurs
+
+```js
+async function test() {
+  try {
+    let reponse = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await reponse.json();
+    console.log(data);
+  } catch (e) {
+    console.error("Erreur :", e);
+  }
+}
+```

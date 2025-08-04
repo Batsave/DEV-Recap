@@ -1,0 +1,34 @@
+---
+title: DOM (Document Object Model)
+description: "Manipuler le DOM avec JavaScript : sélection, modification et création d'éléments."
+sidebar:
+  position: 10
+---
+
+## Sélectionner des éléments
+
+```js
+let titre = document.getElementById("titre");
+let boutons = document.querySelectorAll("button");
+```
+
+---
+
+## Modifier du contenu
+
+```js
+let titre = document.getElementById("titre");
+titre.innerText = "Nouveau texte";
+titre.style.color = "red";
+```
+
+---
+
+## Créer et insérer un élément
+
+```js
+let nouveauParagraphe = document.createElement("p");
+nouveauParagraphe.innerText = "Je suis ajouté en JS";
+
+document.body.appendChild(nouveauParagraphe);
+```

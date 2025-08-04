@@ -1,0 +1,52 @@
+---
+title: Variables & Types
+description: "Déclaration de variables avec var, let et const, et présentation des types de base en JavaScript."
+sidebar:
+  position: 1
+---
+
+## Déclaration de variables
+
+| Mot-clé  | Description |
+|----------|-------------|
+| `var`    | Ancienne façon de déclarer une variable (à éviter) |
+| `let`    | Variable **modifiable**, portée bloc |
+| `const`  | Variable **constante**, non réaffectable |
+
+```js
+let nom = "Baptiste";
+const age = 25;
+```
+
+---
+
+## Types de données
+
+- **String** : texte  
+- **Number** : nombre  
+- **Boolean** : vrai/faux  
+- **Null** : valeur vide  
+- **Undefined** : valeur non définie  
+- **Object** : ensemble clé/valeur  
+- **Array** : liste ordonnée  
+
+```js
+let texte = "Hello";     // string
+let nombre = 42;         // number
+let actif = true;        // boolean
+let vide = null;         // null
+let inconnu;             // undefined
+let personne = { nom: "Alice", age: 30 }; // object
+let fruits = ["pomme", "banane"];         // array
+```
+
+---
+
+## Exemple pratique
+
+```js
+let x = 10;
+let y = 5;
+let somme = x + y;
+console.log("La somme est :", somme); // La somme est : 15
+```

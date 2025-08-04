@@ -1,0 +1,45 @@
+---
+title: Modules
+description: "Utiliser les modules en JavaScript avec import et export."
+sidebar:
+  position: 16
+---
+
+## Exporter un module
+
+```js
+// fichier math.js
+export function addition(a, b) {
+  return a + b;
+}
+
+export const PI = 3.14;
+```
+
+---
+
+## Importer un module
+
+```js
+// fichier main.js
+import { addition, PI } from "./math.js";
+
+console.log(addition(2, 3)); // 5
+console.log(PI); // 3.14
+```
+
+---
+
+## Export par défaut
+
+```js
+// fichier utils.js
+export default function saluer(nom) {
+  return `Bonjour ${nom}`;
+}
+
+// fichier main.js
+import saluer from "./utils.js";
+
+console.log(saluer("Alice"));
+```

@@ -1,0 +1,52 @@
+---
+title: Opérateurs
+description: "Opérateurs arithmétiques, de comparaison et logiques en JavaScript."
+sidebar:
+  position: 2
+---
+
+## Opérateurs arithmétiques
+
+| Opérateur | Exemple | Résultat |
+| --------- | ------- | -------- |
+| `+`       | `5 + 2` | 7        |
+| `-`       | `5 - 2` | 3        |
+| `*`       | `5 * 2` | 10       |
+| `/`       | `5 / 2` | 2.5      |
+| `%`       | `5 % 2` | 1        |
+
+---
+
+## Opérateurs de comparaison
+
+| Opérateur | Exemple     | Résultat                |
+| --------- | ----------- | ----------------------- |
+| `==`      | `5 == "5"`  | true (égalité simple)   |
+| `===`     | `5 === "5"` | false (égalité stricte) |
+| `!=`      | `5 != "5"`  | false                   |
+| `!==`     | `5 !== "5"` | true                    |
+| `>` `<`   | `5 > 3`     | true                    |
+
+---
+
+## Opérateurs logiques
+
+| Opérateur | Exemple         | Résultat |
+| --------- | --------------- | -------- | ----- | --- | ------ | ---- |
+| `&&`      | `true && false` | false    |
+| `         |                 | `        | `true |     | false` | true |
+| `!`       | `!true`         | false    |
+
+---
+
+## Exemple pratique
+
+```js
+let age = 20;
+
+if (age >= 18 && age < 65) {
+  console.log("Adulte actif");
+} else {
+  console.log("Autre catégorie");
+}
+```

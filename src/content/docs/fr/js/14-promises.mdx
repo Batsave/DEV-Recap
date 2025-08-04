@@ -1,0 +1,36 @@
+---
+title: Promesses
+description: "Utilisation des Promises pour gérer les opérations asynchrones en JavaScript."
+sidebar:
+  position: 13
+---
+
+## Créer une Promise
+
+```js
+let promesse = new Promise((resolve, reject) => {
+  let reussite = true;
+
+  if (reussite) {
+    resolve("Succès");
+  } else {
+    reject("Erreur");
+  }
+});
+
+promesse
+  .then(resultat => console.log(resultat))
+  .catch(erreur => console.error(erreur));
+```
+
+---
+
+## Exemple avec setTimeout
+
+```js
+function attendre(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+attendre(1000).then(() => console.log("1 seconde écoulée"));
+```

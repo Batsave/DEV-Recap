@@ -1,0 +1,68 @@
+---
+title: Boucles
+description: "Les boucles en JavaScript : for, while, do...while et les variantes modernes for...of et for...in."
+sidebar:
+  position: 4
+---
+
+## For
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log("Compteur :", i);
+}
+```
+
+---
+
+## While
+
+```js
+let i = 0;
+while (i < 5) {
+  console.log("i vaut", i);
+  i++;
+}
+```
+
+---
+
+## Do...While
+
+Exécutée au moins une fois, même si la condition est fausse.
+
+```js
+let x = 0;
+do {
+  console.log("x =", x);
+  x++;
+} while (x < 3);
+```
+
+---
+
+## For...Of
+
+Parcourt directement les **valeurs** d'un tableau.
+
+```js
+let fruits = ["pomme", "banane", "poire"];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+---
+
+## For...In
+
+Parcourt les **clés** d'un objet.
+
+```js
+let personne = { nom: "Alice", age: 25 };
+
+for (let cle in personne) {
+  console.log(cle, ":", personne[cle]);
+}
+```

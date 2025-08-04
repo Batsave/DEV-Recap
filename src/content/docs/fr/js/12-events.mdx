@@ -1,0 +1,43 @@
+---
+title: Événements
+description: "Gestion des événements en JavaScript avec addEventListener."
+sidebar:
+  position: 11
+---
+
+## Ajouter un événement
+
+```js
+let bouton = document.getElementById("monBouton");
+
+bouton.addEventListener("click", () => {
+  alert("Bouton cliqué !");
+});
+```
+
+---
+
+## Types d'événements courants
+
+- `click` → clic de souris  
+- `mouseover` → passage de la souris  
+- `keydown` → touche du clavier enfoncée  
+- `submit` → soumission d'un formulaire  
+
+---
+
+## Exemple pratique
+
+```html
+<input type="text" id="champ" placeholder="Écris quelque chose">
+<p id="affichage"></p>
+
+<script>
+  let champ = document.getElementById("champ");
+  let affichage = document.getElementById("affichage");
+
+  champ.addEventListener("input", () => {
+    affichage.innerText = champ.value;
+  });
+</script>
+```

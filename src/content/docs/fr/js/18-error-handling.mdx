@@ -1,0 +1,39 @@
+---
+title: Gestion des erreurs
+description: "Gérer les erreurs en JavaScript avec try, catch et throw."
+sidebar:
+  position: 17
+---
+
+## try...catch
+
+```js
+try {
+  let resultat = 10 / 0;
+  console.log(resultat);
+  throw new Error("Erreur personnalisée");
+} catch (erreur) {
+  console.error("Une erreur est survenue :", erreur.message);
+} finally {
+  console.log("Bloc finally exécuté");
+}
+```
+
+---
+
+## Créer et lancer une erreur
+
+```js
+function division(a, b) {
+  if (b === 0) {
+    throw new Error("Division par zéro interdite");
+  }
+  return a / b;
+}
+
+try {
+  console.log(division(10, 0));
+} catch (e) {
+  console.error(e.message); // Division par zéro interdite
+}
+```

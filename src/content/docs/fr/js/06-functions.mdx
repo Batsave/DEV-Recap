@@ -1,0 +1,54 @@
+---
+title: Fonctions
+description: "Introduction aux fonctions en JavaScript : déclaration, fonctions fléchées, paramètres et valeurs de retour."
+sidebar:
+  position: 5
+---
+
+## Déclaration de fonction
+
+```js
+function saluer(nom) {
+  return "Bonjour " + nom;
+}
+
+console.log(saluer("Alice")); // Bonjour Alice
+```
+
+---
+
+## Fonctions fléchées
+
+Syntaxe plus concise introduite avec ES6.
+
+```js
+const saluer = (nom) => "Bonjour " + nom;
+
+console.log(saluer("Bob")); // Bonjour Bob
+```
+
+---
+
+## Paramètres et valeurs par défaut
+
+```js
+function multiplier(a, b = 2) {
+  return a * b;
+}
+
+console.log(multiplier(5));    // 10
+console.log(multiplier(5, 3)); // 15
+```
+
+---
+
+## Retourner une valeur
+
+```js
+function addition(x, y) {
+  return x + y;
+}
+
+let resultat = addition(4, 6);
+console.log(resultat); // 10
+```

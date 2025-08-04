@@ -1,0 +1,49 @@
+---
+title: Tableaux
+description: "Manipuler les tableaux en JavaScript : création, méthodes et parcours."
+sidebar:
+  position: 8
+---
+
+## Créer un tableau
+
+```js
+let fruits = ["pomme", "banane", "poire"];
+console.log(fruits[0]); // pomme
+```
+
+---
+
+## Méthodes principales
+
+| Méthode | Exemple | Résultat |
+|---------|---------|----------|
+| `push()` | `fruits.push("kiwi")` | Ajoute à la fin |
+| `pop()` | `fruits.pop()` | Retire le dernier élément |
+| `shift()` | `fruits.shift()` | Retire le premier élément |
+| `unshift()` | `fruits.unshift("fraise")` | Ajoute au début |
+| `map()` | `fruits.map(f => f.toUpperCase())` | Transforme les éléments |
+| `filter()` | `fruits.filter(f => f.startsWith("p"))` | Filtre les éléments |
+| `reduce()` | `[1,2,3].reduce((a,b)=>a+b)` | Réduit à une seule valeur |
+
+---
+
+## Parcourir un tableau
+
+```js
+let fruits = ["pomme", "banane", "poire"];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+---
+
+## Exemple pratique
+
+```js
+let nombres = [1, 2, 3, 4, 5];
+let pairs = nombres.filter(n => n % 2 === 0);
+console.log(pairs); // [2, 4]
+```

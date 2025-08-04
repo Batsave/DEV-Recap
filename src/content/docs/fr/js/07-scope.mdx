@@ -1,0 +1,51 @@
+---
+title: Portée (Scope)
+description: "Comprendre la portée des variables en JavaScript : globale, fonction et bloc."
+sidebar:
+  position: 6
+---
+
+## Portée globale
+
+Les variables déclarées en dehors de toute fonction sont globales.
+
+```js
+let variableGlobale = "Je suis globale";
+
+function afficherGlobale() {
+  console.log(variableGlobale);
+}
+
+afficherGlobale(); // Je suis globale
+```
+
+---
+
+## Portée fonction
+
+Les variables déclarées dans une fonction ne sont accessibles qu'à l'intérieur de celle-ci.
+
+```js
+function test() {
+  let variableLocale = "Dans la fonction";
+  console.log(variableLocale);
+}
+
+test();
+// console.log(variableLocale); // Erreur : non définie
+```
+
+---
+
+## Portée bloc
+
+Avec `let` et `const`, les variables sont limitées au bloc `{ }`.
+
+```js
+if (true) {
+  let variableBloc = "Dans le bloc";
+  console.log(variableBloc); // OK
+}
+
+// console.log(variableBloc); // Erreur : non définie
+```

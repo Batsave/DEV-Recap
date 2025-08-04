@@ -1,0 +1,59 @@
+---
+title: Conditions
+description: "Les structures conditionnelles en JavaScript : if, else, else if et switch."
+sidebar:
+  position: 3
+---
+
+## If / Else
+
+La structure conditionnelle permet d'exécuter du code uniquement si une condition est vraie.
+
+```js
+let age = 18;
+
+if (age >= 18) {
+  console.log("Majeur");
+} else {
+  console.log("Mineur");
+}
+```
+
+---
+
+## Else If
+
+Pour tester plusieurs conditions successives :
+
+```js
+let note = 15;
+
+if (note >= 16) {
+  console.log("Très bien");
+} else if (note >= 10) {
+  console.log("Moyen");
+} else {
+  console.log("Échec");
+}
+```
+
+---
+
+## Switch
+
+Alternative à plusieurs `if/else if`.
+
+```js
+let jour = "mardi";
+
+switch (jour) {
+  case "lundi":
+    console.log("Début de semaine");
+    break;
+  case "vendredi":
+    console.log("Bientôt le week-end");
+    break;
+  default:
+    console.log("Jour normal");
+}
+```

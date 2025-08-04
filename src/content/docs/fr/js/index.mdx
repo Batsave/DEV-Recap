@@ -1,0 +1,43 @@
+---
+title: Introduction à JavaScript
+description: "Présentation du langage JavaScript, son rôle et son exécution dans le navigateur et Node.js."
+sidebar:
+  position: 0
+---
+
+## Qu'est-ce que JavaScript ?
+
+JavaScript est un **langage de programmation** principalement utilisé pour rendre les pages web **interactives**.  
+Il peut être exécuté :
+
+- Dans le navigateur (Chrome, Firefox, Safari…)  
+- Hors navigateur avec [Node.js](https://nodejs.org)
+
+---
+
+## Rôles principaux
+
+- Manipuler le **DOM** (contenu d’une page HTML).
+- Réagir aux **événements** (clics, saisies clavier, etc.).
+- Communiquer avec un serveur via des **API**.
+- Développer des applications côté serveur (Node.js).
+
+---
+
+## Exemple simple
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="titre">Bonjour</h1>
+    <button onclick="changerTexte()">Clique-moi</button>
+
+    <script>
+      function changerTexte() {
+        document.getElementById("titre").innerText = "Hello JavaScript !";
+      }
+    </script>
+  </body>
+</html>
+```

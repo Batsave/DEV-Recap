@@ -1,0 +1,39 @@
+---
+title: Programmation Asynchrone
+description: "Introduction à la programmation asynchrone en JavaScript : setTimeout, setInterval, Promises, async/await."
+sidebar:
+  position: 12
+---
+
+## setTimeout
+
+Exécute une fonction après un certain délai (en millisecondes).
+
+```js
+console.log("Début");
+
+setTimeout(() => {
+  console.log("Exécuté après 2 secondes");
+}, 2000);
+
+console.log("Fin");
+```
+
+---
+
+## setInterval
+
+Répète une fonction à intervalles réguliers.
+
+```js
+let compteur = 0;
+
+let intervalle = setInterval(() => {
+  compteur++;
+  console.log("Compteur :", compteur);
+
+  if (compteur >= 5) {
+    clearInterval(intervalle);
+  }
+}, 1000);
+```

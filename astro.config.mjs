@@ -63,6 +63,12 @@ export default defineConfig({
             directory: "/css",
           },
         },
+        {
+          label: "JavaScript",
+          autogenerate: {
+            directory: "/js",
+          },
+        },
       ],
     }),
   ],

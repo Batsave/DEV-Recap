@@ -1,0 +1,39 @@
+---
+title: Closures
+description: "Introduction aux closures en JavaScript et leur utilité pour préserver un état."
+sidebar:
+  position: 7
+---
+
+## Qu'est-ce qu'une closure ?
+
+Une **closure** est créée lorsqu'une fonction "se souvient" des variables de son environnement extérieur, même après l'exécution de celui-ci.
+
+---
+
+## Exemple
+
+```js
+function creerCompteur() {
+  let compteur = 0;
+
+  return function() {
+    compteur++;
+    return compteur;
+  };
+}
+
+const monCompteur = creerCompteur();
+
+console.log(monCompteur()); // 1
+console.log(monCompteur()); // 2
+console.log(monCompteur()); // 3
+```
+
+---
+
+## Pourquoi utiliser les closures ?
+
+- Pour **préserver un état** entre plusieurs appels de fonction.  
+- Pour créer des **variables privées**.  
+- Utile dans les callbacks et la programmation fonctionnelle.
