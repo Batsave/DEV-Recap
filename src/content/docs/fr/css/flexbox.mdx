@@ -218,3 +218,28 @@ Permet à un **item individuel** d’écraser la valeur de `align-items`.
 - `flex-grow`, `flex-shrink`, `flex-basis` → contrôlent la répartition de l’espace.  
 - `gap` → préférable à `margin` pour gérer les espacements.  
 - `order` → change l’ordre visuel sans toucher au DOM.  
+
+
+<script>
+  function syncIframeThemes() {
+    const theme = document.documentElement.getAttribute("data-theme") || "light";
+
+    document.querySelectorAll("iframe").forEach(iframe => {
+      try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (doc?.documentElement) {
+          doc.documentElement.setAttribute("data-theme", theme);
+        }
+      } catch (e) {
+        // Ignore les iframes externes (MDN etc.)
+      }
+    });
+  }
+
+  // synchro au chargement
+  window.addEventListener("load", syncIframeThemes);
+
+  // synchro si le thème change dynamiquement
+  const observer = new MutationObserver(syncIframeThemes);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+</script>
