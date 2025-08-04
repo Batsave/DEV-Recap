@@ -4,18 +4,37 @@
   <meta charset="UTF-8">
   <title>Grid Align Demo</title>
   <style>
+    :root {
+      --bg-body: #fff;
+      --bg-example: #fafafa;
+      --border: #d1d5db;
+      --item-bg: #2563eb;
+      --item-color: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-body: #0f172a;       /* gris très foncé */
+        --bg-example: #1e293b;    /* gris foncé */
+        --border: #334155;        /* gris bleu */
+        --item-bg: #3b82f6;       /* bleu clair */
+        --item-color: #f8fafc;    /* quasi blanc */
+      }
+    }
+
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
       padding: 1rem;
-      background: #fff;
+      background: var(--bg-body);
+      color: var(--item-color);
     }
 
     .example {
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--border);
       border-radius: 8px;
       padding: 1rem;
-      background: #fafafa;
+      background: var(--bg-example);
     }
 
     .container {
@@ -28,8 +47,8 @@
     }
 
     .item {
-      background: #2563eb;
-      color: white;
+      background: var(--item-bg);
+      color: var(--item-color);
       font-weight: bold;
       display: flex;
       align-items: center;
