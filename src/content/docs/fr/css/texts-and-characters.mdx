@@ -1,42 +1,65 @@
 ---
-title: Textes & Caractères
+title: "Textes & Caractères"
 description: "Apprenez à styliser les textes et les caractères en CSS."
 sidebar:
   position: 1
 ---
 
-*Cette famille regroupe toutes les propriétés permettant d'agir sur le texte.*
+## Textes et caractères en CSS
 
-| color | Couleur de l'avant plan (texte, par exemple). |
+Cette famille regroupe toutes les propriétés permettant d'agir sur le texte, sa police, sa taille, son espacement, son alignement ou encore ses décorations.
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
 | --- | --- |
-| direction | Sens d'écriture. |
-| font | Ensemble des propriétés concernant les caractères. |
-| font-family | Police de caractères. |
-| font-size | Taille des caractères. |
-| font-size-adjust | Hauteur des lignes de texte. |
-| font-stretch | Etirement ou compression des caractères. |
-| font-style | Mise en italique. |
-| font-variant | Mise en petites capitales. |
-| font-weight | Mise en gras ou extra-gras (extra-bold). |
-| letter-spacing | Espacement des lettres. |
-| line-break | Contrôle les règles qui régissent le saut de ligne pour un texte en japonais. |
-| line-height | Hauteur de ligne |
-| text-align | Détermine l'alignement horizontal du texte à l'intérieur d'un élément. |
-| text-align-last | Détermine l'alignement horizontal de la dernière ligne de texte dans un cadre de l'élément (Explorer seulement). |
-| text-autospace | Détermine l'espacement entre les caractères (langues asiatiques - Explorer seulement). |
-| text-decoration | Soulignement ou rayure du texte. |
-| text-indent | Indentation du texte. |
-| text-justify | Justification du texte. |
-| text-kashida-space | Concerne le texte arabe inclus dans un élément de bloc (Explorer seulement). |
-| text-overflow | Détermine s'il faut afficher le contenu débordant d'un cadre plein sous forme de points de suspension (...) à la fin de la ligne |
-| text-shadow | Définit les effets d'ombre à appliquer au texte de l'élément. |
-| text-transform | Contrôle la capitalisation (majuscules/minuscules) du texte d'un élément. |
-| text-underline-position | Position du texte par rapport au soulgnement (langues asiatiques - Explorer seulement). |
-| unicode-bidi | Détermine l'incorporation du texte bidirectionnel avec la propriété de style direction (langues asiatiques - Explorer seulement). |
-| vertical-align | Alignement vertical de l'élément. |
-| unicode-bidi | Détermine l'incorporation du texte bidirectionnel avec la propriété de style direction (langues asiatiques - Explorer seulement). |
-| white-space | Gestion des espaces multiples et des retours chariot. |
-| word-break | Détermine le style de césure de mot (langues asiatiques - Explorer seulement). |
-| word-wrap | Détermine le style de renvoi à la ligne pour les éléments de niveau bloc, les éléments incorporés de taille spécifique ou les éléments positionnés (Explorer seulement). |
-| writing-mode | Progression du contenu texte dans l'élément (langues asiatiques - Explorer seulement). |
-| word-spacing | Espacement des mots. |
+| `color` | Définit la couleur du texte. |
+| `font` | Propriété raccourcie regroupant plusieurs valeurs (`font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, `font-family`). |
+| `font-family` | Définit la police de caractères (ex: Arial, Verdana, Times New Roman). |
+| `font-size` | Définit la taille des caractères (px, em, rem, %). |
+| `font-style` | Définit le style du texte : normal, italique, oblique. |
+| `font-variant` | Active les petites capitales (`small-caps`). |
+| `font-weight` | Définit l’épaisseur des caractères : normal, bold, 100 à 900. |
+| `letter-spacing` | Définit l’espacement entre les lettres. |
+| `line-height` | Définit la hauteur de ligne (interligne). |
+| `text-align` | Définit l’alignement horizontal : left, right, center, justify. |
+| `text-decoration` | Définit les décorations : underline, overline, line-through. |
+| `text-overflow` | Définit l’affichage du contenu qui dépasse : `ellipsis` ajoute des points de suspension. |
+| `text-shadow` | Définit une ombre appliquée au texte. |
+| `text-transform` | Définit la transformation du texte : uppercase, lowercase, capitalize. |
+| `vertical-align` | Définit l’alignement vertical relatif (baseline, top, middle, bottom). |
+| `white-space` | Contrôle la gestion des espaces et retours : normal, nowrap, pre, pre-wrap. |
+| `word-break` | Définit la césure : normal, break-all, keep-all. |
+| `word-wrap` / `overflow-wrap` | Définit le retour forcé à la ligne si un mot dépasse. |
+| `word-spacing` | Définit l’espacement entre les mots. |
+| `writing-mode` | Définit le sens d’écriture : horizontal-tb, vertical-rl, vertical-lr. |
+| `direction` | Définit le sens d’écriture : ltr (gauche → droite), rtl (droite → gauche). |
+| `unicode-bidi` | Définit l’intégration du texte bidirectionnel en combinaison avec `direction`. |
+
+---
+
+## Propriétés spécifiques ou obsolètes
+
+Certaines propriétés sont liées à d’anciens navigateurs (Internet Explorer) ou à des cas spécifiques (langues asiatiques). Elles sont rarement utilisées aujourd’hui.
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `font-size-adjust` | Peu utilisé | Ajuste la hauteur des minuscules indépendamment de `font-size`. |
+| `font-stretch` | Peu supporté | Définit l’étirement ou la compression de la police (condensed, expanded). |
+| `line-break` | Spécifique langues asiatiques | Définit les règles de césure en japonais et chinois. |
+| `text-align-last` | Internet Explorer | Définit l’alignement spécifique de la dernière ligne. |
+| `text-autospace` | Internet Explorer | Définit l’espacement automatique pour les caractères asiatiques. |
+| `text-kashida-space` | Internet Explorer | Définit la justification spécifique pour le texte arabe. |
+| `text-underline-position` | Spécifique langues asiatiques | Définit la position du soulignement (utile pour le japonais et le chinois). |
+
+---
+
+## À retenir
+
+- Les propriétés principales concernent la **police** (`font-family`, `font-size`, `font-weight`, `font-style`),  
+  l’**espacement** (`line-height`, `letter-spacing`, `word-spacing`),  
+  et la **mise en forme du texte** (`text-align`, `text-transform`, `text-decoration`).  
+- Les propriétés obsolètes comme `text-autospace` ou `text-kashida-space` ne sont plus à utiliser.  
+- Pour les langues asiatiques ou l’arabe, certaines propriétés spécifiques (`line-break`, `writing-mode`, `unicode-bidi`) peuvent encore être utiles.  

@@ -1,27 +1,52 @@
 ---
-title: Couleurs
+title: "Couleurs"
 description: "Cette famille regroupe toutes les propriétés consacrées à la couleur."
 sidebar:
   position: 1
 ---
 
-*Cette famille regroupe toutes les propriétés consacrées à la couleur. Les normes HTML et CSS permettent de définir les couleurs de 3 façons différentes.*
+## Couleurs en CSS
 
-| background-color | Couleur de l'arrière-plan. |
+Cette famille regroupe toutes les propriétés consacrées à la couleur.  
+En CSS, les couleurs peuvent être définies de différentes façons : noms de couleurs (`red`), valeurs hexadécimales (`#ff0000`), fonctions (`rgb()`, `hsl()`, etc.).
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
 | --- | --- |
-| border-bottom-color | Couleur de la bordure du bas. |
-| border-color | Couleur des bordures. |
-| border-left-color | Couleur de la bordure de gauche. |
-| border-right-color | Couleur de la bordure de droite. |
-| border-top-color | Couleur de la bordure de droite. |
-| color | Couleur de l'avant plan (texte, par exemple). |
-| layer-background-color | Couleur d'arrière plan et de la bordure dans Netscape. |
-| outline-color | Couleur de l'encadrement de l'élément. |
-| scrollbar-3dlight-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-arrow-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-base-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-darkShadow-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-face-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-highlight-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-shadow-color | Aspect de l'ascenseur (Explorer seulement). |
-| scrollbar-track-color | Aspect de l'ascenseur (Explorer seulement). |
+| `color` | Définit la couleur du texte (avant-plan). |
+| `background-color` | Définit la couleur de l’arrière-plan. |
+| `border-color` | Définit la couleur des bordures. |
+| `border-top-color` | Définit la couleur de la bordure supérieure. |
+| `border-right-color` | Définit la couleur de la bordure droite. |
+| `border-bottom-color` | Définit la couleur de la bordure inférieure. |
+| `border-left-color` | Définit la couleur de la bordure gauche. |
+| `outline-color` | Définit la couleur du contour de l’élément. |
+
+---
+
+## Propriétés obsolètes ou spécifiques
+
+Certaines propriétés étaient utilisées uniquement dans d’anciens navigateurs (Internet Explorer, Netscape) et ne doivent plus être utilisées.
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `layer-background-color` | Netscape 4 (obsolète) | Définissait la couleur d’arrière-plan et de la bordure dans Netscape. |
+| `scrollbar-base-color` | Internet Explorer (obsolète) | Définissait la couleur principale de la barre de défilement. |
+| `scrollbar-face-color` | Internet Explorer (obsolète) | Définissait la couleur de la zone centrale de la barre de défilement. |
+| `scrollbar-track-color` | Internet Explorer (obsolète) | Définissait la couleur de la piste (track) de la barre de défilement. |
+| `scrollbar-arrow-color` | Internet Explorer (obsolète) | Définissait la couleur des flèches de la barre de défilement. |
+| `scrollbar-shadow-color` | Internet Explorer (obsolète) | Définissait la couleur de l’ombre de la barre de défilement. |
+| `scrollbar-darkshadow-color` | Internet Explorer (obsolète) | Définissait la couleur de l’ombre externe plus sombre. |
+| `scrollbar-highlight-color` | Internet Explorer (obsolète) | Définissait la couleur de la zone mise en surbrillance. |
+| `scrollbar-3dlight-color` | Internet Explorer (obsolète) | Définissait la couleur des bords en relief de la barre de défilement. |
+
+---
+
+## À retenir
+
+- Utilise uniquement les propriétés **standards** (`color`, `background-color`, `border-color`, `outline-color`).  
+- Les propriétés liées aux barres de défilement (`scrollbar-*`) ou à Netscape (`layer-background-color`) sont **obsolètes**.  
+- Aujourd’hui, pour personnaliser une **scrollbar**, on utilise les pseudo-éléments CSS modernes (`::-webkit-scrollbar`, `scrollbar-color`, `scrollbar-width`).  
