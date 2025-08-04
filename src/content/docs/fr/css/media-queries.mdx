@@ -1,0 +1,195 @@
+---
+title: Media Queries
+description: "Une media query permet de définir des styles CSS spécifiques en fonction de certaines conditions."
+weight: 1
+---
+
+## Qu’est-ce qu’une Media Query ?
+
+Une **media query** permet de **définir des styles CSS spécifiques** en fonction de certaines conditions comme :
+
+- la **taille de l’écran** (largeur/hauteur),
+- le **type d’appareil** (impression, écran),
+- la **résolution**,
+- le **mode sombre ou clair**, etc.
+
+C’est un **outil fondamental du responsive design**, pour adapter l’affichage à tous les appareils : desktop, tablette, mobile.
+
+---
+
+## Syntaxe de base
+
+```css
+@media condition {
+  /* styles CSS ici */
+}
+```
+
+---
+
+## Exemple pratique (breakpoints)
+
+```css
+/* Style par défaut : Desktop */
+body {
+  background: white;
+  font-size: 18px;
+}
+
+/* Tablette : max-width 768px */
+@media (max-width: 768px) {
+  body {
+    background: #f0f0f0;
+    font-size: 16px;
+  }
+}
+
+/* Mobile : max-width 480px */
+@media (max-width: 480px) {
+  body {
+    background: #e0e0e0;
+    font-size: 14px;
+  }
+}
+```
+
+---
+
+## Les breakpoints courants (indicatifs)
+
+| Appareil | Largeur max (`max-width`) |
+| --- | --- |
+| Mobile | `480px` à `600px` |
+| Tablette | `768px` à `1024px` |
+| Laptop | `1024px` à `1440px` |
+| Desktop large | `1440px+` |
+
+---
+
+## Quelques conditions utiles
+
+### 1. Par largeur d’écran
+
+```css
+@media (min-width: 1024px) { ... }
+@media (max-width: 768px) { ... }
+```
+
+### 2. Orientation portrait/paysage
+
+```css
+@media (orientation: portrait) { ... }
+@media (orientation: landscape) { ... }
+```
+
+### 3. Mode clair/sombre (dark mode)
+
+```css
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+}
+```
+
+---
+
+## Astuce : combiner plusieurs conditions
+
+```css
+@media (min-width: 600px) and (max-width: 900px) {
+  /* Styles pour les écrans entre 600px et 900px */
+}
+```
+
+---
+
+## Bonnes pratiques
+
+- Utilise les **mobile-first** media queries : styles de base pour les petits écrans, puis `min-width` pour les plus grands.
+- Évite de tout surcharger dans une seule règle.
+- Garde une **structure claire** (desktop / tablette / mobile).
+- Utilise des **unités fluides** (`em`, `%`, `rem`) autant que possible.
+
+---
+
+## Exemple complet
+
+```css
+.card {
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+```
+
+---
+
+## 🧠 `@media` vs `@media screen`
+
+### 1. `@media`
+
+```css
+@media (max-width: 768px) {
+  /* styles ici */
+}
+
+```
+
+C'est la **forme la plus courante** et la plus utilisée aujourd'hui.
+
+Par défaut, **`screen` est sous-entendu**, donc tu peux **omettre** `screen` sans problème dans 99 % des cas.
+
+---
+
+### 2. `@media screen`
+
+```css
+@media screen and (max-width: 768px) {
+  /* styles ici */
+}
+
+```
+
+Tu précises ici que les règles ne s’appliquent **que pour les écrans** (et pas pour l'impression, par exemple).
+
+---
+
+## Autres types de media
+
+| Type | Description |
+| --- | --- |
+| `all` | Tous les types de médias (défaut) |
+| `screen` | Écrans (ordinateurs, tablettes, etc.) |
+| `print` | Impression papier |
+| `speech` | Synthèse vocale (lecture d'écran) |
+
+---
+
+## Bonnes pratiques
+
+- Si tu ne cibles que les **écrans**, tu peux **utiliser juste `@media`** (plus court, plus lisible).
+- Si tu veux **exclure `print` ou `speech`**, utilise explicitement :
+    
+    ```css
+    @media screen and (max-width: 768px) { ... }
+    
+    ```
+    
+
+---
+
+## En résumé
+
+
+| Écriture | Recommandée ? | Notes |
+| --- | --- | --- |
+| `@media (...)` | ✅ OUI | Suffit dans 99 % des cas |
+| `@media screen and (...)` | ✅ OUI | Plus explicite, utile si tu fais aussi du print |
+| `@media print` | ✅ OUI | Pour les styles d’impression |
+
