@@ -5,6 +5,10 @@ sidebar:
   position: 1
 ---
 
+import GridAlign from "~/components/demos/GridAlign.jsx";
+import GridResponsive from "~/components/demos/GridResponsive.jsx";
+
+
 ## Grid layout (mise en page en grille 2D)
 
 `display: grid` transforme tous les enfants directs en cellules d'une grille bidimensionnelle.
@@ -103,12 +107,7 @@ Les règles d’alignement dans Grid proviennent du module flex, maintenant part
 
 ```
 
-<iframe
-  height="400"
-  width="100%"
-  src="/demos/grid-align.html"
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<GridAlign client:only="react"/>
 
 ---
 
@@ -125,12 +124,7 @@ Exemples avancés : layout fluide en 1 à 3 colonnes, système 12‑colonnes, au
 
 ```
 
-<iframe
-  height="400"
-  width="100%"
-  src="/demos/grid-responsive.html"
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<FlexGrow client:only="react"/>
 
 ---
 
