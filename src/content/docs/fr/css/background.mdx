@@ -1,21 +1,46 @@
 ---
 title: "Background (arrière-plan)"
-description: "Cette liste de propriétés permet de définir la couleur ou l'image qui sera utilisée en fond de page ou en arrière plan d'élément."
+description: "Cette liste de propriétés permet de définir la couleur ou l'image utilisée en fond de page ou en arrière-plan d'un élément."
 sidebar:
   position: 1
 ---
 
-*Cette liste de propriétés permet de définir la couleur ou l'image qui sera utilisée en fond de page ou en arrière plan d'élément.*
+## Background (arrière-plan)
 
-| background | Ensemble de propriétés de l'arrière-plan. |
+Cette liste de propriétés permet de définir la couleur ou l'image utilisée en arrière-plan d'une page ou d'un élément.
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
 | --- | --- |
-| background-attachment | Mode de défilement de l'image d'arrière-plan. |
-| background-color | Couleur de l'arrière-plan. |
-| background-image | Image d'arrière-plan. |
-| background-position-x | Position horizontale de l'image d'arrière-plan. |
-| background-position-y | Position verticale de l'image d'arrière-plan. |
-| background-size | Taille de l’arrière plan  |
-| background-position | Position de l'image d'arrière-plan. |
-| background-repeat | Mode de répétition de l'image d'arrière-plan. |
-| layer-background-image | Image d'arrière plan et de la bordure dans Netscape Navigator. |
-| layer-background-color | Couleur d'arrière plan et de la bordure dans Netscape Navigator. |
+| `background` | Propriété raccourcie regroupant toutes les propriétés d’arrière-plan. |
+| `background-attachment` | Définit si l’image de fond est fixe (`fixed`) ou défile avec le contenu (`scroll`). |
+| `background-color` | Définit la couleur de l’arrière-plan. |
+| `background-image` | Définit une ou plusieurs images d’arrière-plan. |
+| `background-position` | Définit la position de l’image de fond (ex: `center`, `top right`). |
+| `background-position-x` | Définit uniquement la position horizontale de l’image de fond. |
+| `background-position-y` | Définit uniquement la position verticale de l’image de fond. |
+| `background-repeat` | Définit la répétition de l’image de fond (`repeat`, `no-repeat`, `repeat-x`, `repeat-y`). |
+| `background-size` | Définit la taille de l’image de fond (`auto`, `cover`, `contain` ou valeurs personnalisées). |
+
+---
+
+## Propriétés obsolètes ou spécifiques
+
+Ces propriétés appartiennent à des versions anciennes de Netscape Navigator et ne doivent plus être utilisées.
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `layer-background-image` | Netscape (obsolète) | Définissait l’image d’arrière-plan et de la bordure dans Netscape Navigator 4. |
+| `layer-background-color` | Netscape (obsolète) | Définissait la couleur d’arrière-plan et de la bordure dans Netscape Navigator 4. |
+
+---
+
+## À retenir
+
+- Utiliser uniquement les propriétés **modernes** (`background-color`, `background-image`, `background-size`, etc.).  
+- Les propriétés `background-position-x` et `background-position-y` sont pratiques mais non strictement nécessaires : on peut tout gérer avec `background-position`.  
+- Les anciennes propriétés liées à **Netscape Navigator** (`layer-background-*`) sont **obsolètes**.  
+- On peut appliquer plusieurs images de fond en les séparant par des virgules dans `background-image`.  

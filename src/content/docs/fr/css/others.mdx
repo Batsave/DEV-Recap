@@ -1,0 +1,72 @@
+---
+title: "Divers"
+description: "Propriétés CSS diverses qui n’appartiennent pas à une famille précise."
+sidebar:
+  position: 1
+---
+
+## Divers
+
+Cette catégorie regroupe plusieurs propriétés CSS utiles, qui ne relèvent pas directement des familles couleurs, textes ou arrière-plans.
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
+| --- | --- |
+| `cursor` | Définit l’apparence du curseur de la souris (ex: `pointer`, `text`, `wait`). |
+| `filter` | Applique un filtre graphique moderne (ex: `blur`, `grayscale`, `brightness`). |
+| `opacity` | Définit l’opacité/transparence de l’élément (de `0` à `1`). |
+| `visibility` | Définit si un élément est visible (`visible`, `hidden`, `collapse`). |
+| `white-space` | Définit la gestion des espaces et des retours (`normal`, `nowrap`, `pre`, etc.). |
+| `!important` | Mot-clé permettant de donner la priorité absolue à une règle CSS. |
+
+---
+
+## Propriétés obsolètes ou spécifiques
+
+Certaines propriétés étaient utilisées dans des navigateurs anciens (Internet Explorer, Netscape, vieux Mozilla).  
+Elles ne doivent plus être utilisées aujourd’hui.
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `filter` (ancienne syntaxe) | Internet Explorer (obsolète) | Ancienne version des filtres CSS, remplacée par la propriété standard `filter`. |
+| `-moz-opacity` | Mozilla (obsolète) | Ancienne propriété pour gérer l’opacité, remplacée par `opacity`. |
+| `scrollbar-base-color` | Internet Explorer (obsolète) | Définissait la couleur principale de la barre de défilement. |
+| `scrollbar-face-color` | Internet Explorer (obsolète) | Définissait la couleur de la zone centrale de la barre de défilement. |
+| `scrollbar-track-color` | Internet Explorer (obsolète) | Définissait la couleur de la piste (track) de la barre de défilement. |
+| `scrollbar-arrow-color` | Internet Explorer (obsolète) | Définissait la couleur des flèches. |
+| `scrollbar-shadow-color` | Internet Explorer (obsolète) | Définissait la couleur de l’ombre. |
+| `scrollbar-darkshadow-color` | Internet Explorer (obsolète) | Définissait la couleur de l’ombre externe. |
+| `scrollbar-highlight-color` | Internet Explorer (obsolète) | Définissait la couleur des zones en surbrillance. |
+| `scrollbar-3dlight-color` | Internet Explorer (obsolète) | Définissait la couleur des bords en relief de la barre de défilement. |
+
+---
+
+## À retenir
+
+- Utiliser **les versions standards** : `cursor`, `filter`, `opacity`, `visibility`, `white-space`.  
+- Éviter `!important` sauf en dernier recours, car il complique la maintenance du CSS.  
+- Les propriétés liées aux barres de défilement d’Internet Explorer et aux anciens navigateurs sont **obsolètes**.  
+- Pour styliser une scrollbar aujourd’hui, utiliser :  
+
+```css
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #eee;
+}
+
+/* Chrome, Edge, Safari (WebKit) */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #eee;
+}
+```

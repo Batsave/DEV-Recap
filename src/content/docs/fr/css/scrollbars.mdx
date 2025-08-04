@@ -1,0 +1,124 @@
+---
+title: "Scrollbars (barres de défilement)"
+description: "Propriétés CSS modernes pour personnaliser l'apparence des barres de défilement."
+sidebar:
+  position: 1
+---
+
+# Scrollbars (barres de défilement)
+
+La personnalisation des barres de défilement a longtemps été spécifique à Internet Explorer (`scrollbar-*`) ou via des hacks.  
+Aujourd’hui, CSS propose des solutions **modernes et standardisées**.
+
+---
+
+## Propriétés standards
+
+### 1. `scrollbar-width` (Firefox uniquement)
+
+Définit l’épaisseur de la barre de défilement.
+
+```css
+/* Valeurs possibles */
+scrollbar-width: auto;   /* largeur par défaut */
+scrollbar-width: thin;   /* plus fine */
+scrollbar-width: none;   /* cache la scrollbar */
+```
+
+exemple :
+
+```css
+* {
+  scrollbar-width: thin;
+}
+/* ou */
+html {
+  scrollbar-width: none;
+}
+```
+--
+
+### 2. scrollbar-color (Firefox uniquement)
+Permet de définir les couleurs de la barre (thumb) et du fond (track).
+
+```css
+/* syntaxe : scrollbar-color: <couleur-thumb> <couleur-track>; */
+* {
+  scrollbar-color: #888 #eee;  /* gris foncé sur fond clair */
+}
+```
+---
+
+## Propriétés spécifiques WebKit (Chrome, Edge, Safari)
+
+Pour les navigateurs basés sur WebKit et Blink, on utilise des pseudo-éléments :
+
+Sélecteur	Cible
+::-webkit-scrollbar	La zone de la scrollbar
+::-webkit-scrollbar-thumb	La partie déplaçable (thumb)
+::-webkit-scrollbar-track	La piste (fond de la scrollbar)
+::-webkit-scrollbar-corner	Le coin entre deux scrollbars
+
+Exemple :
+
+```css
+/* Largeur de la scrollbar */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px; /* pour scrollbar horizontale */
+}
+
+/* Partie déplaçable */
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* Partie de fond */
+*::-webkit-scrollbar-track {
+  background: #eee;
+}
+```
+
+Exemple complet (cross-browser):
+
+```css
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #666 #f0f0f0;
+}
+
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+```
+
+---
+
+## Bonnes pratiques
+
+- Toujours tester sur plusieurs navigateurs : Chrome, Firefox, Safari.
+- Utiliser des couleurs avec contraste suffisant pour l’accessibilité.
+- Éviter de rendre les scrollbars trop fines, surtout pour les utilisateurs mobiles.
+- Pour cacher une scrollbar, préférer scrollbar-width: none; (Firefox) et ::-webkit-scrollbar { display: none; } (WebKit), mais attention à l’accessibilité.
+
+
+---
+
+### À retenir
+- Les anciennes propriétés scrollbar-* (Internet Explorer) sont obsolètes.
+- Aujourd’hui :
+    - Firefox → scrollbar-width et scrollbar-color.
+    - WebKit (Chrome, Safari, Edge) → ::-webkit-scrollbar et ses sous-éléments.
+- Pas encore de solution totalement standardisée cross-browser, mais cette combinaison couvre 99 % des cas actuels.

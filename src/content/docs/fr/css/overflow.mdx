@@ -1,0 +1,92 @@
+---
+title: "Overflow"
+description: "Propriétés CSS permettant de gérer le dépassement de contenu dans un élément."
+sidebar:
+  position: 1
+---
+
+# Overflow
+
+La propriété **`overflow`** contrôle la façon dont le contenu qui dépasse de la boîte d’un élément est géré (affiché, masqué ou scrollable).
+
+---
+
+## Propriété principale
+
+| Propriété | Description |
+| --- | --- |
+| `overflow` | Définit le comportement global du dépassement (horizontal et vertical). |
+| `overflow-x` | Définit uniquement le comportement horizontal. |
+| `overflow-y` | Définit uniquement le comportement vertical. |
+
+---
+
+## Valeurs possibles
+
+| Valeur | Description |
+| --- | --- |
+| `visible` (par défaut) | Le contenu qui dépasse reste visible. |
+| `hidden` | Le contenu qui dépasse est masqué (non accessible sans scroll). |
+| `scroll` | Ajoute des barres de défilement (toujours visibles, même si inutiles). |
+| `auto` | Ajoute des barres de défilement uniquement si nécessaire. |
+| `clip` | Coupe le contenu sans barres de défilement (plus strict que `hidden`). |
+
+---
+
+## Exemple
+
+```css
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #333;
+  overflow: auto;
+}
+```
+
+Ici, si le contenu dépasse la boîte, une scrollbar s’affiche automatiquement.
+
+```css
+.container {
+  width: 300px;
+  height: 150px;
+  overflow-x: scroll; /* barre horizontale forcée */
+  overflow-y: hidden; /* contenu vertical masqué */
+}
+```
+
+---
+
+## Cas particuliers
+### 1. `overflow: clip`
+
+Coupe le contenu qui dépasse sans afficher de scrollbars.
+Contrairement à hidden, il n’est pas possible de faire défiler le contenu par d’autres moyens (ex: clavier, scroll programmatique).
+
+```css
+.box {
+  overflow: clip;
+}
+```
+
+--
+
+### 2. Interaction avec scrollbar
+overflow: auto et overflow: scroll peuvent afficher une scrollbar personnalisée via scrollbar-width (Firefox) ou ::-webkit-scrollbar (Chrome/Safari/Edge).
+
+overflow: hidden ou clip supprime toute scrollbar.
+
+---
+
+## Bonnes pratiques
+- Préférer overflow: auto pour un comportement naturel.
+- Utiliser overflow: hidden ou clip uniquement si tu veux bloquer l’accès au contenu dépassant.
+- Toujours tester avec du contenu dynamique (textes longs, images larges) pour éviter des coupures inattendues.
+
+---
+
+## À retenir
+- `overflow` gère le contenu qui dépasse en masquant, coupant, ou en permettant le scroll.
+- `overflow-x` et `overflow-y` offrent un contrôle indépendant horizontal/vertical.
+- `clip` est une version stricte de `hidden`, sans possibilité de scroll.
+- L’utilisation d’`overflow` est souvent combinée avec la personnalisation des scrollbars.
