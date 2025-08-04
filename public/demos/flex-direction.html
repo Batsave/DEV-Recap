@@ -4,98 +4,89 @@
   <meta charset="UTF-8">
   <title>Démo Flex-Direction</title>
   <style>
-    /* Thème clair par défaut */
     :root {
       --bg-body: #ffffff;
-      --bg-example: #f9fafb;
+      --bg-card: #f9fafb;
       --border: #e5e7eb;
+      --text: #111827;
       --item-bg: #2563eb;
       --item-color: #ffffff;
-      --button-bg: #f3f4f6;
-      --button-color: #111827;
-      --button-hover: #e5e7eb;
+      --active: #1d4ed8;
     }
 
-    /* Thème sombre */
     html[data-theme="dark"] {
       --bg-body: #0f172a;
-      --bg-example: #1e293b;
+      --bg-card: #1e293b;
       --border: #334155;
+      --text: #f1f5f9;
       --item-bg: #3b82f6;
       --item-color: #f8fafc;
-      --button-bg: #1f2937;
-      --button-color: #f9fafb;
-      --button-hover: #374151;
+      --active: #60a5fa;
     }
 
     body {
       margin: 0;
-      padding: 1rem;
-      background: var(--bg-body);
       font-family: system-ui, sans-serif;
-      color: var(--button-color);
+      background: var(--bg-body);
+      color: var(--text);
     }
 
-    .example {
+    .card {
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 1.5rem;
-      background: var(--bg-example);
-      max-width: 700px;
+      background: var(--bg-card);
+      max-width: 750px;
       margin: auto;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
     .buttons {
-      margin-bottom: 1rem;
       display: flex;
       gap: 0.5rem;
+      margin-bottom: 1rem;
       flex-wrap: wrap;
     }
 
     button {
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 6px;
       border: 1px solid var(--border);
-      background: var(--button-bg);
-      color: var(--button-color);
-      cursor: pointer;
+      background: var(--bg-body);
+      color: var(--text);
       font-size: 0.9rem;
+      cursor: pointer;
       transition: all 0.2s ease;
     }
 
     button:hover {
-      background: var(--button-hover);
+      background: var(--border);
     }
 
     button.active {
-      background: var(--item-bg);
+      background: var(--active);
       color: var(--item-color);
-      border-color: var(--item-bg);
+      border-color: var(--active);
     }
 
     .container {
       display: flex;
       flex-direction: row; /* valeur par défaut */
-      gap: 1rem;
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-      padding: 1rem;
+      gap: 0.5rem;
       transition: all 0.3s ease;
-      min-height: 120px;
       justify-content: center;
       align-items: center;
+      min-height: 100px;
     }
 
     .item {
       background: var(--item-bg);
       color: var(--item-color);
-      padding: 1rem 1.2rem;
-      font-weight: bold;
+      font-weight: 500;
+      padding: 0.6rem 1rem;
       border-radius: 6px;
-      text-align: center;
-      min-width: 60px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      white-space: nowrap;
+      flex: 0 0 auto;
       transition: transform 0.2s ease;
     }
 
@@ -105,7 +96,7 @@
   </style>
 </head>
 <body>
-  <div class="example">
+  <div class="card">
     <div class="buttons">
       <button class="active" onclick="setDirection('row', this)">row</button>
       <button onclick="setDirection('row-reverse', this)">row-reverse</button>
@@ -125,7 +116,6 @@
       const container = document.getElementById("flexbox");
       container.style.flexDirection = dir;
 
-      // reset boutons actifs
       document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     }
