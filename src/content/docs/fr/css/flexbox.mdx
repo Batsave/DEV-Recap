@@ -23,28 +23,38 @@ Cela crée un **contexte flex** pour tous les descendants directs.
 
 La propriété `flex-direction` établit l’axe principal du container.
 
-| Propriété        | Valeur           | Description                                                                 |
-|------------------|-----------------|-----------------------------------------------------------------------------|
-| `flex-direction` | `row`           | (par défaut) : de gauche à droite (ou droite à gauche si langue RTL).       |
-|                  | `row-reverse`   | Inverse le sens de `row`.                                                   |
-|                  | `column`        | De haut en bas.                                                             |
-|                  | `column-reverse`| Comme `column`, mais du bas vers le haut.                                   |
+| Valeur           | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `row`            | (par défaut) : de gauche à droite (ou droite à gauche si langue RTL).       |
+| `row-reverse`    | Inverse le sens de `row`.                                                   |
+| `column`         | De haut en bas.                                                             |
+| `column-reverse` | Comme `column`, mais du bas vers le haut.                                   |
 
-🔗 [Exemple interactif MDN](https://interactive-examples.mdn.mozilla.net/pages/css/flex-direction.html)
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/flex-direction.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
 ## Flex-Wrap
 
-Définit si le container comprend une seule ligne ou plusieurs, et la direction de l’empilement.
+Définit si le container comprend une seule ligne ou plusieurs.
 
-| Propriété    | Valeur         | Description                                                                 |
-|--------------|---------------|-----------------------------------------------------------------------------|
-| `flex-wrap`  | `nowrap`      | (par défaut) Une seule ligne, pouvant déborder du contenant.                 |
-|              | `wrap`        | Multi-lignes, retour automatique à la ligne.                                |
-|              | `wrap-reverse`| Multi-lignes, empilement inversé (de droite à gauche ou bas vers haut).     |
+| Valeur         | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `nowrap`       | (par défaut) Une seule ligne, pouvant déborder du contenant.                 |
+| `wrap`         | Multi-lignes, retour automatique à la ligne.                                |
+| `wrap-reverse` | Multi-lignes inversées (bas vers haut ou droite vers gauche).               |
 
-🔗 [Exemple interactif MDN](https://interactive-examples.mdn.mozilla.net/pages/css/flex-wrap.html)
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/flex-wrap.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
@@ -52,14 +62,14 @@ Définit si le container comprend une seule ligne ou plusieurs, et la direction 
 
 Raccourci combinant `flex-direction` et `flex-wrap`.
 
-| Propriété   | Valeur            | Description                                            |
-|-------------|------------------|--------------------------------------------------------|
-| `flex-flow` | `flex-direction` | Définit l’axe principal.                               |
-|             | `flex-wrap`      | Définit le retour à la ligne (axe secondaire).         |
-
 Par défaut : `row nowrap`.
 
-🔗 [Exemple interactif MDN](https://interactive-examples.mdn.mozilla.net/pages/css/flex-flow.html)
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/flex-flow.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
@@ -75,13 +85,18 @@ Définit l’alignement **le long de l’axe principal**.
 | `space-between` | Répartition sur toute la ligne (1er au start, dernier à l’end).             |
 | `space-around`  | Espacement égal autour de chaque item.                                      |
 
-🔗 [Exemple interactif MDN](https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html)
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
 ## Align-Items
 
-Définit l’alignement **le long de l’axe secondaire (cross-axis)**.
+Aligne les items le long de l’axe secondaire (cross-axis).
 
 | Valeur       | Description                                                                 |
 |--------------|-----------------------------------------------------------------------------|
@@ -91,7 +106,12 @@ Définit l’alignement **le long de l’axe secondaire (cross-axis)**.
 | `baseline`   | Alignement sur la ligne de base du texte.                                   |
 | `stretch`    | (par défaut) Étire les items pour remplir le container.                     |
 
-🔗 [Exemple interactif MDN](https://interactive-examples.mdn.mozilla.net/pages/css/align-items.html)
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/align-items.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
@@ -100,22 +120,25 @@ Définit l’alignement **le long de l’axe secondaire (cross-axis)**.
 Aligne les **lignes** d’un container flex lorsqu’il y a plusieurs lignes.  
 ⚠️ Sans effet si le container n’a qu’une seule ligne.
 
-| Valeur          | Description                                                                 |
-|-----------------|-----------------------------------------------------------------------------|
-| `flex-start`    | Lignes regroupées en haut du container.                                     |
-| `flex-end`      | Lignes regroupées en bas.                                                   |
-| `center`        | Lignes regroupées au centre.                                                |
-| `space-between` | Répartition avec extrêmes collés au début et à la fin.                      |
-| `space-around`  | Espacement égal autour de chaque ligne.                                     |
-| `stretch`       | (par défaut) Étire les lignes pour remplir l’espace.                        |
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/align-content.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
 ## Gap
 
-La propriété `gap` définit les **espaces entre les items**, en remplaçant souvent l’usage de `margin`.
+La propriété `gap` définit les **espaces entre les items**.
 
-🔗 [Exemple interactif MDN](https://interactive-examples.mdn.mozilla.net/pages/css/gap.html)
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/gap.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
@@ -123,29 +146,38 @@ La propriété `gap` définit les **espaces entre les items**, en remplaçant so
 
 Contrôle l’ordre d’affichage des items flex indépendamment du DOM.
 
-| Propriété | Valeur             | Description                                   |
-|-----------|--------------------|-----------------------------------------------|
-| `order`   | `nombre entier`    | Positif ou négatif (ex. `-1`, `0`, `2`, etc.) |
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/order.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
 ## Flex-Grow
 
-Définit la **capacité d’un item à grandir**.
+Définit la capacité d’un item à **grandir**.
 
-| Propriété     | Valeur            | Description                                             |
-|---------------|------------------|---------------------------------------------------------|
-| `flex-grow`   | `nombre entier`  | (par défaut = 0). Valeurs négatives interdites.         |
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/flex-grow.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
 ## Flex-Shrink
 
-Définit la **capacité d’un item à rétrécir**.
+Définit la capacité d’un item à **rétrécir**.
 
-| Propriété      | Valeur           | Description                                             |
-|----------------|-----------------|---------------------------------------------------------|
-| `flex-shrink`  | `nombre entier` | (par défaut = 1). Valeurs négatives interdites.         |
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/flex-shrink.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
@@ -153,10 +185,12 @@ Définit la **capacité d’un item à rétrécir**.
 
 Définit la **taille initiale** d’un élément avant distribution de l’espace.
 
-| Propriété     | Valeur          | Description                   |
-|---------------|----------------|-------------------------------|
-| `flex-basis`  | `longueur`     | Taille par défaut.            |
-|               | `auto` (defaut)| Calculée en fonction du contenu.|
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/flex-basis.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
@@ -164,22 +198,20 @@ Définit la **taille initiale** d’un élément avant distribution de l’espac
 
 Permet à un **item individuel** d’écraser la valeur de `align-items`.
 
-| Valeur       | Description                                                             |
-|--------------|-------------------------------------------------------------------------|
-| `auto`       | Valeur par défaut.                                                      |
-| `flex-start` | Aligné au début du container.                                           |
-| `flex-end`   | Aligné à la fin du container.                                           |
-| `center`     | Centré sur l’axe secondaire.                                            |
-| `baseline`   | Alignement sur la ligne de base du texte.                               |
-| `stretch`    | Étire l’item pour remplir le container.                                 |
+<iframe 
+  src="https://interactive-examples.mdn.mozilla.net/pages/css/align-self.html" 
+  height="400" 
+  width="100%" 
+  style="border:1px solid #ddd; border-radius:8px;">
+</iframe>
 
 ---
 
 ## À retenir
 
 - `display: flex` → crée un conteneur flexible.  
-- `flex-direction` → définit l’axe principal (`row`/`column`).  
-- `flex-wrap` → gère le retour à la ligne.  
+- `flex-direction` → axe principal (`row`/`column`).  
+- `flex-wrap` → retour à la ligne.  
 - `justify-content` → aligne sur l’axe principal.  
 - `align-items` → aligne sur l’axe secondaire.  
 - `align-self` → surchage l’alignement d’un item.  
