@@ -29,7 +29,7 @@ html[data-theme="dark"] {
   color: var(--text);
   border-radius: 8px;
   border: solid 1px var(--border);
-  overflow: hidden;
+  overflow: auto;
   box-sizing: border-box;
   margin-top: 32px;
 }
@@ -82,7 +82,7 @@ html[data-theme="dark"] {
   box-sizing: border-box;
   transition: all 0.3s ease;
   margin: 0;
-  overflow: visible;
+
   
 
   .item {
