@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Démo Flex-Grow</title>
+  <style>
+     :root {
+      --bg-body: #ffffff;
+      --bg-card: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+      --item-bg: #374151;
+      --item-color: #ffffff;
+      --active: #374151;
+      --code-bg: #f3f4f6;
+    }
+
+    html[data-theme="dark"] {
+      --bg-body: #0f172a;
+      --bg-card: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --item-bg: #3b82f6;
+      --item-color: #f8fafc;
+      --active: #60a5fa;
+      --code-bg: #1f2937;
+    }
+
+     body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg-body);
+      color: var(--text);
+      padding: 0;
+    }
+
+    .card {
+      padding: 16px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .demo {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    /* --- Boutons --- */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    button {
+      padding: 0.6rem 0.9rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--border);
+    }
+
+    button.active {
+      background: var(--active);
+      color: var(--item-color);
+      border-color: var(--active);
+    }
+
+    /* --- Container rendu --- */
+    .container {
+      display: flex;
+      gap: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 120px;
+      transition: all 0.3s ease;
+      background: var(--bg-card);
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .item {
+      background: var(--item-bg);
+      color: var(--item-color);
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex: 0 1 auto;
+      transition: transform 0.2s ease, flex-grow 0.3s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Code --- */
+    pre {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      background: var(--code-bg);
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="demo">
+      <!-- Colonne gauche : boutons -->
+      <div class="buttons">
+        <button class="active" onclick="setGrow(0, this)">Item 2: flex-grow 0 (default)</button>
+        <button onclick="setGrow(1, this)">Item 2: flex-grow 1</button>
+        <button onclick="setGrow(2, this)">Item 2: flex-grow 2</button>
+        <button onclick="setGrow(3, this)">Item 2: flex-grow 3</button>
+      </div>
+
+      <!-- Colonne droite : rendu -->
+      <div class="container" id="flexbox">
+        <div class="item">Item 1</div>
+        <div class="item" id="growItem">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Code affiché -->
+    <pre id="code">#growItem {
+  flex-grow: 0; /* valeur par défaut */
+}</pre>
+  </div>
+
+  <script>
+    function setGrow(value, btn) {
+      const item = document.getElementById("growItem");
+      item.style.flexGrow = value;
+
+      // reset boutons actifs
+      document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // mettre à jour le code affiché
+      document.getElementById("code").textContent = `#growItem {
+  flex-grow: ${value};
+}`;
+    }
+  </script>
+</body>
+</html>
