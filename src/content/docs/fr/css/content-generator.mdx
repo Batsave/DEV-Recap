@@ -1,0 +1,83 @@
+---
+title: "Génération de contenu"
+description: "Propriétés CSS permettant d’ajouter du contenu généré avant ou après des éléments HTML."
+sidebar:
+  position: 1
+---
+
+# Génération de contenu
+
+Ces propriétés CSS permettent d’ajouter du contenu **généré automatiquement** (texte, symboles, images) avant ou après des éléments HTML.  
+Elles sont principalement utilisées avec les pseudo-éléments `::before` et `::after`.
+
+---
+
+## Propriétés principales
+
+| Propriété | Description |
+| --- | --- |
+| `content` | Ajoute du contenu généré dans le document (texte, icônes, images). |
+| `counter-increment` | Définit le pas d’incrémentation d’un compteur CSS. |
+| `counter-reset` | Définit la valeur de départ ou réinitialise un compteur CSS. |
+| `quotes` | Définit les caractères utilisés pour les guillemets (ouverture/fermeture). |
+
+---
+
+## Exemple simple : ajout de contenu
+
+```css
+p::before {
+  content: "→ ";
+  color: gray;
+}
+```
+
+Résultat : chaque paragraphe affichera une flèche avant son texte.
+
+---
+
+## Exemple avec compteurs
+
+```css
+h2 {
+  counter-increment: section; /* incrémente un compteur à chaque h2 */
+}
+
+h2::before {
+  content: "Section " counter(section) ": ";
+}
+```
+
+Résultat :
+
+- Premier `h2` → "Section 1 : ..."
+- Deuxième `h2` → "Section 2 : ..."
+
+---
+
+## Exemple avec guillemets
+
+```css
+q {
+  quotes: "«" "»" "‹" "›";
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+```
+
+Résultat : un élément `<q>` sera affiché automatiquement avec des guillemets français (« ... »).
+
+---
+
+## À retenir
+
+- `content` est utilisé avec `::before` et `::after` pour insérer du contenu généré.  
+- `counter-reset` initialise un compteur, `counter-increment` l’augmente.  
+- `quotes` permet de définir des guillemets personnalisés.  
+- Ces propriétés sont utiles pour la numérotation automatique, l’ajout d’icônes ou la personnalisation des citations.  

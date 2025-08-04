@@ -1,0 +1,58 @@
+---
+title: "Tables"
+description: "Propriétés CSS spécifiques aux tableaux et à leurs sous-éléments."
+sidebar:
+  position: 1
+---
+
+# Tables
+
+Ces propriétés s’appliquent uniquement aux éléments de type `<table>` et à leurs sous-éléments (`caption`, `th`, `td`, etc.).  
+Elles permettent de contrôler l’affichage, l’espacement et la mise en page des tableaux en CSS.
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
+| --- | --- |
+| `border-collapse` | Définit si les bordures des cellules adjacentes sont séparées (`separate`) ou fusionnées (`collapse`). |
+| `border-spacing` | Définit l’espacement entre les bordures des cellules (uniquement si `border-collapse: separate`). |
+| `caption-side` | Définit l’emplacement de la légende du tableau (`top`, `bottom`). |
+| `empty-cells` | Définit si les cellules vides affichent leur bordure (`show`) ou non (`hide`). |
+| `table-layout` | Définit le mode de calcul des largeurs de colonnes : `auto` (par défaut) ou `fixed` (largeurs basées sur les attributs/valeurs CSS). |
+
+---
+
+## Propriétés spécifiques / peu utilisées
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `speak-header` | Obsolète (CSS2, accessibilité) | Définissait la lecture des en-têtes de tableau par les synthèses vocales. Aujourd’hui, remplacé par des solutions **ARIA** et bonnes pratiques HTML (`scope`, `headers`, etc.). |
+
+---
+
+## Exemple simple
+
+```css
+table {
+  border-collapse: collapse; /* Fusionne les bordures */
+  table-layout: fixed;       /* Colonnes à largeur fixe */
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #333;
+  padding: 8px;
+}
+```
+
+---
+
+## À retenir
+
+- `border-collapse` et `border-spacing` gèrent l’apparence des bordures de cellules.  
+- `table-layout: fixed` est utile pour des tableaux rapides à afficher avec des colonnes régulières.  
+- `caption-side` positionne la légende au-dessus ou en dessous du tableau.  
+- `empty-cells` peut masquer les cellules vides si nécessaire.  
+- `speak-header` est obsolète : utiliser HTML sémantique et ARIA pour l’accessibilité.  

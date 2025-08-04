@@ -1,0 +1,73 @@
+---
+title: "CSS pour l’impression"
+description: "Propriétés CSS spécifiques à l’impression, permettant de gérer les sauts de page, les marges et la mise en page imprimée."
+sidebar:
+  position: 1
+---
+
+Les propriétés ci-dessous ne sont actives que lorsque vos visiteurs **impriment vos pages Web** ou exportent en **PDF** via le navigateur.  
+Elles permettent de contrôler l’affichage, les sauts de page et la mise en forme spécifique au média `print`.
+
+---
+
+## Propriétés principales
+
+| Propriété | Description |
+| --- | --- |
+| `marks` | Ajoute des traits de coupe et repères d’alignement (impression professionnelle). |
+| `orphans` | Définit le nombre minimum de lignes d’un paragraphe à afficher en bas d’une page avant un saut. |
+| `widows` | Définit le nombre minimum de lignes d’un paragraphe à afficher en haut d’une page après un saut. |
+| `page-break-before` | Force un saut de page avant l’élément. |
+| `page-break-after` | Force un saut de page après l’élément. |
+| `page-break-inside` | Contrôle les sauts de page à l’intérieur d’un élément (`auto`, `avoid`). |
+| `page` | Définit le type ou le modèle de page à utiliser. |
+| `size` | Définit la taille et/ou l’orientation de la page (`A4`, `letter`, `landscape`, etc.). |
+
+---
+
+## Exemple d’utilisation
+
+```css
+@media print {
+  /* Évite de couper un tableau en deux */
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Force un saut avant chaque titre */
+  h1 {
+    page-break-before: always;
+  }
+
+  /* Définit la taille en A4 et orientation portrait */
+  @page {
+    size: A4 portrait;
+    margin: 2cm;
+  }
+}
+```
+
+---
+
+## Pourquoi c’est important aujourd’hui
+
+- **Génération de PDF** : De nombreuses applications web proposent l’export PDF (factures, tickets, rapports).  
+  → Ces propriétés permettent de structurer correctement le document imprimé.  
+
+- **Accessibilité et confort de lecture** : Contrôler les orphelins et veuves (`orphans`, `widows`) évite les paragraphes mal découpés et améliore la lisibilité.  
+
+- **Documents professionnels** : Pour les rapports, CV, contrats, supports pédagogiques… une bonne gestion du rendu imprimé donne une image plus professionnelle.  
+
+- **Respect des formats standards** : `@page` et `size` permettent de produire directement du contenu adapté aux formats A4, Letter, etc., utiles dans un contexte international.  
+
+- **Compatibilité avec les navigateurs modernes** : Chrome, Edge, Safari et Firefox supportent largement ces propriétés dans leurs moteurs d’impression/PDF.  
+
+---
+
+## À retenir
+
+- Toujours prévoir une feuille de style `@media print` si ton site génère des contenus imprimables.  
+- Utiliser `page-break-inside: avoid` pour les tableaux, images, sections importantes.  
+- Définir `@page { size: A4; margin: ... }` pour produire un rendu PDF propre.  
+- Les propriétés `orphans` et `widows` permettent un meilleur contrôle typographique.  
+- Ces outils sont essentiels pour tout site qui propose un export PDF ou une impression soignée.  
