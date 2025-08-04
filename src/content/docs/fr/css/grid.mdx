@@ -9,6 +9,7 @@ import GridTemplate from "~/components/demos/GridTemplate.jsx";
 import GridAutoPlacement from "~/components/demos/GridAutoPlacement.jsx";
 import GridAlign from "~/components/demos/GridAlign.jsx";
 import GridResponsive from "~/components/demos/GridResponsive.jsx";
+import GridPlacement from "~/components/demos/GridPlacement.jsx";
 
 
 ## Grid layout (mise en page en grille 2D)
@@ -44,24 +45,7 @@ Définir les pistes de colonnes et de lignes, souvent avec des fonctions comme `
 
 Position exacte des éléments dans la grille via angles linéaires ou noms d’aires.
 
-```css
-.item-a {
-  grid-column: 1 / 3;  /* occupe 2 colonnes */
-  grid-row: 1;         /* occupe la 1ère ligne */
-}
-
-.item-b {
-  grid-area: 2 / 1 / 3 / 4; /* ligne 2 à 3, colonne 1 à 4 */
-}
-
-```
-
-<iframe
-  height="400"
-  width="100%"
-  src="https://interactive-examples.mdn.mozilla.net/pages/css/grid-template-areas.html"
-  style="border:1px solid #ddd; border-radius:8px; height: 400px;">
-</iframe>
+<GridPlacement client:only="react"/>
 
 ---
 
