@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light"> <!-- valeur par défaut -->
 <head>
   <meta charset="UTF-8">
   <title>Grid Align Demo</title>
   <style>
+    /* Variables par défaut (light) */
     :root {
       --bg-body: #fff;
       --bg-example: #fafafa;
@@ -12,14 +13,13 @@
       --item-color: #fff;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-body: #1b1b1b;
-        --bg-example: #1e293b;
-        --border: #334155;
-        --item-bg: #3b82f6;
-        --item-color: #f8fafc;
-      }
+    /* Mode sombre basé sur [data-theme="dark"] */
+    html[data-theme="dark"] {
+      --bg-body: #1b1b1b;
+      --bg-example: #1e293b;
+      --border: #334155;
+      --item-bg: #3b82f6;
+      --item-color: #f8fafc;
     }
 
     body {
@@ -40,10 +40,10 @@
     .container {
       display: grid;
       grid-template-columns: repeat(3, 100px);
-      grid-template-rows: repeat(2, 100px); /* ← 2 lignes */
+      grid-template-rows: 100px;
       justify-items: center;
       align-items: start;
-      gap: 1rem; /* ← espace visible entre les cases */
+      gap: 1rem;
     }
 
     .item {
@@ -51,8 +51,6 @@
       color: var(--item-color);
       font-weight: bold;
       display: flex;
-      width: 80px;
-      height: 48px;
       align-items: center;
       justify-content: center;
       border-radius: 4px;
