@@ -1,0 +1,66 @@
+---
+title: "Position et dimensions"
+description: "Propriétés CSS permettant de gérer la mise en page et la taille des éléments."
+sidebar:
+  position: 1
+---
+
+*Ces propriétés permettent de gérer la mise en page de votre site.*
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
+| --- | --- |
+| `position` | Définit le mode de positionnement (`static`, `relative`, `absolute`, `fixed`, `sticky`). |
+| `top` | Définit la position verticale d’un élément (en haut). |
+| `bottom` | Définit la position verticale d’un élément (en bas). |
+| `left` | Définit la position horizontale d’un élément (à gauche). |
+| `right` | Définit la position horizontale d’un élément (à droite). |
+| `z-index` | Définit l’ordre de superposition des éléments (avant/arrière-plan). |
+| `display` | Définit la façon dont un élément est affiché (`block`, `inline`, `flex`, `grid`, etc.). |
+| `float` | Positionne un élément flottant à gauche ou à droite (souvent remplacé aujourd’hui par `flex` ou `grid`). |
+| `clear` | Contrôle le comportement d’habillage autour d’éléments flottants. |
+| `clip` | Définit la zone visible d’un élément (obsolète, remplacée par `clip-path`). |
+| `height` | Définit la hauteur d’un élément. |
+| `min-height` | Définit la hauteur minimale. |
+| `max-height` | Définit la hauteur maximale. |
+| `width` | Définit la largeur d’un élément. |
+| `min-width` | Définit la largeur minimale. |
+| `max-width` | Définit la largeur maximale. |
+| `margin` | Définit les marges extérieures. |
+| `margin-top` | Définit la marge extérieure haute. |
+| `margin-right` | Définit la marge extérieure droite. |
+| `margin-bottom` | Définit la marge extérieure basse. |
+| `margin-left` | Définit la marge extérieure gauche. |
+| `padding` | Définit les marges intérieures. |
+| `padding-top` | Définit la marge intérieure haute. |
+| `padding-right` | Définit la marge intérieure droite. |
+| `padding-bottom` | Définit la marge intérieure basse. |
+| `padding-left` | Définit la marge intérieure gauche. |
+| `text-align` | Définit l’alignement horizontal du texte à l’intérieur d’un élément. |
+| `vertical-align` | Définit l’alignement vertical d’un élément (s’applique surtout aux éléments inline et aux cellules de tableau). |
+| `overflow` | Définit le comportement du contenu qui dépasse (`visible`, `hidden`, `scroll`, `auto`, `clip`). |
+
+---
+
+## Propriétés spécifiques / obsolètes
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `overflow-x` | Standard aujourd’hui | Gère le dépassement horizontal uniquement. |
+| `overflow-y` | Standard aujourd’hui | Gère le dépassement vertical uniquement. |
+| `clip` | Obsolète | Ancienne propriété, remplacée par `clip-path` pour définir des zones visibles. |
+
+---
+
+## À retenir
+
+- `position` et les propriétés associées (`top`, `left`, `right`, `bottom`) définissent le placement des éléments.  
+- `z-index` contrôle l’ordre de superposition.  
+- `margin` et `padding` gèrent respectivement les marges externes et internes.  
+- `width`, `height`, `min/max-width`, `min/max-height` définissent les dimensions.  
+- `overflow`, `overflow-x`, `overflow-y` contrôlent le contenu qui dépasse.  
+- `float` et `clear` sont hérités des anciennes méthodes de mise en page : préférer `flex` ou `grid` aujourd’hui.  
+- `clip` est obsolète, utiliser `clip-path` à la place.  

@@ -1,0 +1,49 @@
+---
+title: "Internet Explorer seulement"
+description: "Liste des propriétés CSS propres à Internet Explorer, aujourd’hui obsolètes ou non standardisées."
+sidebar:
+  position: 1
+---
+
+*La famille Mozilla/Firefox représente plus de 30% des navigateurs utilisés dans le monde. Soyez donc prudents dans l'utilisation des propriétés suivantes qui ne sont reconnues que par Internet Explorer !*
+
+---
+
+## Propriétés obsolètes (Internet Explorer uniquement)
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `behavior` | Obsolète | Permettait d’associer un script ou un composant ActiveX à un élément. |
+| `filter` (new style / old style) | Obsolète | Ancienne syntaxe IE pour appliquer des filtres graphiques. Aujourd’hui remplacée par la propriété standard `filter`. |
+| `ime-mode` | Obsolète | Gérait la saisie des langues asiatiques (chinois, japonais, coréen). |
+| `layout-flow` | Obsolète | Définit la progression du texte dans IE pour les langues asiatiques. |
+| `layout-grid`, `layout-grid-char`, `layout-grid-line`, `layout-grid-mode`, `layout-grid-type` | Obsolète | Ensemble de propriétés liées à la gestion des grilles de caractères dans IE (langues asiatiques). |
+| `overflow-x`, `overflow-y` | Aujourd’hui standardisées | IE les proposait en premier, désormais elles font partie du standard CSS. |
+| `scrollbar-*` (base-color, track-color, arrow-color, etc.) | Obsolète | Permettaient de modifier les couleurs des barres de défilement dans IE. Aujourd’hui remplacées par `scrollbar-width`, `scrollbar-color`, et les pseudo-éléments `::-webkit-scrollbar`. |
+| `text-align-last` | Obsolète | Alignement de la dernière ligne de texte. Supporté uniquement par IE. |
+| `text-autospace` | Obsolète | Espacement automatique des caractères en langues asiatiques. |
+| `text-justify` | Obsolète | Gestion de la justification de texte dans IE. |
+| `text-kashida-space` | Obsolète | Ajustement du texte arabe dans IE. |
+| `text-underline-position` | Partiellement supporté | Définit la position des soulignements (utile en japonais/chinois). |
+| `unicode-bidi` | Standard aujourd’hui | Support initial dans IE, désormais partie du standard CSS pour le texte bidirectionnel. |
+| `word-break` | Standard aujourd’hui | Initialement introduit dans IE, désormais propriété standard CSS pour la césure de mots. |
+| `word-wrap` | Renommée `overflow-wrap` | Introduite par IE, aujourd’hui remplacée par `overflow-wrap`. |
+| `writing-mode` | Standard aujourd’hui | Initialement spécifique à IE, aujourd’hui partie intégrante du CSS pour gérer le sens d’écriture. |
+| `zoom` | Propriété non standard | Permettait de zoomer sur un élément dans IE. Supportée dans certains navigateurs (Chrome), mais non standard. |
+
+---
+
+## Pourquoi c’est important aujourd’hui
+
+- Ces propriétés étaient **propres à Internet Explorer** et ne sont **plus reconnues dans les navigateurs modernes** (Firefox, Chrome, Safari, Edge Chromium).  
+- Certaines ont été **intégrées au standard CSS** (ex : `overflow-x/y`, `writing-mode`, `word-break`, `overflow-wrap`).  
+- D’autres sont **complètement obsolètes** (`scrollbar-*`, `behavior`, `ime-mode`) et ne doivent plus être utilisées.  
+- Leur utilisation peut rendre vos feuilles de style **incompatibles et non maintenables**.  
+
+---
+
+## À retenir
+
+- Ne pas utiliser ces anciennes propriétés IE, sauf pour du **code historique**.  
+- Préférer les **propriétés standardisées modernes** (`filter`, `overflow-wrap`, `writing-mode`, `scrollbar-*` modernes).  
+- Garder en tête que IE est officiellement **abandonné depuis 2022** : tout développement actuel doit cibler les navigateurs modernes.  

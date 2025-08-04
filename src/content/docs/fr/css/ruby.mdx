@@ -1,0 +1,54 @@
+---
+title: "Ruby"
+description: "Propriétés CSS permettant de gérer l’affichage des annotations Ruby, principalement utilisées dans les langues asiatiques."
+sidebar:
+  position: 1
+---
+
+*Les "Ruby" sont des annotations destinées à apporter un sens complémentaire ou à préciser la façon de prononcer un segment de texte.  
+Elles sont essentiellement utilisées pour les langues asiatiques (chinois, japonais, coréen).*
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
+| --- | --- |
+| `ruby-align` | Définit l’alignement du texte ruby par rapport à la base (par ex. `start`, `center`, `space-between`). |
+| `ruby-position` | Définit la position de l’annotation ruby (`over`, `under`, `inter-character`). Exemple : texte au-dessus, en dessous ou entre les caractères. |
+
+---
+
+## Propriétés obsolètes ou non standardisées
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `ruby-overhang` (parfois notée `ruby-overhang.php` dans d’anciennes docs) | Obsolète, jamais standardisée | Propriété spécifique à Internet Explorer/Opera pour gérer le retrait du texte ruby. Non supportée aujourd’hui. |
+
+---
+
+## Exemple d’utilisation
+
+```html
+<ruby>
+  漢 <rt>kan</rt>
+  字 <rt>ji</rt>
+</ruby>
+```
+
+```css
+ruby {
+  ruby-align: center;
+  ruby-position: over;
+}
+```
+
+Résultat : l’annotation phonétique (furigana) apparaît au-dessus des caractères.
+
+---
+
+## À retenir
+
+- Les propriétés `ruby-align` et `ruby-position` sont **standardisées** et utiles pour la typographie asiatique.  
+- `ruby-overhang` était une propriété expérimentale d’IE/Opera, **abandonnée** et à ne pas utiliser.  
+- Les annotations `ruby` améliorent la **lisibilité et l’accessibilité linguistique**, surtout pour l’apprentissage du japonais (furigana) et du chinois (pinyin).  

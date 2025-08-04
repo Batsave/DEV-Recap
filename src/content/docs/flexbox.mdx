@@ -1,0 +1,189 @@
+---
+title: FlexBox
+description: "C'est ainsi qu'on définit un container flex, il est block par défaut ou inline selon la valeur donnée. Cela crée un contexte flex pour tous les descendants directs."
+sidebar:
+  position: 0
+---
+
+C'est ainsi qu'on définit un container flex, il est block par défaut ou inline selon la valeur donnée. Cela crée un contexte flex pour tous les descendants directs.
+
+| display  | flex | Cette valeur génère un container flex, de niveau block, à l'intérieur de l'élément. |
+| --- | --- | --- |
+|  | inline-flex | Cette valeur génère un container flex, de niveau inline, à l'intérieur de l'élément. |
+
+**Flex-Direction**
+
+---
+
+La propriété flex-direction établit l'axe principal.
+**
+
+| flex-direction  | row | (valeur par défaut): de gauche à droite si la lecture se fait dans ce sens, de droite à gauche dans le cas inverse. |
+| --- | --- | --- |
+|  | row-reverse | inverse le sens de row. |
+|  | column | comme `row` mais du haut vers le bas |
+|  | column-reverse | comme `row-reverse` mais du bas vers le haut |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/flex-direction.html](https://interactive-examples.mdn.mozilla.net/pages/css/flex-direction.html)
+
+**Flex-Wrap**
+
+---
+
+La propriété flex-wrap définit si le container comprend une seule ligne ou plusieurs et la direction sur l'axe perpendiculaire (cross-axis), qui détermine la direction dans laquelle les nouvelles lignes seront empilées.
+**
+
+| flex-wrap  | nowrap | (valeur par défaut) sur une seule ligne, de gauche à droite. La ligne peut déborder de son contenant. |
+| --- | --- | --- |
+|  | wrap | multiligne, de gauche à droite. Pas de débordement, on passe à la ligne. |
+|  | wrap-reverse | multiligne, de droite à gauche. |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/flex-wrap.html](https://interactive-examples.mdn.mozilla.net/pages/css/flex-wrap.html)
+
+**Flex-Flow**
+
+---
+
+La propriété flex-flow est un raccourci des propriétés "flex-direction" et "flex-wrap" qui ensemble définissent les axes "main" et "cross" du container flex. La valeur par défaut est `row nowrap`.
+
+| flex-flow | <‘flex-direction’> | Cette valeur génère un container flex, de niveau block, à l'intérieur de l'élément. |
+| --- | --- | --- |
+|  | <‘flex-wrap’> | Cette valeur génère un container flex, de niveau inline, à l'intérieur de l'élément. |
+
+*La propriété flex-flow est un raccourci des propriétés "flex-direction" et "flex-wrap" qui ensemble définissent les axes "main" et "cross" du container flex. La valeur par défaut est `row nowrap`.*
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/flex-flow.html](https://interactive-examples.mdn.mozilla.net/pages/css/flex-flow.html)
+
+**Justify-Content**
+
+---
+
+*La propriété justify-content définit l'alignement le long de l'axe principal. Elle permet de distribuer l'espace excédentaire lorsque tous les items flex sur une ligne sont inflexibles ou lorsqu'ils ont atteint leur taille maximale. Elle contrôle aussi l'alignement des items lorsqu'ils débordent.*
+
+| justify-content | flex-start | (par défaut) : les items sont regroupés en début de ligne |
+| --- | --- | --- |
+|  | flex-end | les items sont regroupés en fin de ligne |
+|  | center | les items sont centrés le long de la ligne |
+|  | space-between | les items sont répartis sur la ligne; le premier est collé du côté start, le dernier du côté end. |
+|  | space-around | les items sont répartis sur la ligne avec un espacement égal autour de chacun. |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html](https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html)
+
+**Align-Items**
+
+---
+
+La propriété align-items définit la façon dont les items d'une ligne sont disposés le long de l'axe "cross". On peut le voir comme la version de `justify-content` pour "cross axis".
+**
+
+| align-items | flex-start | l'item est placé au début de la ligne cross-start |
+| --- | --- | --- |
+|  | flex-end | la marge "cross-end" de l'item est placée sur la ligne cross-end |
+|  | center | les items sont centrés sur l'axe cross |
+|  | baseline | les items sont alignés sur leur ligne de base |
+|  | stretch | (par défaut) : les items sont étirés jusqu'à remplir le container (tout en respectant min-width/max-width) |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html](https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html)
+
+**Align-Content**
+
+---
+
+La propriété align-content aligne les lignes d'un container flex à l'intérieur de l'espace où il reste de l'espace sur l'axe cross, un peu comme `justify-content` aligne les items sur l'axe principal.
+
+Note : cette propriété n'a pas d'effet quand la flexbox n'a qu'une seule ligne.
+
+| align-content | flex-start | lignes regroupées au début du container |
+| --- | --- | --- |
+|  | flex-end | lignes regroupées à la fin du container |
+|  | center | lignes regroupées au centre du container |
+|  | space-between | les lignes sont réparties, la première est collée du côté start, la dernière du côté end. |
+|  | space-around | les lignes sont réparties avec un espacement égal autour de chacune. |
+|  | stretch | (par défaut) : les lignes s'étirent pour remplir tout l'espace. |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html](https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html)
+
+**Gap**
+
+---
+
+La propriété **`gap`** est une propriété raccourcie pour [`row-gap`](https://developer.mozilla.org/fr/docs/Web/CSS/row-gap) et [`column-gap`](https://developer.mozilla.org/fr/docs/Web/CSS/column-gap) qui permet de définir les espaces (les gouttières) entre les lignes et entre les colonnes d'une grille.
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/gap.html](https://interactive-examples.mdn.mozilla.net/pages/css/gap.html)
+
+**Order**
+
+---
+
+Par défaut, les items flex sont disposés par ordre d'arrivée. Cependant, la propriété `order` permet de contrôler l'ordre dans lequel ils apparaissent dans le container.
+
+| order | <nombre entier> | nombre entier négatif comme positif. (1 / 10 / 80 / -20) |
+| --- | --- | --- |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/order.html](https://interactive-examples.mdn.mozilla.net/pages/css/order.html)
+
+**Flex-Grow**
+
+---
+
+La propriété flex-grow définit la possibilité pour un item de grandir, si nécessaire. Elle accepte une valeur sans unité qui sert de proportion. Elle dicte l'espace que peut prendre l'item à l'intérieur de l'espace disponible dans le flex container.
+
+Si tous les items ont `flex-grow` défini à 1, chaque enfant aura le même espace dans le container. Si vous donnez à l'un des enfants une valeur de 2, cet enfant prendra deux fois plus de place que les autres.
+
+| flex-grow | <nombre entier> | Les chiffres négatifs ne sont pas valides. (par default = 0) |
+| --- | --- | --- |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/flex-grow.html](https://interactive-examples.mdn.mozilla.net/pages/css/flex-grow.html)
+
+**Flex-Shrink**
+
+---
+
+La propriété flex-shrink définit la possibilité pour un item flex de rétrécir si nécessaire.
+
+| flex-grow | <nombre entier> | Les chiffres négatifs ne sont pas valides. (par default = 1) |
+| --- | --- | --- |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/flex-shrink.html](https://interactive-examples.mdn.mozilla.net/pages/css/flex-shrink.html)
+
+**Flex-Basis**
+
+---
+
+La propriété flex-basis définit la taille par défaut d'un élément avant que l'espace restant soit réparti.
+
+| flex-basis | <longueur> | auto (par défaut = auto) |
+| --- | --- | --- |
+|  | auto |  |
+
+*NdT : pour plonger dans le menu détail de `flex-grow`, `flex-shrink`et `flex-basis`, vous pouvez consulter le passionnant article [CSS Flexbox et la dimension des boîtes](https://la-cascade.io/articles/css-flexbox-et-la-dimension-des-boites/) dans La Cascade*.
+
+**Align-Self**
+
+---
+
+La propriété align-self permet à des items flex de passer outre aux alignement par défaut ou à ceux spécifiés par `align-items`. Les valeurs sont les mêmes que pour ce dernier.
+
+| align-self | auto | lignes regroupées au début du container |
+| --- | --- | --- |
+|  | flex-start | lignes regroupées à la fin du container |
+|  | flex-end | lignes regroupées au centre du container |
+|  | center | les lignes sont réparties, la première est collée du côté start, la dernière du côté end. |
+|  | baseline | les lignes sont réparties avec un espacement égal autour de chacune. |
+|  | stretch | (par défaut) : les lignes s'étirent pour remplir tout l'espace. |
+
+[https://interactive-examples.mdn.mozilla.net/pages/css/align-self.html](https://interactive-examples.mdn.mozilla.net/pages/css/align-self.html)
+
+---
+
+## À retenir
+
+- `display: flex` crée un conteneur flexible.  
+- `flex-direction` définit l’axe principal (row/column).  
+- `flex-wrap` gère le retour à la ligne.  
+- `justify-content` aligne sur l’axe principal.  
+- `align-items` aligne sur l’axe secondaire (cross-axis).  
+- `align-self` permet de surcharger l’alignement d’un seul item.  
+- `flex-grow`, `flex-shrink`, `flex-basis` définissent comment l’espace est distribué entre les items.  
+- `gap` est aujourd’hui préféré à `margin` pour gérer les espaces.  
+- `order` change l’ordre visuel des éléments sans modifier le DOM.  

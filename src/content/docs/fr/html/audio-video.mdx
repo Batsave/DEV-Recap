@@ -1,0 +1,95 @@
+---
+title: "Audio et Vidéo"
+description: "Propriétés et bonnes pratiques pour intégrer des sons et vidéos accessibles dans une page web."
+sidebar:
+  position: 1
+---
+
+Aujourd’hui, l’intégration du son et de la vidéo passe par les balises HTML5 `<audio>` et `<video>`, combinées aux API JavaScript et aux bonnes pratiques d’accessibilité.*
+
+---
+
+## Balise `<audio>`
+
+```html
+<audio controls>
+  <source src="musique.mp3" type="audio/mpeg">
+  <source src="musique.ogg" type="audio/ogg">
+  Votre navigateur ne supporte pas la balise audio.
+</audio>
+```
+### Attributs importants
+
+- `controls` : affiche les contrôles du player.  
+- `autoplay` : démarre automatiquement (**souvent bloqué par les navigateurs sans `muted`**).  
+- `loop` : répète automatiquement.  
+- `muted` : démarre en sourdine (nécessaire pour `autoplay`).  
+- `preload` : suggère comment charger le média (`auto`, `metadata`, `none`).  
+
+
+---
+
+## Balise `<video>`
+
+```html
+<video width="640" height="360" controls>
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <track src="sous-titres.vtt" kind="subtitles" srclang="fr" label="Français">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+```
+
+### Attributs importants
+
+- `controls` : affiche les contrôles.  
+- `autoplay` : démarre automatiquement (**souvent bloqué sans `muted`**).  
+- `loop` : rejoue la vidéo en continu.  
+- `muted` : démarre sans son (**obligatoire pour `autoplay`**).  
+- `poster` : définit une image affichée avant la lecture.  
+- `<track>` : permet d’ajouter des sous-titres (format **WebVTT**).  
+
+
+---
+
+## Accessibilité
+- Sous-titres : toujours prévoir un fichier `.vtt` avec `<track>` pour les vidéos.
+- Transcription : proposer une version texte pour les contenus audio.
+- Contrôles clavier : s’assurer que le player est utilisable sans souris.
+- ARIA : ajouter des attributs comme aria-label pour décrire le média si nécessaire.
+
+---
+
+## API JavaScript
+Les deux balises exposent une API DOM commune (HTMLMediaElement) :
+
+Exemple de contrôle vidéo en JavaScript :
+
+```js
+const video = document.querySelector("video");
+
+// Lecture et pause
+video.play();
+video.pause();
+
+// Contrôle du volume
+video.volume = 0.5;
+
+// Avancer dans la vidéo
+video.currentTime = 30; // saute à 30s
+
+// Vérifier si la vidéo est en cours de lecture
+if (!video.paused) {
+  console.log("Vidéo en lecture");
+}
+```
+
+--- 
+
+## À retenir
+
+- `play-during` et les anciennes propriétés CSS audio sont **obsolètes**.  
+- Utiliser `<audio>` et `<video>` pour un support **moderne, accessible et cross-browser**.  
+- Fournir plusieurs formats (`.mp4`, `.webm`, `.ogg`) pour assurer la compatibilité.  
+- Prévoir des **sous-titres** et des **transcriptions** pour l’accessibilité.  
+- Les **API JavaScript** permettent de créer des players personnalisés (contrôles, playlists, synchronisation).  
