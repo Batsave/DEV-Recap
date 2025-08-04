@@ -14,11 +14,11 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-body: #0f172a;       /* gris très foncé */
-        --bg-example: #1e293b;    /* gris foncé */
-        --border: #334155;        /* gris bleu */
-        --item-bg: #3b82f6;       /* bleu clair */
-        --item-color: #f8fafc;    /* quasi blanc */
+        --bg-body: #0f172a;
+        --bg-example: #1e293b;
+        --border: #334155;
+        --item-bg: #3b82f6;
+        --item-color: #f8fafc;
       }
     }
 
@@ -40,10 +40,10 @@
     .container {
       display: grid;
       grid-template-columns: repeat(3, 100px);
-      grid-template-rows: 100px;
-      justify-items: center; /* axe horizontal */
-      align-items: start;    /* axe vertical */
-      gap: 0.5rem;
+      grid-template-rows: repeat(2, 100px); /* ← 2 lignes */
+      justify-items: center;
+      align-items: start;
+      gap: 1rem; /* ← espace visible entre les cases */
     }
 
     .item {
@@ -57,7 +57,7 @@
     }
 
     .special {
-      align-self: end; /* aligne uniquement cet item en bas */
+      align-self: end;
     }
   </style>
 </head>
