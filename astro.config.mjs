@@ -64,6 +64,12 @@ export default defineConfig({
               label: "Les conseils de Tonton Bat",
               link: "/css/uncle-bat-advices",
             },
+            {
+              label: "Media Queries",
+              link: "/css/media-queries",
+            },
+            
+
           ],
         },
       ],
