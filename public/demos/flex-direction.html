@@ -4,18 +4,28 @@
   <meta charset="UTF-8">
   <title>Démo Flex-Direction</title>
   <style>
+    /* Thème clair par défaut */
     :root {
-      --bg-body: #fff;
-      --border: #d1d5db;
+      --bg-body: #ffffff;
+      --bg-example: #f9fafb;
+      --border: #e5e7eb;
       --item-bg: #2563eb;
-      --item-color: #fff;
+      --item-color: #ffffff;
+      --button-bg: #f3f4f6;
+      --button-color: #111827;
+      --button-hover: #e5e7eb;
     }
 
+    /* Thème sombre */
     html[data-theme="dark"] {
       --bg-body: #0f172a;
+      --bg-example: #1e293b;
       --border: #334155;
       --item-bg: #3b82f6;
       --item-color: #f8fafc;
+      --button-bg: #1f2937;
+      --button-color: #f9fafb;
+      --button-hover: #374151;
     }
 
     body {
@@ -23,57 +33,84 @@
       padding: 1rem;
       background: var(--bg-body);
       font-family: system-ui, sans-serif;
+      color: var(--button-color);
     }
 
     .example {
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
-      background: var(--bg-body);
-    }
-
-    .container {
-      display: flex;
-      flex-direction: row; /* change en row-reverse / column / column-reverse */
-      gap: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .item {
-      background: var(--item-bg);
-      color: var(--item-color);
-      padding: 1rem;
-      font-weight: bold;
-      border-radius: 4px;
-      text-align: center;
-      flex: 1;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: var(--bg-example);
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
     .buttons {
       margin-bottom: 1rem;
       display: flex;
       gap: 0.5rem;
+      flex-wrap: wrap;
     }
+
     button {
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
       border: 1px solid var(--border);
+      background: var(--button-bg);
+      color: var(--button-color);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--button-hover);
+    }
+
+    button.active {
       background: var(--item-bg);
       color: var(--item-color);
-      cursor: pointer;
+      border-color: var(--item-bg);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row; /* valeur par défaut */
+      gap: 1rem;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      min-height: 120px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item {
+      background: var(--item-bg);
+      color: var(--item-color);
+      padding: 1rem 1.2rem;
+      font-weight: bold;
+      border-radius: 6px;
+      text-align: center;
+      min-width: 60px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <div class="example">
     <div class="buttons">
-      <button onclick="setDirection('row')">row</button>
-      <button onclick="setDirection('row-reverse')">row-reverse</button>
-      <button onclick="setDirection('column')">column</button>
-      <button onclick="setDirection('column-reverse')">column-reverse</button>
+      <button class="active" onclick="setDirection('row', this)">row</button>
+      <button onclick="setDirection('row-reverse', this)">row-reverse</button>
+      <button onclick="setDirection('column', this)">column</button>
+      <button onclick="setDirection('column-reverse', this)">column-reverse</button>
     </div>
 
     <div class="container" id="flexbox">
@@ -84,8 +121,13 @@
   </div>
 
   <script>
-    function setDirection(dir) {
-      document.getElementById("flexbox").style.flexDirection = dir;
+    function setDirection(dir, btn) {
+      const container = document.getElementById("flexbox");
+      container.style.flexDirection = dir;
+
+      // reset boutons actifs
+      document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
     }
   </script>
 </body>
