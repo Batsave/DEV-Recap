@@ -1,0 +1,61 @@
+---
+title: "Listes"
+description: "Propriétés CSS permettant de définir la façon d'afficher les éléments de type <ul>, <ol>, <li> ainsi que les listes de définitions (<dl>, <dt>, <dd>)."
+sidebar:
+  position: 1
+---
+
+# Listes
+
+Ces propriétés permettent de définir l’apparence des **listes** (`<ul>`, `<ol>`, `<li>`) ainsi que des listes de définitions (`<dl>`, `<dt>`, `<dd>`).  
+Elles agissent principalement sur les puces (ou numéros), leur position, leur type et la possibilité de les remplacer par une image.
+
+---
+
+## Propriétés standards (à utiliser)
+
+| Propriété | Description |
+| --- | --- |
+| `list-style` | Propriété raccourcie regroupant `list-style-type`, `list-style-position` et `list-style-image`. Permet aussi de supprimer les puces avec `none`. |
+| `list-style-type` | Définit le type de puce ou de numérotation (ex : `disc`, `circle`, `square`, `decimal`, `lower-roman`, `none`). |
+| `list-style-position` | Définit si la puce est affichée **à l’intérieur** (`inside`) ou **à l’extérieur** (`outside`) du bloc de contenu. |
+| `list-style-image` | Définit une image comme puce personnalisée (`url(...)`). |
+
+---
+
+## Propriétés obsolètes ou spécifiques
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `marker-offset` | Obsolète | Définissait la position exacte de la puce ou du numéro. Supprimée dans CSS3, remplacée par `list-style-position` et le pseudo-élément `::marker`. |
+
+---
+
+## Exemple simple
+
+```css
+ul.custom {
+  list-style-type: square;          /* Puces carrées */
+  list-style-position: inside;      /* Les puces sont à l’intérieur du texte */
+}
+
+ol.romain {
+  list-style-type: upper-roman;     /* Numérotation en chiffres romains */
+}
+
+ul.image {
+  list-style-image: url("puce.png"); /* Image en guise de puce */
+}
+
+ul.none {
+  list-style: none;                 /* Supprime les puces */
+}
+```
+--- 
+
+## À retenir
+
+- `list-style` permet de configurer en une seule ligne type, position et image des puces.  
+- `list-style-type` est le plus utilisé pour changer la forme ou supprimer les puces.  
+- `list-style-image` permet une personnalisation graphique, mais reste peu utilisé (préférer `::marker` ou `::before`).  
+- `marker-offset` est obsolète et remplacé par l’utilisation de `list-style-position` ou du pseudo-élément `::marker`.  

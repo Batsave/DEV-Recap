@@ -1,0 +1,72 @@
+---
+title: "Outline"
+description: "Propriétés CSS permettant de définir un encadrement autour du contenu des éléments, souvent utilisées pour l’accessibilité."
+sidebar:
+  position: 1
+---
+
+Alors que les propriétés `border` permettent d’attribuer une bordure à l’élément lui-même,  
+les propriétés **`outline`** ajoutent un cadre autour du **contenu** de l’élément.  
+
+Contrairement à `border`, `outline` :
+- ne modifie pas la taille ou la position de l’élément,
+- peut dépasser à l’extérieur de la boîte de l’élément,
+- est souvent utilisé par défaut par les navigateurs pour indiquer le **focus clavier**.
+
+---
+
+## Propriétés principales
+
+| Propriété | Description |
+| --- | --- |
+| `outline` | Propriété raccourcie qui combine couleur, style et largeur de l’outline. |
+| `outline-color` | Définit la couleur de l’encadrement. |
+| `outline-style` | Définit le style de l’encadrement (`solid`, `dashed`, `dotted`, etc.). |
+| `outline-width` | Définit l’épaisseur de l’encadrement. |
+
+---
+
+## Exemple simple
+
+```css
+button:focus {
+  outline: 2px solid blue; /* Indique le focus clavier */
+}
+input:focus {
+  outline-color: red; /* Change la couleur de l'outline au focus */
+}
+```
+
+---
+## Accessibilité et bonnes pratiques
+
+- L’`outline` est **fondamental pour l’accessibilité** : il permet aux utilisateurs qui naviguent au clavier (tabulation) ou aux personnes malvoyantes de repérer quel élément est actif.  
+
+- **Ne jamais supprimer** les outlines par défaut (`outline: none`) **sans les remplacer par un équivalent visuel** (par exemple avec `box-shadow`).  
+
+### Exemple correct
+
+```css
+/* Mauvais : supprime totalement le focus */
+button:focus {
+  outline: none;
+}
+
+/* Bon : remplace par un style visible et accessible */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.5);
+}
+```
+
+
+---
+
+## À retenir
+
+- `outline` encadre le contenu sans impacter la taille de l’élément.  
+- Indispensable pour indiquer le **focus clavier** et assurer l’accessibilité.  
+- Ne jamais supprimer `outline` sans fournir une **alternative visuelle équivalente**.  
+- Utiliser `outline` pour améliorer la **navigation inclusive** sur vos pages web.  
+
+
