@@ -36,7 +36,7 @@ html[data-theme="dark"] {
 .demo {
   display: grid;
   grid-template-columns: 220px 1fr;
-  gap: 1.5rem;
+  gap: 24px;
   align-items: start;
 }
 
@@ -71,15 +71,17 @@ html[data-theme="dark"] {
 
 .container {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   border: 1px solid var(--border);
+  background: var(--bg-card);
   border-radius: 8px;
   padding: 1rem;
   height: 100%;
   min-height: 120px;
+  height: 100%;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  background: var(--bg-card);
+  
 
   .item {
     background: var(--item-bg);
