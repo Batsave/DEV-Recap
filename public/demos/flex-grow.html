@@ -47,7 +47,6 @@
       align-items: start;
     }
 
-    /* --- Boutons --- */
     .buttons {
       display: flex;
       flex-direction: column;
@@ -77,7 +76,6 @@
       border-color: var(--active);
     }
 
-    /* --- Container rendu --- */
     .container {
       display: flex;
       gap: 0.5rem;
@@ -102,11 +100,15 @@
       transition: transform 0.2s ease, flex-grow 0.3s ease;
     }
 
+    /* On force Item 2 à avoir une base étroite → permet de voir l'effet du grow */
+    #growItem {
+      flex-basis: 50px;
+    }
+
     .item:hover {
       transform: scale(1.05);
     }
 
-    /* --- Code --- */
     pre {
       margin-top: 1.5rem;
       padding: 1rem 1.2rem;
@@ -123,7 +125,6 @@
 <body>
   <div class="card">
     <div class="demo">
-      <!-- Colonne gauche : boutons -->
       <div class="buttons">
         <button class="active" onclick="setGrow(0, this)">Item 2: flex-grow 0 (default)</button>
         <button onclick="setGrow(1, this)">Item 2: flex-grow 1</button>
@@ -131,7 +132,6 @@
         <button onclick="setGrow(3, this)">Item 2: flex-grow 3</button>
       </div>
 
-      <!-- Colonne droite : rendu -->
       <div class="container" id="flexbox">
         <div class="item">Item 1</div>
         <div class="item" id="growItem">Item 2</div>
@@ -139,9 +139,9 @@
       </div>
     </div>
 
-    <!-- Code affiché -->
     <pre id="code">#growItem {
   flex-grow: 0; /* valeur par défaut */
+  flex-basis: 50px;
 }</pre>
   </div>
 
@@ -150,13 +150,12 @@
       const item = document.getElementById("growItem");
       item.style.flexGrow = value;
 
-      // reset boutons actifs
       document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // mettre à jour le code affiché
       document.getElementById("code").textContent = `#growItem {
   flex-grow: ${value};
+  flex-basis: 50px;
 }`;
     }
   </script>
