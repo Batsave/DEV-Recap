@@ -19,7 +19,7 @@ export default function FlexShrinkDemo() {
             </button>
           ))}
         </div>
-        <div className="container shrink-demo">
+        <div className="container">
           <p className="item">Item 1</p>
           <p className="item" style={{ flex: "0 0 150px", flexShrink: shrink }}>Item 2</p>
           <p className="item">Item 3</p>
