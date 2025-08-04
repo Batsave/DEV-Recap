@@ -12,16 +12,18 @@
       --item-bg: #2563eb;
       --item-color: #ffffff;
       --active: #1d4ed8;
+      --code-bg: #f3f4f6;
     }
 
     html[data-theme="dark"] {
-      --bg-body: #1b1b1b;
+      --bg-body: #0f172a;
       --bg-card: #1e293b;
       --border: #334155;
       --text: #f1f5f9;
       --item-bg: #3b82f6;
       --item-color: #f8fafc;
       --active: #60a5fa;
+      --code-bg: #1f2937;
     }
 
     body {
@@ -33,25 +35,33 @@
 
     .card {
       padding: 1.5rem;
-      max-width: 750px;
+      max-width: 900px;
       margin: auto;
     }
 
+    .demo {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    /* --- Boutons --- */
     .buttons {
       display: flex;
+      flex-direction: column;
       gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
     }
 
     button {
-      padding: 0.4rem 0.8rem;
+      padding: 0.5rem 0.8rem;
       border-radius: 6px;
       border: 1px solid var(--border);
       background: var(--bg-body);
       color: var(--text);
       font-size: 0.9rem;
       cursor: pointer;
+      text-align: left;
       transition: all 0.2s ease;
     }
 
@@ -65,14 +75,18 @@
       border-color: var(--active);
     }
 
+    /* --- Container rendu --- */
     .container {
       display: flex;
-      flex-direction: row; /* valeur par défaut */
+      flex-direction: row;
       gap: 0.5rem;
       transition: all 0.3s ease;
       justify-content: center;
       align-items: center;
-      min-height: 100px;
+      min-height: 120px;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 1rem;
     }
 
     .item {
@@ -89,22 +103,43 @@
     .item:hover {
       transform: scale(1.05);
     }
+
+    /* --- Code --- */
+    pre {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--code-bg);
+      font-family: monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="buttons">
-      <button class="active" onclick="setDirection('row', this)">row</button>
-      <button onclick="setDirection('row-reverse', this)">row-reverse</button>
-      <button onclick="setDirection('column', this)">column</button>
-      <button onclick="setDirection('column-reverse', this)">column-reverse</button>
+    <div class="demo">
+      <!-- Colonne gauche : boutons -->
+      <div class="buttons">
+        <button class="active" onclick="setDirection('row', this)">flex-direction: row</button>
+        <button onclick="setDirection('row-reverse', this)">flex-direction: row-reverse</button>
+        <button onclick="setDirection('column', this)">flex-direction: column</button>
+        <button onclick="setDirection('column-reverse', this)">flex-direction: column-reverse</button>
+      </div>
+
+      <!-- Colonne droite : rendu -->
+      <div class="container" id="flexbox">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
     </div>
 
-    <div class="container" id="flexbox">
-      <div class="item">Item 1</div>
-      <div class="item">Item 2</div>
-      <div class="item">Item 3</div>
-    </div>
+    <!-- Code affiché -->
+    <pre id="code">.container {
+  display: flex;
+  flex-direction: row;
+}</pre>
   </div>
 
   <script>
@@ -112,8 +147,15 @@
       const container = document.getElementById("flexbox");
       container.style.flexDirection = dir;
 
+      // reset boutons actifs
       document.querySelectorAll(".buttons button").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
+      // mettre à jour le code affiché
+      document.getElementById("code").textContent = `.container {
+  display: flex;
+  flex-direction: ${dir};
+}`;
     }
   </script>
 </body>
