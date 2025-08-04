@@ -45,7 +45,7 @@ La propriété `flex-direction` établit l’axe principal du container.
 | `column`         | De haut en bas.                                                             |
 | `column-reverse` | Comme `column`, mais du bas vers le haut.                                   |
 
-<FlexDirection />
+<FlexDirection client:only="react"/>
 
 ---
 
@@ -59,7 +59,7 @@ Définit si le container comprend une seule ligne ou plusieurs.
 | `wrap`         | Multi-lignes, retour automatique à la ligne.                                |
 | `wrap-reverse` | Multi-lignes inversées (bas vers haut ou droite vers gauche).               |
 
-<FlexWrap />
+<FlexWrap client:only="react"/>
 
 ---
 
@@ -69,7 +69,7 @@ Raccourci combinant `flex-direction` et `flex-wrap`.
 
 Par défaut : `row nowrap`.
 
-<FlexFlow />
+<FlexFlow client:only="react"/>
 
 ---
 
@@ -85,7 +85,7 @@ Définit l’alignement **le long de l’axe principal**.
 | `space-between` | Répartition sur toute la ligne (1er au start, dernier à l’end).             |
 | `space-around`  | Espacement égal autour de chaque item.                                      |
 
-<JustifyContent />
+<JustifyContent client:only="react"/>
 
 ---
 
@@ -101,7 +101,7 @@ Aligne les items le long de l’axe secondaire (cross-axis).
 | `baseline`   | Alignement sur la ligne de base du texte.                                   |
 | `stretch`    | (par défaut) Étire les items pour remplir le container.                     |
 
-<AlignItems />
+<AlignItems client:only="react"/>
 
 ---
 
@@ -110,7 +110,7 @@ Aligne les items le long de l’axe secondaire (cross-axis).
 Aligne les **lignes** d’un container flex lorsqu’il y a plusieurs lignes.  
 ⚠️ Sans effet si le container n’a qu’une seule ligne.
 
-<AlignContent />
+<AlignContent client:only="react"/>
 
 ---
 
@@ -118,7 +118,7 @@ Aligne les **lignes** d’un container flex lorsqu’il y a plusieurs lignes.
 
 La propriété `gap` définit les **espaces entre les items**.
 
-<Gap />
+<Gap client:only="react"/>
 
 ---
 
@@ -126,7 +126,7 @@ La propriété `gap` définit les **espaces entre les items**.
 
 Contrôle l’ordre d’affichage des items flex indépendamment du DOM.
 
-<Order />
+<Order client:only="react"/>
 
 ---
 
@@ -134,7 +134,7 @@ Contrôle l’ordre d’affichage des items flex indépendamment du DOM.
 
 Définit la capacité d’un item à **grandir**.
 
-<FlexGrow />
+<FlexGrow client:only="react"/>
 
 ---
 
@@ -155,7 +155,7 @@ Définit la capacité d’un item à **rétrécir**.
 
 Définit la **taille initiale** d’un élément avant distribution de l’espace.
 
-<FlexBasis />
+<FlexBasis client:only="react"/>
 
 ---
 
@@ -163,7 +163,7 @@ Définit la **taille initiale** d’un élément avant distribution de l’espac
 
 Permet à un **item individuel** d’écraser la valeur de `align-items`.
 
-<AlignSelf />
+<AlignSelf client:only="react"/>
 
 ---
 
