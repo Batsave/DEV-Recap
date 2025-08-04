@@ -171,8 +171,6 @@ pre {
   }
 }
 
-
-
 .container.grid-auto {
   display: grid;
   gap: 1rem;
@@ -187,3 +185,21 @@ pre {
     justify-content: center;
   }
 }
+
+.container.grid-placement {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(3, 80px);
+
+  .item {
+    background: var(--item-bg);
+    color: var(--item-color);
+    font-weight: 600;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
