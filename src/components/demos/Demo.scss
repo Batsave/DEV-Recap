@@ -14,9 +14,9 @@ html[data-theme="dark"] {
   --bg-card: #1b1b1b;
   --border: #334155;
   --text: #f1f5f9;
-  --item-bg: #B3C7FF;
+  --item-bg: #b3c7ff;
   --item-color: #374151;
-  --active: #B3C7FF;
+  --active: #b3c7ff;
   --code-bg: #1f2937;
 }
 
@@ -32,6 +32,10 @@ html[data-theme="dark"] {
   overflow: auto;
   box-sizing: border-box;
   margin-top: 32px;
+
+  @media print {
+    display: none;
+  }
 }
 
 .demo {
@@ -83,8 +87,6 @@ html[data-theme="dark"] {
   transition: all 0.3s ease;
   margin: 0;
 
-  
-
   .item {
     display: flex;
     align-items: center;
@@ -98,7 +100,6 @@ html[data-theme="dark"] {
     flex: 0 0 auto;
     transition: transform 0.2s ease;
     margin: 0;
-   
 
     &:hover {
       transform: scale(1.05);
@@ -128,14 +129,12 @@ pre {
   border: 1px solid var(--border);
 }
 
-
 .example {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
   background: var(--bg-card);
 }
-
 
 /* Grid demos */
 
@@ -152,7 +151,6 @@ pre {
   padding: 1rem;
   border-radius: 4px;
 }
-
 
 .container.grid-demo {
   display: grid;
