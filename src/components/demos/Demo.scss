@@ -136,6 +136,9 @@ pre {
   background: var(--bg-card);
 }
 
+
+/* Grid demos */
+
 .grid {
   display: grid;
   gap: 1rem;
@@ -148,4 +151,39 @@ pre {
   text-align: center;
   padding: 1rem;
   border-radius: 4px;
+}
+
+
+.container.grid-demo {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 200px;
+
+  .item {
+    background: var(--item-bg);
+    color: var(--item-color);
+    font-weight: 600;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+.container.grid-auto {
+  display: grid;
+  gap: 1rem;
+
+  .item {
+    background: var(--item-bg);
+    color: var(--item-color);
+    font-weight: 600;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
