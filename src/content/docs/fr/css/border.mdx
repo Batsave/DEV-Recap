@@ -1,0 +1,127 @@
+---
+title: "Contours"
+description: "Cette liste de propriétés permet de définir les caractéristiques des bordures de l'élément."
+sidebar:
+  position: 1
+---
+
+## Les propriétés CSS des bordures
+
+En CSS, les bordures permettent de définir l’apparence du contour d’un élément.  
+Voici un récapitulatif **des propriétés valides aujourd’hui** et un autre pour **les anciennes versions obsolètes**.
+
+---
+
+## Propriétés standards (à utiliser en 2025)
+
+| Propriété | Description |
+| --- | --- |
+| `border` | Définit toutes les caractéristiques d’une bordure (style, couleur, épaisseur). |
+| `border-top` / `border-right` / `border-bottom` / `border-left` | Bordures spécifiques à chaque côté. |
+| `border-color` | Définit la couleur de la bordure. |
+| `border-style` | Définit le style de la bordure (solid, dotted, dashed, etc.). |
+| `border-width` | Définit l’épaisseur de la bordure. |
+| `border-radius` | Définit l’arrondi des coins. |
+| `border-image` | Définit une image comme bordure. |
+| `border-collapse` | Définit le mode d’affichage des bordures de cellules adjacentes (pour les tableaux). |
+| `border-spacing` | Définit l’espace entre deux cellules (utilisé uniquement si `border-collapse: separate`). |
+| `outline` | Définit un contour autour de l’élément (différent d’une bordure). |
+| `outline-color` / `outline-style` / `outline-width` | Déclinaisons de `outline`. |
+| `box-shadow` | Définit une ombre portée sur un élément. |
+
+---
+
+## Propriétés obsolètes ou spécifiques navigateurs
+
+Ces propriétés étaient utilisées **avant la standardisation**, ou bien restent supportées uniquement dans certains navigateurs (principalement Safari / anciens Firefox).  
+Elles ne doivent être utilisées **qu’en cas de compatibilité avec de très vieux navigateurs**.
+
+| Propriété | Statut | Explication |
+| --- | --- | --- |
+| `-moz-border-radius` (et variantes `-topleft`, `-bottomright`…) | Obsolète | Ancien préfixe pour `border-radius` (avant standardisation dans Firefox). |
+| `-webkit-border-radius` (et variantes) | Obsolète | Ancien préfixe pour `border-radius` (Chrome/Safari). |
+| `-webkit-border-image-*` | Obsolète | Ancien préfixe pour `border-image`. |
+| `-moz-outline-*` | Obsolète | Ancienne implémentation expérimentale de `outline`. |
+| `-webkit-box-shadow` | Obsolète | Ancien préfixe pour `box-shadow`. |
+| `-webkit-text-stroke` | Spécifique | Toujours utilisé dans Safari/Chrome pour appliquer un contour au texte, mais non standard. |
+| `-webkit-box-reflect` | Spécifique Safari | Permet de créer un effet de reflet sous un élément (non standard, propre à WebKit). |
+
+---
+
+## À retenir
+
+- Utilise **toujours les propriétés standards** (`border-radius`, `box-shadow`, `outline`, etc.).  
+- Les versions préfixées `-moz-` et `-webkit-` ne sont utiles que si tu veux supporter des navigateurs **très anciens**.  
+- Certaines propriétés spécifiques (`-webkit-text-stroke`, `-webkit-box-reflect`) sont **propriétaires à Safari** et n’ont pas d’équivalent standardisé.
+
+---
+
+## Exemple rapide d’utilisation moderne :
+
+```css
+.my-box {
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+```jsx
+export const BorderDemo = () => {
+  const [style, setStyle] = useState('solid')
+  const [color, setColor] = useState('#333333')
+  const [width, setWidth] = useState(3)
+  const [radius, setRadius] = useState(0)
+
+  return (
+    <div>
+      {/* Contrôles */}
+      <div style={{ marginBottom: '1em', display: 'flex', gap: '1em', flexWrap:'wrap' }}>
+        <label>
+          Style :
+          <select value={style} onChange={e => setStyle(e.target.value)}>
+            {['solid','dashed','dotted','double','groove','ridge','inset','outset','none','hidden'].map(v => (
+              <option key={v} value={v}>{v}</option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Couleur :
+          <input type="color" value={color} onChange={e => setColor(e.target.value)} />
+        </label>
+
+        <label>
+          Largeur :
+          <input type="range" min="1" max="20" value={width} onChange={e => setWidth(e.target.value)} />
+          {width}px
+        </label>
+
+        <label>
+          Rayon (border-radius) :
+          <input type="range" min="0" max="50" value={radius} onChange={e => setRadius(e.target.value)} />
+          {radius}px
+        </label>
+      </div>
+
+      {/* Zone de test */}
+      <div
+        style={{
+          width: '200px',
+          height: '200px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: '#f5f5f5',
+          border: `${width}px ${style} ${color}`,
+          borderRadius: `${radius}px`
+        }}
+      >
+        Exemple
+      </div>
+    </div>
+  )
+}
+````
+</BorderDemo>
