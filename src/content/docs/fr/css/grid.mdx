@@ -10,6 +10,7 @@ import GridAutoPlacement from "~/components/demos/GridAutoPlacement.jsx";
 import GridAlign from "~/components/demos/GridAlign.jsx";
 import GridResponsive from "~/components/demos/GridResponsive.jsx";
 import GridPlacement from "~/components/demos/GridPlacement.jsx";
+import GridAlignSelf from "~/components/demos/GridAlignSelf.jsx";
 
 
 ## Grid layout (mise en page en grille 2D)
@@ -52,17 +53,7 @@ Position exacte des éléments dans la grille via angles linéaires ou noms d’
 ## Alignement & Align-Self
 
 Les règles d’alignement dans Grid proviennent du module flex, maintenant partagé (box‑alignment).
-
-```css
-.container {
-  display: grid;
-  justify-items: center; /* axe horizontal */
-  align-items: start;    /* axe vertical */
-}
-
-.item {
-  align-self: end;       /* alignement individuel */
-}
+<GridAlignSelf client:only="react"/>
 
 
 ```
