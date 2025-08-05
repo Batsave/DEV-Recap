@@ -63,6 +63,7 @@ export default defineConfig({
 
         {
           label: "HTML",
+          collapsed: true,
           items: [
             { label: "Introduction", link: "/html/" },
             { label: "Balises Meta", link: "/html/meta-tags" },
@@ -75,24 +76,28 @@ export default defineConfig({
         },
         {
           label: "CSS",
+          collapsed: true,
           autogenerate: {
             directory: "/css",
           },
         },
         {
           label: "JavaScript",
+          collapsed: true,
           autogenerate: {
             directory: "/js",
           },
         },
         {
           label: "Terminal",
+          collapsed: true,
           autogenerate: {
             directory: "/terminal",
           },
         },
         {
           label: "Git",
+          collapsed: true,
           autogenerate: {
             directory: "/git",
           },
