@@ -5,7 +5,20 @@ sidebar:
   position: 15
 ---
 
+## Qu'est-ce qu'une classe ?
+
+Une **classe** est un modèle qui permet de créer des objets partageant les mêmes propriétés et méthodes.  
+En réalité, les classes JavaScript sont du **sucre syntaxique** autour du système basé sur les **prototypes**.  
+
+➡ Elles rendent le code plus lisible et proche d’autres langages orientés objet.
+
+---
+
 ## Déclaration d'une classe
+
+Une classe peut contenir :  
+- un **constructeur** → fonction spéciale exécutée à la création de l’objet,  
+- des **méthodes** → fonctions définies dans la classe.  
 
 ```js
 class Personne {
@@ -27,6 +40,9 @@ alice.sePresenter(); // Je m'appelle Alice et j'ai 25 ans.
 
 ## Héritage
 
+Avec extends, une classe peut hériter d’une autre.
+On peut utiliser `super()` pour appeler le constructeur de la classe parente.
+
 ```js
 class Animal {
   constructor(nom) {
@@ -39,11 +55,43 @@ class Animal {
 }
 
 class Chien extends Animal {
+  constructor(nom, race) {
+    super(nom); // appelle le constructeur de Animal
+    this.race = race;
+  }
+
   parler() {
     console.log(`${this.nom} aboie.`);
   }
 }
 
-let rex = new Chien("Rex");
+let rex = new Chien("Rex", "Berger allemand");
 rex.parler(); // Rex aboie.
 ```
+
+---
+
+## Méthodes statiques
+Une méthode peut être déclarée comme `static` → elle est appelée directement sur la classe, pas sur une instance.
+
+```js
+class Maths {
+  static addition(a, b) {
+    return a + b;
+  }
+}
+
+console.log(Maths.addition(2, 3)); // 5
+
+```
+
+---
+
+## Bonnes pratiques 
+
+- Utiliser les **classes** pour modéliser des entités (ex. `Utilisateur`, `Produit`).  
+- Employer **`extends`** + **`super`** pour réutiliser du code et faciliter l’héritage.  
+- Préférer les **méthodes statiques** quand l’action ne dépend pas d’une instance particulière.  
+- Garder en tête que les **classes** sont du **sucre syntaxique** → en interne, JavaScript repose toujours sur le mécanisme des **prototypes**.  
+
+
