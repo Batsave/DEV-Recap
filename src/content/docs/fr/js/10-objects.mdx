@@ -5,6 +5,16 @@ sidebar:
   position: 9
 ---
 
+## Qu'est-ce qu'un objet ?
+
+Un **objet** est une structure qui permet de stocker des données sous forme de **paires clé/valeur**.  
+Chaque clé est une chaîne de caractères, et chaque valeur peut être de **n'importe quel type** (string, number, array, autre objet…).
+
+Exemple en français :  
+- Un objet est comme une **fiche descriptive** avec des champs.
+
+
+---
 ## Créer un objet
 
 ```js
@@ -18,9 +28,16 @@ console.log(personne.nom);  // Alice
 console.log(personne["age"]); // 25
 ```
 
+### Dot notation vs Bracket notation
+
+- Dot notation (`personne.nom`) → plus lisible, mais limité aux clés valides comme identifiant.
+- Bracket notation (`personne["nom complet"]`) → utile si la clé contient des espaces ou est une variable.
+
 ---
 
 ## Modifier un objet
+
+On peut ajouter ou modifier une propriété à tout moment :
 
 ```js
 let voiture = { marque: "Tesla", modele: "Model 3" };
@@ -33,6 +50,8 @@ console.log(voiture);
 
 ## Parcourir un objet
 
+La boucle `for...in` permet de parcourir toutes les clés d’un objet.
+
 ```js
 let utilisateur = { nom: "Bob", age: 30 };
 
@@ -41,11 +60,48 @@ for (let cle in utilisateur) {
 }
 ```
 
+### Autres méthodes utiles
+- `Object.keys(obj)` → renvoie toutes les clés sous forme de tableau.
+- `Object.values(obj)` → renvoie toutes les valeurs.
+- `Object.entries(obj)` → renvoie des paires `[clé, valeur]`.
+
+Exemple :
+
+```js
+let utilisateur = { nom: "Bob", age: 30 };
+
+console.log(Object.keys(utilisateur));   // ["nom", "age"]
+console.log(Object.values(utilisateur)); // ["Bob", 30]
+console.log(Object.entries(utilisateur)); // [["nom","Bob"], ["age",30]]
+```
+
+---
+
+## Objets imbriqués
+Les objets peuvent contenir d’autres objets (structure hiérarchique).
+
+```js
+let personne = {
+  nom: "Alice",
+  adresse: {
+    ville: "Paris",
+    codePostal: 75000
+  }
+};
+
+console.log(personne.adresse.ville); // Paris
+```
+
+
 ---
 
 ## JSON
 
-Le **JSON** (JavaScript Object Notation) est un format de données basé sur la syntaxe des objets JS.
+Le JSON (JavaScript Object Notation) est un format de données basé sur la syntaxe des objets JS.
+Il est très utilisé pour l’échange de données entre un serveur et une application.
+
+- `JSON.parse(chaine)` → transforme une chaîne JSON en objet JavaScript.
+- `JSON.stringify(objet)` → transforme un objet en chaîne JSON.
 
 ```js
 let json = '{"nom": "Alice", "age": 25}';
@@ -55,3 +111,12 @@ console.log(objet.nom); // Alice
 let chaine = JSON.stringify(objet);
 console.log(chaine); // {"nom":"Alice","age":25}
 ```
+
+---
+
+## Bonnes pratiques
+
+- Utiliser la **dot notation** si possible (`obj.prop`), sinon la **bracket notation** (`obj["prop"]`) lorsque les clés ne sont pas des identifiants valides.  
+- Penser à `Object.keys()`, `Object.values()`, `Object.entries()` pour manipuler les objets facilement.  
+- Utiliser **JSON** (`JSON.parse` / `JSON.stringify`) pour sauvegarder ou transmettre des données.  
+- Organiser ses objets avec des **sous-objets** si besoin (ex. `adresse` dans `personne`).  
