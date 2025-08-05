@@ -31,22 +31,57 @@ sidebar:
 
 ## Opérateurs logiques
 
-| Opérateur | Exemple         | Résultat |
-| --------- | --------------- | -------- | ----- | --- | ------ | ---- |
-| `&&`      | `true && false` | false    |
-| `         |                 | `        | `true |     | false` | true |
-| `!`       | `!true`         | false    |
+Les opérateurs logiques permettent de combiner plusieurs conditions booléennes.
+
+| Opérateur | Exemple             | Résultat | Explication |
+|-----------|---------------------|----------|-------------|
+| `&&`      | `true && false`     | false    | Retourne `true` seulement si **les deux** conditions sont vraies |
+| `\|\|`    | `true \|\| false`   | true     | Retourne `true` si **au moins une** condition est vraie |
+| `!`       | `!true`             | false    | Inverse la valeur (NOT) |
+
 
 ---
 
-## Exemple pratique
+### Exemple pratique
 
 ```js
 let age = 20;
+let aUnPermis = true;
 
-if (age >= 18 && age < 65) {
-  console.log("Adulte actif");
+if (age >= 18 && aUnPermis) {
+  console.log("Tu peux conduire !");
 } else {
-  console.log("Autre catégorie");
+  console.log("Tu ne peux pas conduire.");
+}
+
+let estConnecte = false;
+let estAdmin = true;
+
+if (estConnecte || estAdmin) {
+  console.log("Accès autorisé");
+} else {
+  console.log("Accès refusé");
 }
 ```
+
+---
+
+## Table de vérité
+
+| A     | B     | `A && B` | `A \|\| B` |
+|-------|-------|----------|----------|
+| true  | true  | true     | true     |
+| true  | false | false    | true     |
+| false | true  | false    | true     |
+| false | false | false    | false    |
+
+---
+
+### Négation (`!`)
+
+L’opérateur `!` inverse la valeur logique :
+
+| A     | `!A`  |
+|-------|-------|
+| true  | false |
+| false | true  |

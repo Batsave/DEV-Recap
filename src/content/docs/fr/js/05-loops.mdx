@@ -7,15 +7,22 @@ sidebar:
 
 ## For
 
+La boucle `for` est la plus classique.  
+Elle est composée de **3 parties** : initialisation ; condition ; incrémentation.  
+
 ```js
 for (let i = 0; i < 5; i++) {
   console.log("Compteur :", i);
 }
 ```
 
+> Ici, `i` commence à 0, la boucle continue tant que `i < 5`, et `i` augmente de 1 à chaque tour.
+
 ---
 
 ## While
+
+La boucle while s’exécute tant que la condition est vraie.
 
 ```js
 let i = 0;
@@ -25,11 +32,14 @@ while (i < 5) {
 }
 ```
 
+> [!CAUTION] Attention
+> Si la condition ne devient jamais fausse → boucle infinie.
+
 ---
 
 ## Do...While
 
-Exécutée au moins une fois, même si la condition est fausse.
+La boucle do...while est similaire à while, mais s’exécute au moins une fois avant de tester la condition.
 
 ```js
 let x = 0;
@@ -38,12 +48,14 @@ do {
   x++;
 } while (x < 3);
 ```
+> Même si `x` était initialisé à 10, le code s’exécuterait au moins une fois.
 
 ---
 
 ## For...Of
 
-Parcourt directement les **valeurs** d'un tableau.
+Parcourt directement les valeurs d’un tableau (ou autre itérable).
+C’est la façon la plus lisible de parcourir un tableau.
 
 ```js
 let fruits = ["pomme", "banane", "poire"];
@@ -52,12 +64,16 @@ for (let fruit of fruits) {
   console.log(fruit);
 }
 ```
+> Résultat : `pomme`, `banane`, `poire`.
 
 ---
 
 ## For...In
 
-Parcourt les **clés** d'un objet.
+Parcourt les clés (propriétés) d’un objet.
+
+> [!CAUTION] Attention
+> À ne pas utiliser pour les tableaux → utilisez for...of à la place.
 
 ```js
 let personne = { nom: "Alice", age: 25 };
@@ -66,3 +82,39 @@ for (let cle in personne) {
   console.log(cle, ":", personne[cle]);
 }
 ```
+
+> Résultat :
+> - nom : Alice
+> - age : 25
+
+---
+
+## Comparaison rapide
+
+| Boucle       | Utilisation principale |
+|--------------|-------------------------|
+| `for`        | Quand on connaît le **nombre d’itérations** (compteur) |
+| `while`      | Quand on répète tant qu’une **condition est vraie** |
+| `do...while` | Comme `while`, mais **au moins une exécution garantie** |
+| `for...of`   | Pour parcourir les **valeurs** d’un tableau |
+| `for...in`   | Pour parcourir les **clés** d’un objet |
+
+
+---
+
+## Exemple pratique 
+
+```js
+let nombres = [1, 2, 3, 4, 5];
+
+// Version classique
+for (let i = 0; i < nombres.length; i++) {
+  console.log("Index", i, "=", nombres[i]);
+}
+
+// Version moderne
+for (let n of nombres) {
+  console.log("Valeur :", n);
+}
+``` 
+
