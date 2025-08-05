@@ -103,6 +103,7 @@ export default defineConfig({
             directory: "/conventions",
           },
         },
+        { label: "Ressources utiles", link: "/ressources" },
       ],
     }),
   ],
