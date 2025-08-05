@@ -5,16 +5,32 @@ sidebar:
   position: 10
 ---
 
+## Qu'est-ce que le DOM ?
+
+Le **DOM (Document Object Model)** est une représentation sous forme d’**arbre** du contenu HTML d’une page.  
+Grâce à JavaScript, on peut **sélectionner, modifier, ajouter ou supprimer** des éléments du DOM pour rendre la page interactive.
+
+---
+
 ## Sélectionner des éléments
+
+Il existe plusieurs façons de sélectionner un élément dans la page :  
+
+- `getElementById("id")` → sélectionne par **ID**  
+- `querySelector("sélecteur")` → sélectionne le **premier élément** qui correspond  
+- `querySelectorAll("sélecteur")` → sélectionne **tous les éléments** correspondants (NodeList)
 
 ```js
 let titre = document.getElementById("titre");
+let bouton = document.querySelector("button");
 let boutons = document.querySelectorAll("button");
 ```
 
 ---
 
-## Modifier du contenu
+## Modifier du contenu et du style
+
+Une fois l’élément sélectionné, on peut modifier son contenu et son style.
 
 ```js
 let titre = document.getElementById("titre");
@@ -22,9 +38,16 @@ titre.innerText = "Nouveau texte";
 titre.style.color = "red";
 ```
 
+### Différences entre innerText, textContent et innerHTML
+- `innerText` → affiche uniquement le texte visible (ignore les balises cachées par CSS).
+- `textContent` → récupère tout le texte, même caché.
+- `innerHTML` → permet d’insérer du HTML (Attention aux failles XSS si contenu externe).
+
 ---
 
 ## Créer et insérer un élément
+
+On peut créer un nouvel élément avec `document.createElement()` et l’insérer dans la page.
 
 ```js
 let nouveauParagraphe = document.createElement("p");
@@ -32,3 +55,22 @@ nouveauParagraphe.innerText = "Je suis ajouté en JS";
 
 document.body.appendChild(nouveauParagraphe);
 ```
+
+### Autres méthodes utiles
+- `append()` → ajoute à la fin (comme `appendChild`)
+- `prepend()` → ajoute au début
+- `remove()` → supprime un élément
+
+```js
+document.body.prepend(nouveauParagraphe); // insère au début
+titre.remove(); // supprime l'élément titre
+```
+
+---
+
+## Bonnes pratiques ✅
+
+- Préférer **`querySelector`** et **`querySelectorAll`** (plus flexibles grâce aux sélecteurs CSS).  
+- Utiliser **`textContent`** plutôt que **`innerHTML`** pour éviter les failles de sécurité (*injections XSS*).  
+- Créer et insérer les éléments **dynamiquement** au lieu de modifier directement le HTML brut.  
+
