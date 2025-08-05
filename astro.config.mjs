@@ -97,6 +97,7 @@ export default defineConfig({
         },
         {
           label: "Conventions",
+          collapsed: true,
           autogenerate: {
             directory: "/conventions",
           },
