@@ -1,0 +1,40 @@
+---
+title: Annuler et corriger
+description: "Corriger ses erreurs avec reset, revert et stash."
+sidebar:
+  position: 6
+---
+
+## Annuler des changements
+
+```bash
+git checkout -- fichier.txt   # annule les changements non commités
+```
+
+## Défaire le dernier commit
+
+```bash
+git reset --soft HEAD~1   # garde les fichiers en staging
+git reset --hard HEAD~1   # supprime totalement les changements
+```
+
+## Revenir en arrière proprement
+
+```bash
+git revert abc123
+```
+
+## Mettre de côté des changements (stash)
+
+```bash
+git stash
+git stash apply
+```
+
+---
+
+## Bonnes pratiques
+
+- Utiliser `git reset` seulement en local (dangereux si partagé).  
+- Préférer `git revert` pour annuler dans un projet collaboratif.  
+- Utiliser `stash` pour mettre en pause un travail en cours.  

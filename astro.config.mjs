@@ -91,6 +91,12 @@ export default defineConfig({
             directory: "/terminal",
           },
         },
+        {
+          label: "Git",
+          autogenerate: {
+            directory: "/git",
+          },
+        },
       ],
     }),
   ],

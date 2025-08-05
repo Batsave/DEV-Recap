@@ -1,0 +1,37 @@
+---
+title: Remote
+description: "Travailler avec des dépôts distants."
+sidebar:
+  position: 4
+---
+
+## Ajouter un dépôt distant
+
+```bash
+git remote add origin https://github.com/utilisateur/projet.git
+```
+
+## Envoyer ses commits (push)
+
+```bash
+git push origin main
+```
+
+## Récupérer les mises à jour
+
+```bash
+git pull origin main
+```
+
+## Télécharger sans fusionner
+
+```bash
+git fetch
+```
+
+---
+
+## Bonnes pratiques
+
+- Toujours récupérer (`git pull`) avant de pousser (`git push`).  
+- Vérifier `git remote -v` pour lister les dépôts distants.  

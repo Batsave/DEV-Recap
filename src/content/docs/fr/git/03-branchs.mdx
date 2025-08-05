@@ -1,0 +1,35 @@
+---
+title: Branches
+description: "Travailler avec les branches Git."
+sidebar:
+  position: 3
+---
+
+## Créer et lister les branches
+
+```bash
+git branch            # liste les branches
+git branch nouvelle   # crée une nouvelle branche
+```
+
+## Changer de branche
+
+```bash
+git checkout nouvelle
+# ou (nouvelle syntaxe)
+git switch nouvelle
+```
+
+## Fusionner une branche
+
+```bash
+git merge nouvelle
+```
+
+---
+
+## Bonnes pratiques
+
+- Utiliser des noms clairs (`feature/login`, `bugfix/header`).  
+- Supprimer les branches devenues inutiles avec `git branch -d`.  
+- Toujours tester avant de fusionner.  

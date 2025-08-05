@@ -1,0 +1,30 @@
+---
+title: Configuration
+description: "Configurer Git avec son identité et ses préférences."
+sidebar:
+  position: 1
+---
+
+## Configurer son identité
+
+```bash
+git config --global user.name "Ton Nom"
+git config --global user.email "ton@email.com"
+```
+
+➡ Obligatoire pour que chaque commit soit associé à ton identité.
+
+---
+
+## Vérifier la configuration
+
+```bash
+git config --list
+```
+
+---
+
+## Bonnes pratiques
+
+- Utiliser `--global` pour configurer tout le système, ou sans pour un projet spécifique.  
+- Vérifier régulièrement sa configuration avec `git config --list`.  
