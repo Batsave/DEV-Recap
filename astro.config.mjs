@@ -97,6 +97,12 @@ export default defineConfig({
             directory: "/git",
           },
         },
+        {
+          label: "Conventions",
+          autogenerate: {
+            directory: "/conventions",
+          },
+        },
       ],
     }),
   ],

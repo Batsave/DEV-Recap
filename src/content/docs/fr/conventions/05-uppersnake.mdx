@@ -1,0 +1,24 @@
+---
+title: UPPER_SNAKE_CASE
+description: "Convention pour les constantes en développement."
+sidebar:
+  position: 5
+---
+
+## UPPER_SNAKE_CASE
+
+**Exemple** : `MAX_SIZE`, `API_KEY`  
+
+### Pourquoi ?  
+- Distinguer clairement les **constantes** des variables modifiables.  
+- Hérité du langage **C** et adopté par la majorité des langages.  
+
+### Exemple pratique
+
+```js
+const MAX_SIZE = 100;
+const API_KEY = "123-456";
+```
+
+Avantages : immédiatement reconnaissable.  
+Inconvénient : réservé aux constantes → si mal utilisé, perte de sens.  
