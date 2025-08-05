@@ -102,6 +102,13 @@ export default defineConfig({
             directory: "/conventions",
           },
         },
+         {
+          label: "Markdown",
+          collapsed: true,
+          autogenerate: {
+            directory: "/md",
+          },
+        },
         { label: "Ressources utiles", link: "/ressources" },
       ],
     }),
