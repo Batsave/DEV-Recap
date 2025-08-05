@@ -12,7 +12,17 @@ Elle retourne une **Promise**, ce qui la rend asynchrone.
 
 ---
 
-## Exemple simple
+
+## Qu'est-ce que `fetch` ?
+
+La méthode **`fetch()`** est intégrée dans les navigateurs modernes.  
+Elle permet de faire des requêtes HTTP pour **récupérer ou envoyer des données** depuis une API.  
+
+Elle retourne une **Promise**, ce qui la rend asynchrone : le code continue de s’exécuter pendant que la requête est en cours.
+
+---
+
+## Exemple simple (GET)
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1")
@@ -24,6 +34,8 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
 ---
 
 ## Avec async/await
+
+Grâce à async/await, le code est plus lisible :
 
 ```js
 async function getPost() {
@@ -42,6 +54,9 @@ getPost();
 ---
 
 ## Envoyer des données (POST)
+
+On peut aussi envoyer des données avec fetch.
+Il faut préciser la méthode (`POST`, `PUT`, `DELETE`) et souvent ajouter des headers.
 
 ```js
 async function createPost() {
@@ -67,6 +82,29 @@ async function createPost() {
 
 createPost();
 ```
+---
+
+## Autres méthodes HTTP
+
+- **GET** → lire des données  
+- **POST** → créer une donnée  
+- **PUT** → mettre à jour une donnée  
+- **DELETE** → supprimer une donnée  
+
+---
+
+## Vérifier les erreurs HTTP
+
+⚠️ Attention : `fetch` ne lance pas automatiquement une erreur en cas de statut **404** ou **500**.  
+Il faut vérifier **`response.ok`** et **`response.status`** manuellement.  
+
+```js
+let response = await fetch("https://jsonplaceholder.typicode.com/404");
+
+if (!response.ok) {
+  console.error("Erreur HTTP :", response.status);
+}
+```
 
 ---
 
@@ -84,3 +122,12 @@ if (!response.ok) {
   console.error("Erreur HTTP :", response.status);
 }
 ```
+
+---
+
+## Bonnes pratiques
+
+- Toujours vérifier **`response.ok`** avant de traiter la réponse.  
+- Gérer les erreurs avec **`try/catch`** (si tu utilises `async/await`) ou **`.catch()`** (si tu utilises les Promises).  
+- Utiliser correctement les **headers** (`Content-Type`, `Authorization` pour les tokens, etc.).  
+- Préférer **`async/await`** pour garder un code lisible et facile à maintenir.  
