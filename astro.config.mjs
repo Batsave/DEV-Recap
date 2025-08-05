@@ -44,6 +44,8 @@ export default defineConfig({
         { tag: "meta", attrs: { property: "og:image", content: "/assets/share-cover.png" } },
         { tag: "meta", attrs: { property: "og:url", content: "https://dev.batsave.tv" } },
         { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
+        { tag: "meta", attrs: { name: "google-site-verification", content: "ANXl8OG3ubA9eai8sI34GhInc6-KmJ-P8SirJEWHE5k" } },
+        
       ],
       defaultLocale: "fr",
       locales: {
