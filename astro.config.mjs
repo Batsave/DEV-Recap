@@ -110,6 +110,7 @@ export default defineConfig({
         },
         { label: "Ressources utiles", link: "/ressources" },
       ],
+      sidebarOpenDepth: 0,
     }),
   ],
   vite: {
