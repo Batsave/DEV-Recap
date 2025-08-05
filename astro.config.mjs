@@ -55,6 +55,7 @@ export default defineConfig({
             { label: "Liens hypertextes", link: "/html/hypertexts-links" },
             { label: "Structure HTML", link: "/html/html-structure" },
             { label: "Ajouter une image", link: "/html/add-picture" },
+            { label: "Audio et vidéo", link: "/html/audio-video" },
           ],
         },
         {
