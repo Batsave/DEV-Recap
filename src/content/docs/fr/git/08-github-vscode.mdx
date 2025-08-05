@@ -1,0 +1,114 @@
+---
+title: Connecter GitHub à VS Code
+description: "Configurer GitHub et Git pour travailler directement dans Visual Studio Code."
+sidebar:
+  position: 8
+---
+
+## 1. Installer Git et VS Code
+
+- Télécharger **Git** : [git-scm.com](https://git-scm.com)  
+- Télécharger **Visual Studio Code** : [code.visualstudio.com](https://code.visualstudio.com)  
+
+Vérifier que Git est bien installé :  
+
+```bash
+git --version
+```
+
+---
+
+## 2. Configurer Git
+
+Définir ton identité (mêmes informations que sur GitHub) :
+
+```bash
+git config --global user.name "Ton Nom"
+git config --global user.email "ton@email.com"
+```
+
+Configurer VS Code comme éditeur par défaut :
+
+```bash
+git config --global core.editor "code"
+```
+
+---
+
+## 3. Générer une clé SSH
+
+Créer une nouvelle paire de clés SSH :
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "ton-email@exemple.fr"
+```
+
+Tu obtiens deux fichiers dans `~/.ssh/` :  
+- `id_rsa` → clé privée (à garder secrète)  
+- `id_rsa.pub` → clé publique (à partager avec GitHub)  
+
+---
+
+## 4. Ajouter la clé à GitHub
+
+1. Copier la clé publique :  
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+2. Aller sur GitHub → **Settings > SSH and GPG keys > New SSH Key**  
+3. Coller la clé, donner un nom, enregistrer.  
+
+---
+
+## 5. Activer la clé en local
+
+Lancer l’agent SSH et ajouter la clé :  
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+
+---
+
+## 6. Connecter VS Code à GitHub
+
+- Ouvrir VS Code  
+- Installer l’extension **GitHub Pull Requests and Issues**  
+- Cliquer en bas à gauche sur **Se connecter à GitHub**  
+- Autoriser l’accès à ton compte GitHub  
+
+---
+
+## 7. Cloner un dépôt GitHub
+
+Dans VS Code :  
+1. `Ctrl + Shift + P` → taper **Git: Clone**  
+2. Coller l’URL SSH du dépôt :  
+
+```bash
+git@github.com:utilisateur/mon-projet.git
+```
+
+3. Choisir un dossier → VS Code ouvre le projet automatiquement.  
+
+---
+
+## 8. Workflow classique dans VS Code
+
+- Onglet **Source Control** (icône branche dans la barre latérale)  
+- Étapes principales :  
+  1. **Stage** (`+`) = `git add`  
+  2. **Commit** (message obligatoire) = `git commit -m "Message"`  
+  3. **Sync Changes** (`↑↓`) = `git push` / `git pull`  
+
+---
+
+## Bonnes pratiques
+
+- Toujours créer une **branche** par fonctionnalité (`feature/login`, `fix/bug`).  
+- Faire des **commits fréquents** avec des messages clairs.  
+- Utiliser un `.gitignore` pour ignorer les fichiers inutiles.  
+- Toujours faire un **pull** avant de commencer à coder.  
