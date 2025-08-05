@@ -5,9 +5,18 @@ sidebar:
   position: 14
 ---
 
+## Pourquoi async / await ?
+
+Avant ES2017, on utilisait surtout les Promises avec `.then()` et `.catch()`.  
+Mais dès que les appels s’enchaînaient, le code devenait difficile à lire.  
+
+➡ `async` et `await` permettent d’écrire du code asynchrone **comme du code synchrone**, plus clair et plus lisible.  
+
+---
+
 ## Fonction async
 
-Une fonction `async` retourne toujours une Promise.
+Une fonction marquée `async` retourne **toujours une Promise**.
 
 ```js
 async function saluer() {
@@ -21,7 +30,8 @@ saluer().then(msg => console.log(msg)); // Bonjour
 
 ## Await
 
-`await` attend qu’une Promise soit résolue avant de continuer.
+Le mot-clé `await` suspends l’exécution de la fonction async jusqu’à ce que la Promise soit résolue.
+Cela évite de chaîner plusieurs `.then()`.
 
 ```js
 function attendre(ms) {
@@ -39,6 +49,38 @@ demarrer();
 
 ---
 
+## Exemple concret : avant vs après
+
+### Avec `.then()``
+
+```js
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Erreur :", error));
+```
+
+### Avec `async/await`
+
+```js
+async function getPost() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Erreur :", error);
+  }
+}
+
+getPost();
+
+```
+
+> Même résultat, mais beaucoup plus lisible.
+
+---
+
 ## Gestion des erreurs
 
 ```js
@@ -50,5 +92,26 @@ async function test() {
   } catch (e) {
     console.error("Erreur :", e);
   }
+}
+```
+
+---
+
+## Bonnes pratiques
+
+- Utiliser **`async/await`** pour améliorer la lisibilité du code.  
+- Toujours gérer les erreurs avec **`try/catch`**.  
+- ⚠️ `await` ne peut être utilisé que **dans une fonction async**.  
+- Pour exécuter plusieurs Promises en parallèle, préférer **`Promise.all`** plutôt que plusieurs `await` successifs.  
+
+### Exemple : exécuter plusieurs Promises en parallèle
+
+```js
+async function loadData() {
+  let [posts, users] = await Promise.all([
+    fetch("/posts").then(r => r.json()),
+    fetch("/users").then(r => r.json())
+  ]);
+  console.log(posts, users);
 }
 ```
