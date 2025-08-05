@@ -16,7 +16,7 @@ export default defineConfig({
     react(),
     starlight({
       title: "DEV Récap",
-      description: "Récapitulatif du développement web",
+      description: "Récapitulatif du développement web, HTML, CSS, JavaScript et bonnes pratiques.",
       favicon: "/favicon.svg",
       logo: {
         src: "./public/assets/svg/logo.svg",
@@ -32,11 +32,18 @@ export default defineConfig({
         },
       ],
       head: [
-        {
-          tag: "meta",
-          attrs: { name: "robots", content: "index, follow" },
-        },
+    { tag: "meta", attrs: { name: "robots", content: "index, follow" } },
+    { tag: "meta", attrs: { name: "author", content: "Baptiste SAVE" } },
+    { tag: "meta", attrs: { name: "keywords", content: "HTML, CSS, JavaScript, développement web, documentation, référence" } },
+    { tag: "meta", attrs: { property: "og:type", content: "article" } },
+    { tag: "meta", attrs: { property: "og:title", content: "DEV Récap – HTML, CSS, JavaScript" } },
+    { tag: "meta", attrs: { property: "og:description", content: "Feuille récapitulative de développement web : HTML, CSS, JavaScript." } },
+    { tag: "meta", attrs: { property: "og:image", content: "/assets/share-cover.png" } },
+    { tag: "meta", attrs: { property: "og:url", content: "https://dev.batsave.tv" } },
+    { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
+
       ],
+      
       defaultLocale: "fr",
       locales: {
         fr: { label: "Français", lang: "fr" },
