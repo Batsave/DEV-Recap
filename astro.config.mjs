@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import rehypeCallouts from "rehype-callouts";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import Analytics from '@vercel/analytics/astro'
 
 export default defineConfig({
   site: "https://dev.batsave.tv",
@@ -17,6 +18,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
+    Analytics(),
     starlight({
       title: "DEV Récap",
       description: "Récapitulatif du développement web, HTML, CSS, JavaScript et bonnes pratiques.",
