@@ -60,19 +60,12 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       sidebar: [
         { label: "Accueil", link: "/" },
-
         {
           label: "HTML",
           collapsed: true,
-          items: [
-            { label: "Introduction", link: "/html/" },
-            { label: "Balises Meta", link: "/html/meta-tags" },
-            { label: "Titres et textes", link: "/html/titles-and-texts" },
-            { label: "Liens hypertextes", link: "/html/hypertexts-links" },
-            { label: "Structure HTML", link: "/html/html-structure" },
-            { label: "Ajouter une image", link: "/html/add-picture" },
-            { label: "Audio et vidéo", link: "/html/audio-video" },
-          ],
+          autogenerate: {
+            directory: "/html",
+          },
         },
         {
           label: "CSS",
