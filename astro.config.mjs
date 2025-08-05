@@ -36,7 +36,7 @@ export default defineConfig({
       ],
       head: [
         { tag: "meta", attrs: { name: "robots", content: "index, follow" } },
-        { tag: "meta", attrs: { name: "author", content: "Baptiste SAVE" } },
+        { tag: "meta", attrs: { name: "author", content: "Batsave" } },
         { tag: "meta", attrs: { name: "keywords", content: "HTML, CSS, JavaScript, développement web, documentation, référence" } },
         { tag: "meta", attrs: { property: "og:type", content: "article" } },
         { tag: "meta", attrs: { property: "og:title", content: "DEV Récap – HTML, CSS, JavaScript" } },
