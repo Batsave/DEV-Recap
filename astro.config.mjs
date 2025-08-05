@@ -7,6 +7,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
+  site: "https://dev.batsave.tv",
   content: {
     dir: "./content",
   },
