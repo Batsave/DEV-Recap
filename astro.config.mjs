@@ -85,6 +85,12 @@ export default defineConfig({
             directory: "/js",
           },
         },
+        {
+          label: "Terminal",
+          autogenerate: {
+            directory: "/terminal",
+          },
+        },
       ],
     }),
   ],

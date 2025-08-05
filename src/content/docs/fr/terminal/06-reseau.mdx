@@ -1,0 +1,32 @@
+---
+title: Réseau
+description: "Commandes réseau utiles dans le terminal."
+sidebar:
+  position: 6
+---
+
+## Commandes principales
+
+| Commande | Description | Exemple |
+|----------|-------------|---------|
+| `ping`   | Tester la connexion à une adresse | `ping google.com` |
+| `curl`   | Faire une requête HTTP | `curl https://example.com` |
+| `wget`   | Télécharger un fichier | `wget https://example.com/fichier.zip` |
+| `ssh`    | Se connecter à un serveur distant | `ssh user@serveur.com` |
+
+---
+
+## Exemple pratique
+
+```bash
+ping -c 4 google.com
+curl -I https://openai.com
+```
+
+---
+
+## Bonnes pratiques
+
+- Utiliser `ping -c nombre` pour limiter les essais.  
+- Vérifier les en-têtes HTTP avec `curl -I`.  
+- Utiliser `ssh-keygen` pour se connecter sans mot de passe.  

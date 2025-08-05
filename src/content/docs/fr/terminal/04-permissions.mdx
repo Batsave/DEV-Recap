@@ -1,0 +1,49 @@
+---
+title: Permissions et gestion avancée
+description: "Changer les droits d’accès avec chmod et chown."
+sidebar:
+  position: 4
+---
+
+## Les permissions Linux
+
+Chaque fichier/dossier a des permissions : **lecture (r), écriture (w), exécution (x)**.  
+Elles s’appliquent à :  
+- **u** → utilisateur propriétaire  
+- **g** → groupe  
+- **o** → autres  
+
+---
+
+## Changer les permissions
+
+```bash
+chmod 755 script.sh
+chmod u+x fichier.sh
+```
+
+➡ `755` = utilisateur : rwx, groupe et autres : rx
+
+---
+
+## Changer le propriétaire
+
+```bash
+chown user:user fichier.txt
+```
+
+---
+
+## Exécuter en administrateur
+
+```bash
+sudo apt update
+```
+
+---
+
+## Bonnes pratiques
+
+- Vérifier les permissions avec `ls -l`.  
+- Ne donner des droits `777` qu’en dernier recours.  
+- Utiliser `sudo` uniquement si nécessaire.  

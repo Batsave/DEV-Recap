@@ -1,0 +1,74 @@
+---
+title: Gestion des fichiers et dossiers
+description: "Créer, supprimer, copier et déplacer des fichiers avec le terminal."
+sidebar:
+  position: 2
+---
+
+## Créer un fichier
+
+`touch` permet de créer un fichier vide.  
+Si le fichier existe déjà, il met à jour sa date de modification.
+
+```bash
+touch fichier.txt
+```
+
+---
+
+## Créer un dossier
+
+```bash
+mkdir projet
+mkdir -p dossier1/dossier2/dossier3
+```
+
+---
+
+## Supprimer un fichier ou un dossier
+
+- `rm fichier.txt` → supprime un fichier  
+- `rm -r dossier` → supprime un dossier et son contenu  
+- `rm -rf dossier` → supprime sans confirmation ⚠️
+
+---
+
+## Copier un fichier ou un dossier
+
+```bash
+cp fichier.txt copie.txt
+cp -r dossier1 dossier2
+```
+
+---
+
+## Déplacer ou renommer un fichier
+
+```bash
+mv fichier.txt nouveau.txt
+mv fichier.txt Documents/
+```
+
+---
+
+## Résumé des commandes
+
+| Commande  | Description | Exemple |
+|-----------|-------------|---------|
+| `touch`   | Créer un fichier vide | `touch fichier.txt` |
+| `mkdir`   | Créer un dossier | `mkdir projet` |
+| `mkdir -p`| Créer une arborescence complète | `mkdir -p a/b/c` |
+| `rm`      | Supprimer un fichier | `rm fichier.txt` |
+| `rm -r`   | Supprimer un dossier | `rm -r projet` |
+| `cp`      | Copier un fichier | `cp fichier.txt copie.txt` |
+| `cp -r`   | Copier un dossier | `cp -r dossier1 dossier2` |
+| `mv`      | Déplacer ou renommer | `mv fichier.txt nouveau.txt` |
+
+---
+
+## Bonnes pratiques
+
+- Vérifier avec `pwd` avant un `rm -r`.  
+- Utiliser `rm -i` pour demander confirmation.  
+- Préférer `mkdir -p` pour éviter les erreurs.  
+- Vérifier les résultats avec `ls`.  
