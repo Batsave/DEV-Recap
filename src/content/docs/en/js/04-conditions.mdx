@@ -1,98 +1,96 @@
 ---
 title: Conditions
-description: "Les structures conditionnelles en JavaScript : if, else, else if et switch."
+description: "Conditional structures in JavaScript: if, else, else if, and switch."
 sidebar:
   position: 3
 ---
 
 ## If / Else
 
-
-La structure conditionnelle permet d'exécuter du code uniquement si une condition est vraie.  
-En français, on peut le lire comme : **« Si ... alors ... sinon ... »**
+The conditional structure allows code to be executed only if a condition is true.  
+In English, it can be read as: **"If ... then ... else ..."**
 
 ```js
 let age = 18;
 
 if (age >= 18) {
-  console.log("Majeur");
+  console.log("Adult");
 } else {
-  console.log("Mineur");
+  console.log("Minor");
 }
 ```
 
-> Ici, si la variable age est supérieure ou égale à 18, on affiche "Majeur".
-Sinon, c’est "Mineur".
+> Here, if the variable age is greater than or equal to 18, it prints "Adult".  
+Otherwise, it prints "Minor".
 
 ---
 
 ## Else If
 
-else if permet de tester plusieurs conditions successives.
-Le programme s’arrête dès qu’une condition est vraie.
+`else if` allows testing multiple conditions in sequence.  
+The program stops as soon as one condition is true.
 
 ```js
-let note = 15;
+let grade = 15;
 
-if (note >= 16) {
-  console.log("Très bien");
-} else if (note >= 10) {
-  console.log("Moyen");
+if (grade >= 16) {
+  console.log("Excellent");
+} else if (grade >= 10) {
+  console.log("Average");
 } else {
-  console.log("Échec");
+  console.log("Fail");
 }
 ```
 
-> Si la note est 15 :
-> - La 1ère condition (note >= 16) est fausse
-> - La 2e condition (note >= 10) est vraie → on affiche "Moyen".
-> - La dernière n’est pas évaluée.
+> If the grade is 15:  
+> - The 1st condition (grade >= 16) is false  
+> - The 2nd condition (grade >= 10) is true → it prints "Average".  
+> - The last one is not evaluated.
 
 ---
 
 ## Switch
 
-switch est une alternative à plusieurs if/else if, plus lisible quand on compare une seule variable à plusieurs valeurs possibles.
+`switch` is an alternative to multiple if/else if statements, more readable when comparing a single variable against multiple possible values.
 
 ```js
-let jour = "mardi";
+let day = "Tuesday";
 
-switch (jour) {
-  case "lundi":
-    console.log("Début de semaine");
+switch (day) {
+  case "Monday":
+    console.log("Start of the week");
     break;
-  case "vendredi":
-    console.log("Bientôt le week-end");
+  case "Friday":
+    console.log("Almost the weekend");
     break;
   default:
-    console.log("Jour normal");
+    console.log("Regular day");
 }
 ```
 
-> [!CAUTION] Attention
-> Sans break, l’exécution continue dans les cases suivantes (effet de "fallthrough").
-> Le default est exécuté si aucun case ne correspond.
+> [!CAUTION] Warning  
+> Without `break`, execution continues into the following cases (fallthrough effect).  
+> The `default` block runs if no case matches.
 
 ---
 
-## Comparaison rapide
+## Quick comparison
 
-- If / Else : idéal pour tester des conditions complexes (age > 18 && permis === true).
-- Switch : plus lisible quand on teste une seule variable contre plusieurs valeurs fixes (jour === "lundi", jour === "mardi", etc.).
-
+- If / Else: ideal for testing complex conditions (age > 18 && license === true).  
+- Switch: more readable when testing one variable against several fixed values (day === "Monday", day === "Tuesday", etc.).  
 
 ---
 
-## Exemple pratique
+## Practical example
 
 ```js
 let role = "admin";
 
 if (role === "admin") {
-  console.log("Accès complet");
-} else if (role === "editeur") {
-  console.log("Accès limité : édition autorisée");
+  console.log("Full access");
+} else if (role === "editor") {
+  console.log("Limited access: editing allowed");
 } else {
-  console.log("Accès restreint : lecture seule");
+  console.log("Restricted access: read only");
 }
 ```

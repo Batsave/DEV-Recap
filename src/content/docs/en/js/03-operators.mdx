@@ -1,74 +1,73 @@
 ---
-title: Opérateurs
-description: "Opérateurs arithmétiques, de comparaison et logiques en JavaScript."
+title: Operators
+description: "Arithmetic, comparison, and logical operators in JavaScript."
 sidebar:
   position: 2
 ---
 
-## Opérateurs arithmétiques
+## Arithmetic operators
 
-| Opérateur | Exemple | Résultat |
-| --------- | ------- | -------- |
-| `+`       | `5 + 2` | 7        |
-| `-`       | `5 - 2` | 3        |
-| `*`       | `5 * 2` | 10       |
-| `/`       | `5 / 2` | 2.5      |
-| `%`       | `5 % 2` | 1        |
-
----
-
-## Opérateurs de comparaison
-
-| Opérateur | Exemple     | Résultat                |
-| --------- | ----------- | ----------------------- |
-| `==`      | `5 == "5"`  | true (égalité simple)   |
-| `===`     | `5 === "5"` | false (égalité stricte) |
-| `!=`      | `5 != "5"`  | false                   |
-| `!==`     | `5 !== "5"` | true                    |
-| `>` `<`   | `5 > 3`     | true                    |
+| Operator | Example | Result |
+| -------- | ------- | ------ |
+| `+`      | `5 + 2` | 7      |
+| `-`      | `5 - 2` | 3      |
+| `*`      | `5 * 2` | 10     |
+| `/`      | `5 / 2` | 2.5    |
+| `%`      | `5 % 2` | 1      |
 
 ---
 
-## Opérateurs logiques
+## Comparison operators
 
-Les opérateurs logiques permettent de combiner plusieurs conditions booléennes.
-
-| Opérateur | Exemple             | Résultat | Explication |
-|-----------|---------------------|----------|-------------|
-| `&&`      | `true && false`     | false    | Retourne `true` seulement si **les deux** conditions sont vraies |
-| `\|\|`    | `true \|\| false`   | true     | Retourne `true` si **au moins une** condition est vraie |
-| `!`       | `!true`             | false    | Inverse la valeur (NOT) |
-
+| Operator | Example     | Result                |
+| -------- | ----------- | --------------------- |
+| `==`     | `5 == "5"`  | true (loose equality) |
+| `===`    | `5 === "5"` | false (strict equality) |
+| `!=`     | `5 != "5"`  | false                 |
+| `!==`    | `5 !== "5"` | true                  |
+| `>` `<`  | `5 > 3`     | true                  |
 
 ---
 
-### Exemple pratique
+## Logical operators
+
+Logical operators allow you to combine multiple boolean conditions.
+
+| Operator | Example          | Result | Explanation |
+|----------|------------------|--------|-------------|
+| `&&`     | `true && false`  | false  | Returns `true` only if **both** conditions are true |
+| `||`     | `true || false`  | true   | Returns `true` if **at least one** condition is true |
+| `!`      | `!true`          | false  | Inverts the value (NOT) |
+
+---
+
+### Practical example
 
 ```js
 let age = 20;
-let aUnPermis = true;
+let hasLicense = true;
 
-if (age >= 18 && aUnPermis) {
-  console.log("Tu peux conduire !");
+if (age >= 18 && hasLicense) {
+  console.log("You can drive!");
 } else {
-  console.log("Tu ne peux pas conduire.");
+  console.log("You cannot drive.");
 }
 
-let estConnecte = false;
-let estAdmin = true;
+let isLoggedIn = false;
+let isAdmin = true;
 
-if (estConnecte || estAdmin) {
-  console.log("Accès autorisé");
+if (isLoggedIn || isAdmin) {
+  console.log("Access granted");
 } else {
-  console.log("Accès refusé");
+  console.log("Access denied");
 }
 ```
 
 ---
 
-## Table de vérité
+## Truth table
 
-| A     | B     | `A && B` | `A \|\| B` |
+| A     | B     | `A && B` | `A || B` |
 |-------|-------|----------|----------|
 | true  | true  | true     | true     |
 | true  | false | false    | true     |
@@ -77,9 +76,9 @@ if (estConnecte || estAdmin) {
 
 ---
 
-### Négation (`!`)
+### Negation (`!`)
 
-L’opérateur `!` inverse la valeur logique :
+The `!` operator inverts the boolean value:
 
 | A     | `!A`  |
 |-------|-------|

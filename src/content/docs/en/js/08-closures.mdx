@@ -1,98 +1,92 @@
 ---
 title: Closures
-description: "Introduction aux closures en JavaScript et leur utilité pour préserver un état."
+description: "Introduction to closures in JavaScript and their usefulness in preserving state."
 sidebar:
   position: 7
 ---
 
-## Qu'est-ce qu'une closure ?
+## What is a closure?
 
-Une **closure** est créée lorsqu'une fonction interne **mémorise** les variables de son environnement extérieur, même après que la fonction externe ait fini son exécution.  
+A **closure** is created when an inner function **remembers** the variables from its outer environment, even after the outer function has finished executing.  
 
-En français, on peut dire :  
-> *« Une closure est une fonction qui se souvient de l’endroit où elle a été créée »*.
-
+In simple terms:  
+> *“A closure is a function that remembers where it was created.”*
 
 ---
 
+## Concrete example: timer
 
-## Exemple concret : minuterie
-
-Une closure peut être utilisée pour créer un **timer** qui garde en mémoire le nombre de secondes écoulées.
-
+A closure can be used to create a **timer** that keeps track of the number of seconds elapsed.
 
 ```js
 function startTimer() {
-  let secondes = 0;
+  let seconds = 0;
 
   return function() {
-    secondes++;
-    console.log("Temps écoulé :", secondes, "s");
+    seconds++;
+    console.log("Elapsed time:", seconds, "s");
   };
 }
 
 const timer = startTimer();
 
-timer(); // Temps écoulé : 1 s
-timer(); // Temps écoulé : 2 s
-timer(); // Temps écoulé : 3 s
+timer(); // Elapsed time: 1 s
+timer(); // Elapsed time: 2 s
+timer(); // Elapsed time: 3 s
 ```
 
 ---
 
-## Utilisations pratiques des closures
+## Practical uses of closures
 
-- **Préserver un état** entre plusieurs appels (ex. compteur, timer).  
-- Créer des **variables privées** non accessibles depuis l’extérieur.  
-- **Éviter les variables globales** → meilleur cloisonnement du code.  
-- Très utile dans les **callbacks** et en programmation fonctionnelle.
-
+- **Preserve state** across multiple calls (e.g. counter, timer).  
+- Create **private variables** not accessible from the outside.  
+- **Avoid global variables** → better encapsulation.  
+- Very useful in **callbacks** and functional programming.  
 
 ---
 
-## Exemple : variables privées
+## Example: private variables
 
-Une closure permet de protéger une donnée sensible (comme le solde d’un compte bancaire) en la rendant accessible uniquement via des méthodes dédiées.
+A closure can protect sensitive data (like a bank account balance) by making it accessible only through dedicated methods.
 
 ```js
 function createBankAccount() {
-  let balance = 0; // variable privée
+  let balance = 0; // private variable
 
   return {
     deposit(amount) {
       balance += amount;
-      console.log("Nouveau solde :", balance);
+      console.log("New balance:", balance);
     },
     withdraw(amount) {
       if (amount <= balance) {
         balance -= amount;
-        console.log("Retrait effectué, solde :", balance);
+        console.log("Withdrawal successful, balance:", balance);
       } else {
-        console.log("Fonds insuffisants");
+        console.log("Insufficient funds");
       }
     }
   };
 }
 
 const account = createBankAccount();
-account.deposit(100); // Nouveau solde : 100
-account.withdraw(30); // Retrait effectué, solde : 70
-// console.log(account.balance); ❌ impossible d'y accéder directement
-
+account.deposit(100); // New balance: 100
+account.withdraw(30); // Withdrawal successful, balance: 70
+// console.log(account.balance); ❌ not directly accessible
 ```
 
 ---
 
-## Pièges à connaître
+## Pitfalls to know
 
-- Trop de closures inutiles peuvent **consommer de la mémoire**.  
-- Elles peuvent créer des **références cachées** qui empêchent le *garbage collector* de libérer certaines variables.  
-- Bien utilisées, elles rendent le code plus sûr et mieux structuré.  
-
+- Too many unnecessary closures can **consume memory**.  
+- They can create **hidden references** that prevent the garbage collector from freeing variables.  
+- Used wisely, they make code safer and better structured.  
 
 ---
 
-## En résumé
+## Summary
 
-Une closure = **une fonction + son environnement**.  
-C’est un des piliers de JavaScript moderne (utilisé dans les callbacks, les fonctions fléchées, les frameworks comme React, etc.).
+A closure = **a function + its environment**.  
+It’s one of the pillars of modern JavaScript (used in callbacks, arrow functions, frameworks like React, etc.).  

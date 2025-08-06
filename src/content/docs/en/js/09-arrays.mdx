@@ -1,57 +1,57 @@
 ---
-title: Tableaux
-description: "Manipuler les tableaux en JavaScript : création, méthodes et parcours."
+title: Arrays
+description: "Working with arrays in JavaScript: creation, methods, and iteration."
 sidebar:
   position: 8
 ---
 
-## Qu'est-ce qu'un tableau ?
+## What is an array?
 
-Un **tableau** (Array) est une **liste ordonnée** qui peut contenir plusieurs valeurs.  
-Chaque élément du tableau est identifié par un **index** (commence à 0).
+An **array** is an **ordered list** that can hold multiple values.  
+Each element is identified by an **index** (starting at 0).
 
-Exemple : `["pomme", "banane", "poire"]`  
-- `fruits[0]` → "pomme"  
-- `fruits[1]` → "banane"  
-
-
----
-
-## Créer un tableau
-
-On peut créer un tableau avec des crochets `[]`.
+Example: `["apple", "banana", "pear"]`  
+- `fruits[0]` → "apple"  
+- `fruits[1]` → "banana"  
 
 ---
 
-## Méthodes principales
+## Creating an array
 
-| Méthode | Exemple | Résultat |
-|---------|---------|----------|
-| `push()` | `fruits.push("kiwi")` | Ajoute à la fin |
-| `pop()` | `fruits.pop()` | Retire le dernier élément |
-| `shift()` | `fruits.shift()` | Retire le premier élément |
-| `unshift()` | `fruits.unshift("fraise")` | Ajoute au début |
-| `map()` | `fruits.map(f => f.toUpperCase())` | Transforme les éléments |
-| `filter()` | `fruits.filter(f => f.startsWith("p"))` | Filtre les éléments |
-| `reduce()` | `[1,2,3].reduce((a,b)=>a+b)` | Réduit à une seule valeur |
+You can create an array using square brackets `[]`.
 
 ---
 
-## Parcourir un tableau
+## Main methods
 
-### Avec un `for` classique
-On parcourt le tableau via ses **index** :
+| Method      | Example                           | Result                  |
+|-------------|-----------------------------------|-------------------------|
+| `push()`    | `fruits.push("kiwi")`             | Adds to the end         |
+| `pop()`     | `fruits.pop()`                    | Removes the last item   |
+| `shift()`   | `fruits.shift()`                  | Removes the first item  |
+| `unshift()` | `fruits.unshift("strawberry")`    | Adds to the beginning   |
+| `map()`     | `fruits.map(f => f.toUpperCase())`| Transforms the elements |
+| `filter()`  | `fruits.filter(f => f.startsWith("p"))` | Filters elements |
+| `reduce()`  | `[1,2,3].reduce((a,b)=>a+b)`      | Reduces to one value    |
+
+---
+
+## Iterating over an array
+
+### With a classic `for`
+Loop through using **indexes**:
 
 ```js
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
 ```
---
 
-### Avec `for...of`
+---
 
-Parcourt directement les valeurs (plus lisible) :
+### With `for...of`
+
+Loop directly through values (more readable):
 
 ```js
 for (let fruit of fruits) {
@@ -59,66 +59,62 @@ for (let fruit of fruits) {
 }
 ```
 
---
+---
 
-### Avec `forEach`
-Appelle une fonction sur chaque élément :
+### With `forEach`
+
+Calls a function on each element:
 
 ```js
 fruits.forEach(fruit => console.log(fruit));
 ```
 
-
 ---
 
+## Focus: the `map()` method
 
-## Focus : la méthode `map()`
+The **`map()`** method creates a **new array** by applying a function to **each element** of the original array.  
+> Important: `map()` does **not** modify the original array.
 
-La méthode **`map()`** crée un **nouveau tableau** en appliquant une fonction à **chaque élément** du tableau original.  
-> Important : `map()` ne modifie **pas** le tableau initial.
-
-Exemple : transformer tous les éléments en majuscules.
+Example: transform all items to uppercase.
 
 ```js
-let fruits = ["pomme", "banane", "poire"];
-let majuscules = fruits.map(fruit => fruit.toUpperCase());
+let fruits = ["apple", "banana", "pear"];
+let upper = fruits.map(fruit => fruit.toUpperCase());
 
-console.log(majuscules); // ["POMME", "BANANE", "POIRE"]
-console.log(fruits);     // ["pomme", "banane", "poire"] (inchangé)
+console.log(upper);  // ["APPLE", "BANANA", "PEAR"]
+console.log(fruits); // ["apple", "banana", "pear"] (unchanged)
 ```
 
-Autre exemple : extraire une propriété d’un tableau d’objets.
+Another example: extract a property from an array of objects.
 
 ```js
-let utilisateurs = [
-  { nom: "Alice", age: 25 },
-  { nom: "Bob", age: 30 },
-  { nom: "Charlie", age: 35 }
+let users = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 35 }
 ];
 
-let noms = utilisateurs.map(u => u.nom);
-console.log(noms); // ["Alice", "Bob", "Charlie"]
+let names = users.map(u => u.name);
+console.log(names); // ["Alice", "Bob", "Charlie"]
 ```
-
-
 
 ---
 
-## Exemple pratique
+## Practical example
 
-Filtrer les nombres pairs d’un tableau :
+Filter even numbers from an array:
 
 ```js
-let nombres = [1, 2, 3, 4, 5];
-let pairs = nombres.filter(n => n % 2 === 0);
-console.log(pairs); // [2, 4]
+let numbers = [1, 2, 3, 4, 5];
+let evens = numbers.filter(n => n % 2 === 0);
+console.log(evens); // [2, 4]
 ```
 
 ---
 
-## Bonne pratiques
+## Best practices
 
-- Utiliser `for...of` ou `forEach` pour plus de lisibilité.
-- Préférer `map`, `filter`, `reduce` pour écrire du code plus fonctionnel et concis.
-- Éviter de mélanger différents types dans un même tableau (meilleure lisibilité).
-
+- Use `for...of` or `forEach` for readability.  
+- Prefer `map`, `filter`, `reduce` to write more functional and concise code.  
+- Avoid mixing different types in the same array (for clarity).  

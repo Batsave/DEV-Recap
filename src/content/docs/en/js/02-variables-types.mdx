@@ -1,107 +1,106 @@
 ---
 title: Variables & Types
-description: "Déclaration de variables avec var, let et const, et présentation des types de base en JavaScript."
+description: "Declaring variables with var, let, and const, and an introduction to basic JavaScript types."
 sidebar:
   position: 1
 ---
 
-## Déclaration de variables
+## Declaring variables
 
-En JavaScript, on peut déclarer une variable avec **`var`**, **`let`** ou **`const`**.
+In JavaScript, you can declare a variable with **`var`**, **`let`**, or **`const`**.
 
-
-| Mot-clé  | Description |
+| Keyword  | Description |
 |----------|-------------|
-| `var`    | Ancienne façon de déclarer une variable (fonctionne encore mais **à éviter** car sa portée est confuse). |
-| `let`    | Variable **modifiable**, limitée au **bloc** `{ }` où elle est déclarée. |
-| `const`  | Variable **constante**, non réaffectable (mais son contenu peut changer si c’est un objet ou un tableau). |
-
+| `var`    | Old way of declaring variables (still works but **should be avoided** because of confusing scope). |
+| `let`    | A **modifiable** variable, limited to the **block** `{ }` where it is declared. |
+| `const`  | A **constant** variable, cannot be reassigned (but its content can still change if it’s an object or an array). |
 
 ```js
-let nom = "Baptiste";
+let name = "Baptiste";
 const age = 26;
 ```
 
-⚠️ Avec const, si la valeur est un objet ou un tableau, on peut toujours modifier son contenu :
+⚠️ With const, if the value is an object or an array, you can still modify its contents:
 
 ```js
-const fruits = ["pomme", "banane"];
-fruits.push("poire"); 
-console.log(fruits); // ["pomme", "banane", "poire"]
+const fruits = ["apple", "banana"];
+fruits.push("pear"); 
+console.log(fruits); // ["apple", "banana", "pear"]
 ```
 
 ---
 
-## Types de données en JavaScript
-En JavaScript, on distingue deux grandes catégories :
+## Data types in JavaScript
 
-### Types primitifs
-Les primitives sont immuables (leur valeur ne change pas une fois créée) et stockées directement en mémoire.
+In JavaScript, there are two main categories:
 
-- **String** : texte  
-- **Number** : nombre  
-- **Boolean** : vrai/faux  
-- **Null** : valeur vide  
-- **Undefined** : valeur non définie  
-- **Symbol** : identifiant unique (rare, avancé)
-- **BigInt** : très grands entiers  
+### Primitive types
+Primitives are immutable (their value cannot change once created) and are stored directly in memory.
 
-```js
-let texte = "Hello";     // string
-let nombre = 42;         // number
-let actif = true;        // boolean
-let vide = null;         // null
-let inconnu;             // undefined
-let grandNombre = 123456789012345678901234567890n; // BigInt
-```
-
---
-
-### Types par référence
-
-Les références pointent vers des objets en mémoire.
-
-- **Object** : ensemble clé/valeur
-- **Array** : liste ordonnée
-- **Function** : aussi un objet en JavaScript
-
+- **String**: text  
+- **Number**: number  
+- **Boolean**: true/false  
+- **Null**: empty value  
+- **Undefined**: undefined value  
+- **Symbol**: unique identifier (rare, advanced)  
+- **BigInt**: very large integers  
 
 ```js
-let personne = { nom: "Alice", age: 30 }; // object
-let fruits = ["pomme", "banane"];         // array
-function saluer() { return "Bonjour"; }   // function
-
+let text = "Hello";     // string
+let number = 42;        // number
+let active = true;      // boolean
+let empty = null;       // null
+let unknown;            // undefined
+let bigNumber = 123456789012345678901234567890n; // BigInt
 ```
+
 ---
 
-## Vérifier le type d'une variable
+### Reference types
 
-Avec typeof :
+References point to objects in memory.
+
+- **Object**: key/value pairs  
+- **Array**: ordered list  
+- **Function**: also an object in JavaScript  
+
 ```js
-console.log(typeof "Hello");  // string
-console.log(typeof 42);       // number
-console.log(typeof true);     // boolean
-console.log(typeof null);     // object (⚠️ bug historique du langage)
-console.log(typeof []);       // object
+let person = { name: "Alice", age: 30 }; // object
+let fruits = ["apple", "banana"];        // array
+function greet() { return "Hello"; }     // function
+```
+
+---
+
+## Checking a variable’s type
+
+Using typeof:
+
+```js
+console.log(typeof "Hello");   // string
+console.log(typeof 42);        // number
+console.log(typeof true);      // boolean
+console.log(typeof null);      // object (⚠️ historical bug in the language)
+console.log(typeof []);        // object
 console.log(typeof function(){}); // function
 ```
 
 ---
 
-## Exemple pratique
+## Practical example
 
 ```js
 let x = 10;
 let y = 5;
-let somme = x + y;
-console.log("La somme est :", somme); // La somme est : 15
+let sum = x + y;
+console.log("The sum is:", sum); // The sum is: 15
 ```
+
 ---
 
-## Bonnes pratiques modernes
+## Modern best practices
 
-
-- Utilise const par défaut.
-- Si tu sais que la valeur doit changer, utilise let.
-- Évite absolument var, sauf pour comprendre du vieux code.
-- Vérifie le type avec `typeof` quand c’est nécessaire.
+- Use **const** by default.  
+- Use **let** only when the value needs to change.  
+- Avoid **var**, except when reading old code.  
+- Use `typeof` to check the type when necessary.  

@@ -1,76 +1,79 @@
 ---
 title: DOM (Document Object Model)
-description: "Manipuler le DOM avec JavaScript : sélection, modification et création d'éléments."
+description: "Manipulate the DOM with JavaScript: selecting, modifying, and creating elements."
 sidebar:
   position: 10
 ---
 
-## Qu'est-ce que le DOM ?
+## What is the DOM?
 
-Le **DOM (Document Object Model)** est une représentation sous forme d’**arbre** du contenu HTML d’une page.  
-Grâce à JavaScript, on peut **sélectionner, modifier, ajouter ou supprimer** des éléments du DOM pour rendre la page interactive.
+The **DOM (Document Object Model)** is a tree representation of a page's HTML content.  
+With JavaScript, you can **select, modify, add, or remove** DOM elements to make the page interactive.
 
 ---
 
-## Sélectionner des éléments
+## Selecting elements
 
-Il existe plusieurs façons de sélectionner un élément dans la page :  
+There are several ways to select an element on the page:
 
-- `getElementById("id")` → sélectionne par **ID**  
-- `querySelector("sélecteur")` → sélectionne le **premier élément** qui correspond  
-- `querySelectorAll("sélecteur")` → sélectionne **tous les éléments** correspondants (NodeList)
+- `getElementById("id")` → select by **ID**  
+- `querySelector("selector")` → select the **first matching element**  
+- `querySelectorAll("selector")` → select **all matching elements** (NodeList)
 
 ```js
-let titre = document.getElementById("titre");
-let bouton = document.querySelector("button");
-let boutons = document.querySelectorAll("button");
+let title = document.getElementById("title");
+let button = document.querySelector("button");
+let buttons = document.querySelectorAll("button");
 ```
 
 ---
 
-## Modifier du contenu et du style
+## Modifying content and style
 
-Une fois l’élément sélectionné, on peut modifier son contenu et son style.
+Once an element is selected, you can modify its content and style.
 
 ```js
-let titre = document.getElementById("titre");
-titre.innerText = "Nouveau texte";
-titre.style.color = "red";
+let title = document.getElementById("title");
+title.innerText = "New text";
+title.style.color = "red";
 ```
 
-### Différences entre innerText, textContent et innerHTML
-- `innerText` → affiche uniquement le texte visible (ignore les balises cachées par CSS).
-- `textContent` → récupère tout le texte, même caché.
-- `innerHTML` → permet d’insérer du HTML (Attention aux failles XSS si contenu externe).
+### Differences between `innerText`, `textContent`, and `innerHTML`
+
+- `innerText` → returns only visible text (ignores content hidden via CSS).
+- `textContent` → returns all text, including hidden.
+- `innerHTML` → allows inserting HTML (beware of XSS vulnerabilities with external content).
+
+
 
 ---
 
-## Créer et insérer un élément
+## Creating and inserting an element
 
-On peut créer un nouvel élément avec `document.createElement()` et l’insérer dans la page.
+You can create a new element with `document.createElement()` and insert it into the page.
 
 ```js
-let nouveauParagraphe = document.createElement("p");
-nouveauParagraphe.innerText = "Je suis ajouté en JS";
+let newParagraph = document.createElement("p");
+newParagraph.innerText = "I am added via JS";
 
-document.body.appendChild(nouveauParagraphe);
+document.body.appendChild(newParagraph);
 ```
 
-### Autres méthodes utiles
-- `append()` → ajoute à la fin (comme `appendChild`)
-- `prepend()` → ajoute au début
-- `remove()` → supprime un élément
+### Other useful methods
+- `append()` → adds to the end (like`appendChild`)
+- `prepend()` → adds to the beginning
+- `remove()` → removes an element
 
 ```js
-document.body.prepend(nouveauParagraphe); // insère au début
-titre.remove(); // supprime l'élément titre
+document.body.prepend(newParagraph); // insert at the beginning
+title.remove(); // remove the title element
 ```
 
 ---
 
-## Bonnes pratiques
+## Best practices
 
-- Préférer **`querySelector`** et **`querySelectorAll`** (plus flexibles grâce aux sélecteurs CSS).  
-- Utiliser **`textContent`** plutôt que **`innerHTML`** pour éviter les failles de sécurité (*injections XSS*).  
-- Créer et insérer les éléments **dynamiquement** au lieu de modifier directement le HTML brut.  
+- Prefer `querySelector` and `querySelectorAll` (more flexible with CSS selectors).
+- Use `textContent` instead of `innerHTML` to prevent XSS vulnerabilities.
+- Create and insert elements **dynamically** instead of modifying raw HTML directly.  
 

@@ -1,95 +1,96 @@
 ---
-title: Objets
-description: "Introduction aux objets en JavaScript : création, accès aux propriétés et parcours."
+title: Objects
+description: "Introduction to objects in JavaScript: creation, property access, and iteration."
 sidebar:
   position: 9
 ---
 
-## Qu'est-ce qu'un objet ?
+## What is an object?
 
-Un **objet** est une structure qui permet de stocker des données sous forme de **paires clé/valeur**.  
-Chaque clé est une chaîne de caractères, et chaque valeur peut être de **n'importe quel type** (string, number, array, autre objet…).
+An **object** is a structure that allows storing data in the form of **key/value pairs**.  
+Each key is a string, and each value can be of **any type** (string, number, array, another object…).
 
-Exemple en français :  
-- Un objet est comme une **fiche descriptive** avec des champs.
+Example in English:  
+- An object is like a **descriptive sheet** with fields.
 
 
 ---
-## Créer un objet
+## Creating an object
 
 ```js
-let personne = {
-  nom: "Alice",
+let person = {
+  name: "Alice",
   age: 25,
-  actif: true
+  active: true
 };
 
-console.log(personne.nom);  // Alice
-console.log(personne["age"]); // 25
+console.log(person.name);  // Alice
+console.log(person["age"]); // 25
 ```
 
-### Dot notation vs Bracket notation
+## Dot notation vs Bracket notation
 
-- Dot notation (`personne.nom`) → plus lisible, mais limité aux clés valides comme identifiant.
-- Bracket notation (`personne["nom complet"]`) → utile si la clé contient des espaces ou est une variable.
+- Dot notation (`person.name`) → more readable, but limited to valid identifier keys.
+- Bracket notation (`person["full name"]`) → useful if the key contains spaces or is stored in a variable.
+
+---
+## Modifying an object
+
+You can add or modify a property at any time:
+
+
+```js
+let car = { brand: "Tesla", model: "Model 3" };
+car.color = "red";
+
+console.log(car);
+```
 
 ---
 
-## Modifier un objet
+## Iterating over an object
 
-On peut ajouter ou modifier une propriété à tout moment :
-
-```js
-let voiture = { marque: "Tesla", modele: "Model 3" };
-voiture.couleur = "rouge";
-
-console.log(voiture);
-```
-
----
-
-## Parcourir un objet
-
-La boucle `for...in` permet de parcourir toutes les clés d’un objet.
+The `for...in` loop allows iterating over all the keys of an object.
 
 ```js
-let utilisateur = { nom: "Bob", age: 30 };
+let user = { name: "Bob", age: 30 };
 
-for (let cle in utilisateur) {
-  console.log(cle, ":", utilisateur[cle]);
+for (let key in user) {
+  console.log(key, ":", user[key]);
 }
 ```
 
-### Autres méthodes utiles
-- `Object.keys(obj)` → renvoie toutes les clés sous forme de tableau.
-- `Object.values(obj)` → renvoie toutes les valeurs.
-- `Object.entries(obj)` → renvoie des paires `[clé, valeur]`.
+### Other useful methods
+- `Object.keys(obj)` → returns all the keys as an array.
+- `Object.values(obj)` → returns all the values.
+- `Object.entries(obj)` → returns `[key, value]` pairs.
 
-Exemple :
+Example:
 
 ```js
-let utilisateur = { nom: "Bob", age: 30 };
+let user = { name: "Bob", age: 30 };
 
-console.log(Object.keys(utilisateur));   // ["nom", "age"]
-console.log(Object.values(utilisateur)); // ["Bob", 30]
-console.log(Object.entries(utilisateur)); // [["nom","Bob"], ["age",30]]
+console.log(Object.keys(user));   // ["name", "age"]
+console.log(Object.values(user)); // ["Bob", 30]
+console.log(Object.entries(user)); // [["name","Bob"], ["age",30]]
+
 ```
 
 ---
-
-## Objets imbriqués
-Les objets peuvent contenir d’autres objets (structure hiérarchique).
+## Nested objects
+Objects can contain other objects (hierarchical structure).
 
 ```js
-let personne = {
-  nom: "Alice",
-  adresse: {
-    ville: "Paris",
-    codePostal: 75000
+let person = {
+  name: "Alice",
+  address: {
+    city: "Paris",
+    zipCode: 75000
   }
 };
 
-console.log(personne.adresse.ville); // Paris
+console.log(person.address.city); // Paris
+
 ```
 
 
@@ -97,26 +98,27 @@ console.log(personne.adresse.ville); // Paris
 
 ## JSON
 
-Le JSON (JavaScript Object Notation) est un format de données basé sur la syntaxe des objets JS.
-Il est très utilisé pour l’échange de données entre un serveur et une application.
+JSON (JavaScript Object Notation) is a data format based on JS object syntax.  
+It is widely used for data exchange between a server and an application.
 
-- `JSON.parse(chaine)` → transforme une chaîne JSON en objet JavaScript.
-- `JSON.stringify(objet)` → transforme un objet en chaîne JSON.
+- `JSON.parse(string)` → converts a JSON string into a JavaScript object.  
+- `JSON.stringify(object)` → converts an object into a JSON string.  
 
 ```js
-let json = '{"nom": "Alice", "age": 25}';
-let objet = JSON.parse(json);
-console.log(objet.nom); // Alice
+let json = '{"name": "Alice", "age": 25}';
+let obj = JSON.parse(json);
+console.log(obj.name); // Alice
 
-let chaine = JSON.stringify(objet);
-console.log(chaine); // {"nom":"Alice","age":25}
+let string = JSON.stringify(obj);
+console.log(string); // {"name":"Alice","age":25}
+
 ```
 
 ---
 
-## Bonnes pratiques
+## Best practices
 
-- Utiliser la **dot notation** si possible (`obj.prop`), sinon la **bracket notation** (`obj["prop"]`) lorsque les clés ne sont pas des identifiants valides.  
-- Penser à `Object.keys()`, `Object.values()`, `Object.entries()` pour manipuler les objets facilement.  
-- Utiliser **JSON** (`JSON.parse` / `JSON.stringify`) pour sauvegarder ou transmettre des données.  
-- Organiser ses objets avec des **sous-objets** si besoin (ex. `adresse` dans `personne`).  
+- Use **dot notation** if possible (`obj.prop`), otherwise use **bracket notation** (`obj["prop"]`) when keys are not valid identifiers.  
+- Think of `Object.keys()`, `Object.values()`, `Object.entries()` to easily manipulate objects.  
+- Use **JSON** (`JSON.parse` / `JSON.stringify`) to save or transfer data.  
+- Organize your objects with **nested objects** if needed (e.g., `address` inside `person`).  
