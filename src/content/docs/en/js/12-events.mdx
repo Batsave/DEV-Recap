@@ -1,112 +1,110 @@
 ---
-title: Événements
-description: "Gestion des événements en JavaScript avec addEventListener."
+title: Events
+description: "Handling events in JavaScript with addEventListener."
 sidebar:
   position: 11
 ---
 
-## Qu'est-ce qu'un événement ?
+## What is an event?
 
-Un **événement** est une action déclenchée par l’utilisateur ou le navigateur :  
-clic de souris, appui sur une touche, chargement d’une page, etc.  
+An **event** is an action triggered by the user or the browser:  
+mouse click, key press, page load, etc.
 
-JavaScript permet de **réagir** à ces événements en exécutant du code.
+JavaScript lets you **respond** to these events by running code.
 
 ---
 
-## Ajouter un événement
+## Adding an event listener
 
-La méthode moderne est `addEventListener()`.  
-Elle permet d’écouter un événement et de définir la fonction à exécuter.
+The modern method is `addEventListener()`.  
+It allows listening for an event and defining the function to execute.
 
 ```js
-let bouton = document.getElementById("monBouton");
+let button = document.getElementById("myButton");
 
-bouton.addEventListener("click", () => {
-  alert("Bouton cliqué !");
+button.addEventListener("click", () => {
+  alert("Button clicked!");
 });
 ```
 
-> Avantage : on peut attacher plusieurs événements sur le même élément, et les retirer avec `removeEventListener`.
+> Advantage: you can attach multiple listeners to the same element and remove them with `removeEventListener`.
 
 ---
 
-## Types d'événements courants
+## Common event types
 
-- `click` → clic de souris  
-- `mouseover` → passage de la souris  
-- `keydown` → touche du clavier enfoncée  
-- `submit` → soumission d'un formulaire  
+- `click` → mouse click  
+- `mouseover` → mouse hover  
+- `keydown` → keyboard key pressed  
+- `submit` → form submission  
 
 ---
 
-## Utiliser l'objet `event`
+## Using the `event` object
 
-Lorsqu’un événement est déclenché, la fonction de rappel reçoit automatiquement un **objet `event`**.  
-Cet objet contient **toutes les informations** sur l’action qui vient de se produire.
+When an event fires, the callback function automatically receives an **`event` object**.  
+This object contains **all the information** about the action that occurred.
 
-Exemples d’informations utiles :  
-- `event.type` → type d’événement (`click`, `keydown`, …)  
-- `event.target` → élément qui a déclenché l’événement  
-- `event.key` → touche pressée (uniquement pour les événements clavier)  
-- `event.clientX` / `event.clientY` → coordonnées du clic (événements souris)  
+Useful properties:  
+- `event.type` → event type (`click`, `keydown`, etc.)  
+- `event.target` → element that triggered the event  
+- `event.key` → key pressed (keyboard events only)  
+- `event.clientX` / `event.clientY` → click coordinates (mouse events)  
 
 ```js
 document.addEventListener("keydown", (event) => {
-  console.log("Type :", event.type);     // "keydown"
-  console.log("Touche appuyée :", event.key); // ex. "a"
+  console.log("Type:", event.type);      // "keydown"
+  console.log("Key pressed:", event.key); // e.g. "a"
 });
 ```
 
 ---
-## Exemple avec un clic
+## Click example
 
 ```js
 document.addEventListener("click", (event) => {
-  console.log("Élément cliqué :", event.target);
-  console.log("Position du clic :", event.clientX, event.clientY);
+  console.log("Element clicked:", event.target);
+  console.log("Click position:", event.clientX, event.clientY);
 });
 ```
-> L’objet `event` est donc indispensable pour rendre ton code plus réactif et précis.
+> The `event` object is essential for making your code more responsive and precise.
 
 ---
 
-## Exemple pratique
+## Practical example
 
-```js 
-<input type="text" id="champ" placeholder="Écris quelque chose">
-<p id="affichage"></p>
+```html
+<input type="text" id="inputField" placeholder="Type something">
+<p id="display"></p>
 
 <script>
-  let champ = document.getElementById("champ");
-  let affichage = document.getElementById("affichage");
+  let inputField = document.getElementById("inputField");
+  let display = document.getElementById("display");
 
-  champ.addEventListener("input", () => {
-    affichage.innerText = champ.value;
+  inputField.addEventListener("input", () => {
+    display.innerText = inputField.value;
   });
 </script>
-
 ```
-> Ici, le paragraphe s’actualise en direct à chaque saisie.
+> Here, the paragraph updates in real-time as you type.
 
 ---
 
-## Propagation des événements
+## Event propagation
 
-Par défaut, les événements suivent deux phases :  
+By default, events go through two phases:
 
-1. **Capturing** → l’événement part du **document** et descend dans l’arbre DOM jusqu’à l’élément ciblé.  
-2. **Bubbling** → une fois déclenché, l’événement remonte de l’**élément ciblé** vers ses parents.  
+1. **Capturing** → the event travels from the **document** down to the target element in the DOM tree.  
+2. **Bubbling** → after triggering, the event bubbles up from the **target element** to its ancestors.
 
-Cette mécanique permet d’utiliser l’**event delegation** : gérer les événements au niveau d’un parent au lieu de les attacher à chaque enfant individuellement.  
-Très pratique pour des listes ou des éléments ajoutés dynamiquement.  
+This mechanism enables **event delegation**: handling events at a parent level instead of attaching listeners to each child individually.  
+Very useful for lists or dynamically added elements.
 
 ---
 
-## Bonnes pratiques 
+## Best practices
 
-- Utiliser **`addEventListener`** plutôt que `onclick="..."` dans le HTML (plus propre et flexible).  
-- Toujours exploiter l’objet **`event`** pour obtenir des infos utiles (`event.target`, `event.key`, etc.).  
-- Supprimer les écouteurs inutiles avec **`removeEventListener`** pour éviter les fuites mémoire.  
-- Privilégier l’**event delegation** (écouter un parent plutôt que chaque enfant) pour de meilleures performances.  
-
+- Use **`addEventListener`** instead of `onclick="..."` in HTML (cleaner and more flexible).  
+- Always utilize the **`event` object** for useful information (`event.target`, `event.key`, etc.).  
+- Remove unnecessary listeners with **`removeEventListener`** to avoid memory leaks.  
+- Prefer **event delegation** (listen on a parent instead of each child) for better performance.  

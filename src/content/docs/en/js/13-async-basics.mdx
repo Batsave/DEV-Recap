@@ -1,78 +1,79 @@
 ---
-title: Programmation Asynchrone
-description: "Introduction à la programmation asynchrone en JavaScript : setTimeout, setInterval, Promises, async/await."
+title: Asynchronous Programming
+description: "Introduction to asynchronous programming in JavaScript: setTimeout, setInterval, Promises, async/await."
 sidebar:
   position: 12
 ---
 
-## Qu'est-ce que l'asynchrone ?
+## What is asynchronous programming?
 
-En JavaScript, le code est exécuté **ligne par ligne** (synchronement).  
-Mais certaines opérations (ex. attendre un délai, charger une ressource externe, faire une requête HTTP) prennent du temps.  
+In JavaScript, code runs **line by line** (synchronously).  
+But some operations (e.g., waiting a delay, loading an external resource, making an HTTP request) take time.
 
-> L’asynchrone permet de **ne pas bloquer le programme** pendant ces opérations.  
-Le reste du code continue de s’exécuter, et la tâche longue sera traitée plus tard quand elle est prête.
+> Asynchronous programming allows you to **not block the program** during these operations.  
+The rest of the code continues running, and the long task will be handled later when it’s ready.
 
 ---
 
 ## setTimeout
 
-`setTimeout` exécute une fonction **une seule fois** après un délai donné (en millisecondes).
+`setTimeout` runs a function **once** after a specified delay (in milliseconds).
 
 ```js
-console.log("Début");
+console.log("Start");
 
 setTimeout(() => {
-  console.log("Exécuté après 2 secondes");
+  console.log("Executed after 2 seconds");
 }, 2000);
 
-console.log("Fin");
+console.log("End");
 ```
-### Explication (setTimeout)
 
-- `console.log("Début")` → s’affiche immédiatement  
-- `setTimeout` est planifié pour **2000 ms (2s)**  
-- `console.log("Fin")` s’exécute **avant** le callback de `setTimeout`  
-- Après 2 secondes, la fonction dans `setTimeout` est exécutée  
+### Explanation (setTimeout)
+
+- `console.log("Start")` → logs immediately  
+- `setTimeout` is scheduled for **2000 ms (2s)**  
+- `console.log("End")` runs **before** the `setTimeout` callback  
+- After 2 seconds, the function inside `setTimeout` executes  
 
 ---
 
 ## setInterval
 
-`setInterval` exécute une fonction **de manière répétée** à intervalles réguliers.
+`setInterval` runs a function **repeatedly** at regular intervals.
 
 ```js
-let compteur = 0;
+let count = 0;
 
-let intervalle = setInterval(() => {
-  compteur++;
-  console.log("Compteur :", compteur);
+let interval = setInterval(() => {
+  count++;
+  console.log("Count:", count);
 
-  if (compteur >= 5) {
-    clearInterval(intervalle); // stoppe la boucle
+  if (count >= 5) {
+    clearInterval(interval); // stops the loop
   }
 }, 1000);
 ```
 
-### Explication (setInterval)
+### Explanation (setInterval)
 
-- La fonction est exécutée toutes les **1000 ms (1 seconde)**  
-- Le compteur est incrémenté à chaque exécution  
-- Quand `compteur` atteint **5**, on appelle `clearInterval` pour **arrêter la boucle**  
-
----
-
-## Quand utiliser ?
-
-- **setTimeout** → exécuter une tâche **une seule fois après un délai**  
-  _(ex. afficher une notification après 5 secondes)_  
-- **setInterval** → exécuter une tâche **répétée**  
-  _(ex. mettre à jour une horloge en temps réel)_  
+- The function runs every **1000 ms (1 second)**  
+- The counter increments on each run  
+- When `count` reaches **5**, `clearInterval` stops the loop  
 
 ---
 
-## Bonnes pratiques
+## When to use
 
-- Toujours nettoyer un `setInterval` avec **`clearInterval`** quand il n’est plus utile (éviter les boucles infinies).  
-- Éviter de mettre trop de `setTimeout` imbriqués → préférer des solutions plus modernes comme les **Promises** ou **async/await**.  
-- Utiliser l’asynchrone pour garder une application **fluide** (ne pas bloquer l’interface).  
+- **setTimeout** → run a task **once after a delay**  
+  _(e.g., show a notification after 5 seconds)_  
+- **setInterval** → run a task **repeatedly**  
+  _(e.g., update a clock in real time)_  
+
+---
+
+## Best practices
+
+- Always clear an interval with **`clearInterval`** when it’s no longer needed (avoid infinite loops).  
+- Avoid nesting too many `setTimeout` calls → prefer modern solutions like **Promises** or **async/await**.  
+- Use asynchronous programming to keep an application **responsive** (do not block the UI).  

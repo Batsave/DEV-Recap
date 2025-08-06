@@ -1,62 +1,63 @@
 ---
-title: Gestion des erreurs
-description: "Gérer les erreurs en JavaScript avec try, catch et throw."
+title: Error Handling
+description: "Handling errors in JavaScript with try, catch, and throw."
 sidebar:
   position: 17
 ---
 
-## Pourquoi gérer les erreurs ?
+## Why handle errors?
 
-En JavaScript, une erreur **interrompt l’exécution du code**.  
-Sans gestion, l’application peut s’arrêter brutalement.  
+In JavaScript, an error **stops code execution**.  
+Without handling, the application can crash unexpectedly.
 
-➡ Avec `try...catch`, on intercepte l’erreur pour la traiter proprement, sans planter le programme.
+➡ With `try...catch`, we intercept errors to handle them gracefully, preventing application crashes.
 
 ---
 
 ## try...catch
 
-- **try** → contient le code à exécuter.  
-- **catch** → intercepte l’erreur si elle survient.  
-- **finally** → s’exécute toujours (qu’il y ait erreur ou non).  
+- **try** → contains code to execute.  
+- **catch** → intercepts errors if they occur.  
+- **finally** → always runs (whether an error occurred or not).  
 
 ```js
 try {
-  let resultat = 10 / 0;
-  console.log(resultat);
-  throw new Error("Erreur personnalisée");
-} catch (erreur) {
-  console.error("Une erreur est survenue :", erreur.message);
+  let result = 10 / 0;
+  console.log(result);
+  throw new Error("Custom error");
+} catch (error) {
+  console.error("An error occurred:", error.message);
 } finally {
-  console.log("Bloc finally exécuté");
+  console.log("Finally block executed");
 }
 ```
 
 ---
 
-## Créer et lancer une erreur
+## Creating and throwing an error
 
-Avec `throw`, on peut lancer une erreur manuellement.
+With `throw`, you can manually throw an error.
 
 ```js
-function division(a, b) {
+function divide(a, b) {
   if (b === 0) {
-    throw new Error("Division par zéro interdite");
+    throw new Error("Division by zero is not allowed");
   }
   return a / b;
 }
 
 try {
-  console.log(division(10, 0));
+  console.log(divide(10, 0));
 } catch (e) {
-  console.error(e.message); // Division par zéro interdite
+  console.error(e.message); // Division by zero is not allowed
 }
 ```
 
 ---
 
-## Erreurs personnalisées
-On peut créer ses propres **classes d’erreurs** pour distinguer les cas.
+## Custom error types
+
+You can create your own **error classes** to distinguish cases.
 
 ```js
 class ValidationError extends Error {
@@ -66,29 +67,29 @@ class ValidationError extends Error {
   }
 }
 
-function validerAge(age) {
+function validateAge(age) {
   if (age < 18) {
-    throw new ValidationError("Âge insuffisant");
+    throw new ValidationError("Age is below the allowed limit");
   }
   return true;
 }
 
 try {
-  validerAge(15);
+  validateAge(15);
 } catch (e) {
   if (e instanceof ValidationError) {
-    console.error("Erreur de validation :", e.message);
+    console.error("Validation error:", e.message);
   } else {
-    console.error("Autre erreur :", e);
+    console.error("Other error:", e);
   }
 }
 ```
 
 ---
 
-## Bonnes pratiques
+## Best practices
 
-- Toujours fournir un **message clair** dans les erreurs (`throw new Error("...")`).  
-- Utiliser **`finally`** pour libérer des ressources (fermer un fichier, arrêter une connexion…).  
-- Créer des **erreurs personnalisées** pour mieux catégoriser les problèmes.  
-- Ne pas abuser des **`try/catch`** → les utiliser seulement là où une erreur est probable.  
+- Always provide a **clear message** when throwing errors (`throw new Error("...")`).  
+- Use **`finally`** to release resources (close file, terminate connection…).  
+- Create **custom error types** to better categorize issues.  
+- Do not overuse **`try/catch`** → use them only where an error is likely.  

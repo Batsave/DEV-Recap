@@ -1,66 +1,66 @@
 ---
 title: Async / Await
-description: "Simplifier l’écriture de code asynchrone avec async et await."
+description: "Simplify writing asynchronous code with async and await."
 sidebar:
   position: 14
 ---
 
-## Pourquoi async / await ?
+## Why async / await?
 
-Avant ES2017, on utilisait surtout les Promises avec `.then()` et `.catch()`.  
-Mais dès que les appels s’enchaînaient, le code devenait difficile à lire.  
+Before ES2017, we primarily used Promises with `.then()` and `.catch()`.  
+But once calls were chained, the code became hard to read.
 
-➡ `async` et `await` permettent d’écrire du code asynchrone **comme du code synchrone**, plus clair et plus lisible.  
+➡ `async` and `await` allow you to write asynchronous code **like synchronous code**, making it clearer and more readable.
 
 ---
 
-## Fonction async
+## Async function
 
-Une fonction marquée `async` retourne **toujours une Promise**.
+An `async` function **always returns a Promise**.
 
 ```js
-async function saluer() {
-  return "Bonjour";
+async function greet() {
+  return "Hello";
 }
 
-saluer().then(msg => console.log(msg)); // Bonjour
+greet().then(msg => console.log(msg)); // Hello
 ```
 
 ---
 
 ## Await
 
-Le mot-clé `await` suspends l’exécution de la fonction async jusqu’à ce que la Promise soit résolue.
-Cela évite de chaîner plusieurs `.then()`.
+The `await` keyword pauses execution of the async function until the Promise resolves.  
+This avoids chaining multiple `.then()` calls.
 
 ```js
-function attendre(ms) {
+function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function demarrer() {
-  console.log("Attente...");
-  await attendre(2000);
-  console.log("Terminé après 2 secondes");
+async function start() {
+  console.log("Waiting...");
+  await wait(2000);
+  console.log("Finished after 2 seconds");
 }
 
-demarrer();
+start();
 ```
 
 ---
 
-## Exemple concret : avant vs après
+## Concrete example: before vs after
 
-### Avec `.then()``
+### With `.then()`
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1")
   .then(response => response.json())
   .then(data => console.log(data))
-  .catch(error => console.error("Erreur :", error));
+  .catch(error => console.error("Error:", error));
 ```
 
-### Avec `async/await`
+### With `async/await`
 
 ```js
 async function getPost() {
@@ -69,42 +69,41 @@ async function getPost() {
     let data = await response.json();
     console.log(data);
   } catch (error) {
-    console.error("Erreur :", error);
+    console.error("Error:", error);
   }
 }
 
 getPost();
-
 ```
 
-> Même résultat, mais beaucoup plus lisible.
+> Same result, but much more readable.
 
 ---
 
-## Gestion des erreurs
+## Error handling
 
 ```js
 async function test() {
   try {
-    let reponse = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-    let data = await reponse.json();
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
     console.log(data);
   } catch (e) {
-    console.error("Erreur :", e);
+    console.error("Error:", e);
   }
 }
 ```
 
 ---
 
-## Bonnes pratiques
+## Best practices
 
-- Utiliser **`async/await`** pour améliorer la lisibilité du code.  
-- Toujours gérer les erreurs avec **`try/catch`**.  
-- ⚠️ `await` ne peut être utilisé que **dans une fonction async**.  
-- Pour exécuter plusieurs Promises en parallèle, préférer **`Promise.all`** plutôt que plusieurs `await` successifs.  
+- Use **`async/await`** to improve code readability.  
+- Always handle errors with **`try/catch`**.  
+- ⚠️ `await` can only be used **inside an async function**.  
+- To run multiple Promises in parallel, prefer **`Promise.all`** rather than sequential `await` calls.
 
-### Exemple : exécuter plusieurs Promises en parallèle
+### Example: running multiple Promises in parallel
 
 ```js
 async function loadData() {

@@ -1,27 +1,26 @@
 ---
 title: Modules
-description: "Utiliser les modules en JavaScript avec import et export."
+description: "Using modules in JavaScript with import and export."
 sidebar:
   position: 16
 ---
 
+## Why modules?
 
-## Pourquoi des modules ?
+**Modules** allow splitting a program into multiple reusable files.  
+➡ This makes code clearer, better organized, and easier to maintain.
 
-Les **modules** permettent de découper un programme en plusieurs fichiers réutilisables.  
-➡ Cela rend le code plus clair, mieux organisé et plus facile à maintenir.  
-
-Sans modules, tout le code se retrouvait dans un seul fichier, avec un risque de conflits entre variables ou fonctions.
+Without modules, all code would be in one file, risking variable or function name conflicts.
 
 ---
 
-## Exporter un module
+## Exporting a module
 
-Un fichier peut **exporter** ses fonctions, variables ou classes pour les rendre accessibles ailleurs.
+A file can **export** its functions, variables, or classes to make them available elsewhere.
 
 ```js
-// fichier math.js
-export function addition(a, b) {
+// math.js
+export function add(a, b) {
   return a + b;
 }
 
@@ -30,70 +29,69 @@ export const PI = 3.14;
 
 ---
 
-## Importer un module
+## Importing a module
 
-Un autre fichier peut ensuite importer ce dont il a besoin.
+Another file can then import what it needs.
 
 ```js
-// fichier main.js
-import { addition, PI } from "./math.js";
+// main.js
+import { add, PI } from "./math.js";
 
-console.log(addition(2, 3)); // 5
+console.log(add(2, 3)); // 5
 console.log(PI); // 3.14
 ```
 
-> On utilise les accolades `{ }` pour importer des exports nommés.
+> Use curly braces `{ }` to import named exports.
 
 ---
 
-## Export par défaut
-Un fichier peut aussi avoir *$un seul export par défaut*$.
-Dans ce cas, on peut l’importer avec n’importe quel nom.
+## Default export
+
+A file can also have *one default export*.  
+In that case, you can import it with any name.
 
 ```js
-// fichier utils.js
-export default function saluer(nom) {
-  return `Bonjour ${nom}`;
+// utils.js
+export default function greet(name) {
+  return `Hello ${name}`;
 }
 
-// fichier main.js
-import saluer from "./utils.js";
+// main.js
+import greet from "./utils.js";
 
-console.log(saluer("Alice")); // Bonjour Alice
-
+console.log(greet("Alice")); // Hello Alice
 ```
 
 ---
 
-## Export nommé vs export par défaut
+## Named export vs default export
 
-| Type              | Déclaration                         | Importation                           |
-|-------------------|-------------------------------------|----------------------------------------|
-| **Export nommé**  | `export function addition() {}`     | `import { addition } from "./file.js"` |
-| **Export par défaut** | `export default function saluer()` | `import saluer from "./file.js"`       |
+| Type                | Declaration                       | Import                                |
+|---------------------|-----------------------------------|---------------------------------------|
+| **Named export**    | `export function add() {}`        | `import { add } from "./file.js"`     |
+| **Default export**  | `export default function greet()` | `import greet from "./file.js"`       |
 
 ---
 
-## Modules en Node.js
+## Modules in Node.js
 
-Avant l’introduction des **modules ES6**, Node.js utilisait le système **CommonJS** :
+Before ES6 modules, Node.js used **CommonJS**:
 
 ```js
-// CommonJS (ancien)
+// CommonJS (old)
 const fs = require("fs");
 
-// ES6 (moderne)
+// ES6 (modern)
 import fs from "fs";
-``` 
+```
 
-Aujourd’hui, Node.js supporte les **modules ES6** (avec l’extension `.mjs` ou `"type": "module"` dans package.json).
+Today, Node.js supports **ES6 modules** (with the `.mjs` extension or `"type": "module"` in package.json).
 
 ---
 
-## Bonnes pratiques
+## Best practices
 
-- Préférer les **exports nommés** pour plus de clarté et de flexibilité.  
-- Utiliser un **export par défaut** uniquement si le module fournit une seule fonctionnalité principale.  
-- Organiser les modules par **thème ou domaine** (ex. `math.js`, `user.js`, `api.js`).  
-- Toujours indiquer l’extension **`.js`** lors des imports dans un navigateur moderne.  
-
+- Prefer **named exports** for clarity and flexibility.  
+- Use a **default export** only if the module provides a single main feature.  
+- Organize modules by **topic or domain** (e.g., `math.js`, `user.js`, `api.js`).  
+- Always include the **`.js`** extension in imports when targeting modern browsers.  

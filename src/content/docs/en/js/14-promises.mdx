@@ -1,57 +1,57 @@
 ---
-title: Promesses
-description: "Utilisation des Promises pour gérer les opérations asynchrones en JavaScript."
+title: Promises
+description: "Using Promises to handle asynchronous operations in JavaScript."
 sidebar:
   position: 13
 ---
 
-## Qu'est-ce qu'une Promise ?
+## What is a Promise?
 
-Une **Promise** est un objet qui représente une opération **asynchrone** (qui prend du temps) et son résultat futur.  
-Elle peut être dans 3 états :
+A **Promise** is an object representing an **asynchronous** operation (that takes time) and its future result.  
+It can be in three states:
 
-- `pending` → en attente (promesse pas encore terminée)  
-- `fulfilled` → résolue avec succès (`resolve`)  
-- `rejected` → échouée (`reject`)  
+- `pending` → waiting (the promise has not settled yet)  
+- `fulfilled` → successfully resolved (`resolve`)  
+- `rejected` → failed (`reject`)  
 
-➡ Au lieu de bloquer le code, une Promise permet d’**attendre le résultat plus tard**.
+➡ Instead of blocking the code, a Promise allows you to **wait for the result later**.
 
 ---
 
-## Créer une Promise
+## Creating a Promise
 
 ```js
-let promesse = new Promise((resolve, reject) => {
-  let reussite = true;
+let promise = new Promise((resolve, reject) => {
+  let success = true;
 
-  if (reussite) {
-    resolve("Succès");
+  if (success) {
+    resolve("Success");
   } else {
-    reject("Erreur");
+    reject("Error");
   }
 });
 
-promesse
-  .then(resultat => console.log(resultat))   // si succès
-  .catch(erreur => console.error(erreur))    // si erreur
-  .finally(() => console.log("Fin de la promesse")); // toujours exécuté
+promise
+  .then(result => console.log(result))   // on success
+  .catch(error => console.error(error))  // on error
+  .finally(() => console.log("Promise settled")); // always executed
 ```
 
 ---
 
-## Exemple avec setTimeout
+## Example with setTimeout
 
 ```js
-function attendre(ms) {
+function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-attendre(1000).then(() => console.log("1 seconde écoulée"));
+wait(1000).then(() => console.log("1 second passed"));
 ```
 
 ---
 
-## Exemple concret : requête simulée
+## Concrete example: simulated request
 
 ```js
 function getUser() {
@@ -59,25 +59,23 @@ function getUser() {
     setTimeout(() => {
       let success = true;
       if (success) {
-        resolve({ nom: "Alice", age: 25 });
+        resolve({ name: "Alice", age: 25 });
       } else {
-        reject("Impossible de récupérer l'utilisateur");
+        reject("Unable to fetch user");
       }
     }, 2000);
   });
 }
 
 getUser()
-  .then(user => console.log("Utilisateur :", user))
-  .catch(err => console.error("Erreur :", err));
-
+  .then(user => console.log("User:", user))
+  .catch(err => console.error("Error:", err));
 ```
 
 ---
 
-## Bonnes pratiques
+## Best practices
 
-- Toujours gérer les erreurs avec **`.catch()`** (ou avec `try/catch` si tu utilises `async/await`).  
-- Utiliser **`.finally()`** pour exécuter du code **peu importe le résultat** (succès ou erreur).  
-- Préférer **`async/await`** pour un code plus lisible et facile à maintenir quand les promesses s’enchaînent.  
-
+- Always handle errors with **`.catch()`** (or with `try/catch` if using `async/await`).  
+- Use **`.finally()`** to run code **regardless of outcome** (success or error).  
+- Prefer **`async/await`** for more readable and maintainable code when chaining promises.  

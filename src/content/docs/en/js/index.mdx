@@ -1,62 +1,64 @@
 ---
-title: Introduction à JavaScript
-description: "Présentation du langage JavaScript, son rôle et son exécution dans le navigateur et Node.js."
+title: Introduction to JavaScript
+description: "Overview of the JavaScript language, its role, and its execution in the browser and Node.js."
 sidebar:
   position: 0
 ---
 
-## Qu'est-ce que JavaScript ?
+## What is JavaScript?
 
-JavaScript est un **langage de programmation** principalement utilisé pour rendre les pages web **dynamiques et interactives**.  
-Contrairement à **HTML** (structure du contenu) et **CSS** (style et mise en forme), JavaScript gère la **logique** et les **comportements** d’une page.
+JavaScript is a **programming language** primarily used to make web pages **dynamic and interactive**.  
+Unlike **HTML** (content structure) and **CSS** (styling and layout), JavaScript handles the **logic** and **behavior** of a page.
 
-Il peut être exécuté :
+It can run:
 
-- **Dans le navigateur** (Chrome, Firefox, Safari, Edge) pour manipuler une page web.  
-- **Hors navigateur** avec [Node.js](https://nodejs.org) pour créer des serveurs, scripts ou applications desktop.
-
----
-
-## Un peu d'histoire
-
-- **1995** : Créé par Brendan Eich chez Netscape, en seulement 10 jours.  
-- D’abord appelé **Mocha**, puis **LiveScript**, et enfin **JavaScript** (pour profiter de la popularité de Java à l’époque).  
-- Aujourd’hui, c’est un standard géré par l’**ECMA International** sous le nom officiel **ECMAScript (ES)**.  
-- La version actuelle la plus utilisée est **ES6+ (ECMAScript 2015 et suivantes)**.
+- **In the browser** (Chrome, Firefox, Safari, Edge) to manipulate a web page.  
+- **Outside the browser** with [Node.js](https://nodejs.org) to build servers, scripts, or desktop applications.
 
 ---
 
-## Rôles principaux
+## A brief history
 
-- Manipuler le **DOM** (contenu d’une page HTML).  
-- Réagir aux **événements** (clics, saisies clavier, etc.).  
-- Communiquer avec un serveur via des **API** (AJAX, fetch, WebSockets).  
-- Créer des **animations et effets visuels**.  
-- Développer des applications **côté serveur** (ex. avec Node.js).  
-- Développer des applications **mobiles et desktop** (ex. avec React Native, Electron).  
+- **1995**: Created by Brendan Eich at Netscape in just 10 days.  
+- Initially called **Mocha**, then **LiveScript**, and finally **JavaScript** (to capitalize on Java's popularity at the time).  
+- Today, it is standardized by **ECMA International** under the official name **ECMAScript (ES)**.  
+- The most widely used version today is **ES6+ (ECMAScript 2015 and later)**.
 
 ---
 
-## Exemple simple
+## Main roles
+
+- Manipulating the **DOM** (HTML page content).  
+- Responding to **events** (clicks, keyboard input, etc.).  
+- Communicating with a server via **APIs** (AJAX, fetch, WebSockets).  
+- Creating **animations and visual effects**.  
+- Building **server-side** applications (e.g., with Node.js).  
+- Developing **mobile and desktop** apps (e.g., with React Native, Electron).  
+
+---
+
+## Simple example
 
 ```html
 <!DOCTYPE html>
 <html>
   <body>
-    <h1 id="titre">Bonjour</h1>
-    <button onclick="changerTexte()">Clique-moi</button>
+    <h1 id="title">Bonjour</h1>
+    <button onclick="changeText()">Click me</button>
 
     <script>
-      function changerTexte() {
-        document.getElementById("titre").innerText = "Hello JavaScript !";
+      function changeText() {
+        document.getElementById("title").innerText = "Hello, JavaScript!";
       }
     </script>
   </body>
 </html>
 ```
----
-## En résumé
 
-- JavaScript complète HTML + CSS pour créer des expériences web riches.
-- C’est aujourd’hui un langage universel, utilisé aussi bien pour le front-end que le back-end.
-- On l’utilise pour tout : sites web, applications mobiles, serveurs, jeux, etc.
+---
+
+## Summary
+
+- JavaScript complements HTML + CSS to create rich web experiences.  
+- It is a universal language today, used for both front-end and back-end development.  
+- It is used for everything: websites, mobile apps, servers, games, and more.
