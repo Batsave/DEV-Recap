@@ -1,0 +1,102 @@
+---
+title: Advanced Syntax
+description: "Blockquotes, code blocks, tables, images, and advanced links."
+sidebar:
+  position: 3
+---
+
+## Blockquotes
+
+```md
+> This is a quote
+>> Nested quote
+```
+
+Rendering:  
+> This is a quote  
+>> Nested quote  
+
+---
+
+## Code blocks
+
+### Without specified language
+````md
+\`\`\`
+Plain text
+\`\`\`
+````
+
+### With language (syntax highlighting)
+````md
+\`\`\`js
+console.log("Hello World");
+\`\`\`
+````
+
+Rendering:
+
+```js
+console.log("Hello World");
+```
+
+---
+
+## Links
+
+### Simple link
+```md
+[Google](https://google.com)
+```
+
+### Link with title (on hover)
+```md
+[Google](https://google.com "Search engine")
+```
+
+Rendering:  
+[Google](https://google.com)  
+[Google](https://google.com "Search engine")  
+
+---
+
+## Images
+
+```md
+![Alt text](image.png)
+![Logo](logo.png "Hover title")
+```
+
+Rendering:  
+![Alt text](https://via.placeholder.com/100)  
+
+---
+
+## Tables
+
+```md
+| Name  | Age |
+|-------|-----|
+| Alice | 24  |
+| Bob   | 30  |
+```
+
+Rendering:
+
+| Name  | Age |
+|-------|-----|
+| Alice | 24  |
+| Bob   | 30  |
+
+---
+
+## Task Lists
+
+```md
+- [ ] Task to do
+- [x] Completed task
+```
+
+Rendering:  
+- [ ] Task to do  
+- [x] Completed task  
