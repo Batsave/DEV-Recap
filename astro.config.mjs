@@ -56,6 +56,7 @@ export default defineConfig({
       defaultLocale: "fr",
       locales: {
         fr: { label: "Français", lang: "fr" },
+        en: { label: "English", lang: "en" },
       },
       customCss: ["./src/styles/custom.css"],
       sidebar: [
