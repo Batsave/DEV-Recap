@@ -1,0 +1,43 @@
+---
+title: "Uncle Bat's Tips"
+description: "DEV Recap is designed as a clear and concise resource: a practical tool for reviewing, teaching, or finding inspiration."
+sidebar:
+  position: 0
+---
+
+_Before you start writing a CSS file, remember to reset your page with CSS using this code:_
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: underline; /* apply underline to links */
+  text-decoration-thickness: 1px; /* make the underline thicker */
+  text-underline-offset: 3px; /* shift the underline downward */
+}
+
+a:after {
+  content: " ↗";
+}
+```
+
+---
+
+## Explanation
+
+The `body` applies the code to the entire page.  
+To avoid any default offset on your page, reset the `margin` and `padding` by setting them to `0`.  
+
+The `text-decoration` property allows you to remove the default underline that distinguishes a link within text.  
+
+### Example without CSS optimizations
+
+![Example of a web page without CSS optimizations](/assets/webp/css/without-code.webp)
+
+### Example with CSS optimizations
+
+![Example of a web page with CSS optimizations](/assets/webp/css/with-code.webp)

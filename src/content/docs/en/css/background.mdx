@@ -1,0 +1,44 @@
+---
+title: "Background"
+description: "This list of properties defines the color or image used as the background of a page or an element."
+sidebar:
+  position: 1
+---
+
+This list of properties defines the color or image used as the background of a page or an element.
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `background` | Shorthand property grouping all background-related properties. |
+| `background-attachment` | Defines whether the background image is fixed (`fixed`) or scrolls with the content (`scroll`). |
+| `background-color` | Defines the background color. |
+| `background-image` | Defines one or more background images. |
+| `background-position` | Defines the position of the background image (e.g., `center`, `top right`). |
+| `background-position-x` | Defines only the horizontal position of the background image. |
+| `background-position-y` | Defines only the vertical position of the background image. |
+| `background-repeat` | Defines how the background image repeats (`repeat`, `no-repeat`, `repeat-x`, `repeat-y`). |
+| `background-size` | Defines the size of the background image (`auto`, `cover`, `contain`, or custom values). |
+
+---
+
+## Deprecated or specific properties
+
+These properties belonged to older versions of Netscape Navigator and should no longer be used.
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `layer-background-image` | Netscape (deprecated) | Defined the background and border image in Netscape Navigator 4. |
+| `layer-background-color` | Netscape (deprecated) | Defined the background and border color in Netscape Navigator 4. |
+
+---
+
+## Key takeaways
+
+- Use only **modern properties** (`background-color`, `background-image`, `background-size`, etc.).  
+- The properties `background-position-x` and `background-position-y` are useful but not strictly necessary: everything can be handled with `background-position`.  
+- Old properties related to **Netscape Navigator** (`layer-background-*`) are **deprecated**.  
+- You can apply multiple background images by separating them with commas in `background-image`.  

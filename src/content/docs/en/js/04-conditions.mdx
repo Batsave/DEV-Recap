@@ -1,0 +1,98 @@
+---
+title: Conditions
+description: "Les structures conditionnelles en JavaScript : if, else, else if et switch."
+sidebar:
+  position: 3
+---
+
+## If / Else
+
+
+La structure conditionnelle permet d'exécuter du code uniquement si une condition est vraie.  
+En français, on peut le lire comme : **« Si ... alors ... sinon ... »**
+
+```js
+let age = 18;
+
+if (age >= 18) {
+  console.log("Majeur");
+} else {
+  console.log("Mineur");
+}
+```
+
+> Ici, si la variable age est supérieure ou égale à 18, on affiche "Majeur".
+Sinon, c’est "Mineur".
+
+---
+
+## Else If
+
+else if permet de tester plusieurs conditions successives.
+Le programme s’arrête dès qu’une condition est vraie.
+
+```js
+let note = 15;
+
+if (note >= 16) {
+  console.log("Très bien");
+} else if (note >= 10) {
+  console.log("Moyen");
+} else {
+  console.log("Échec");
+}
+```
+
+> Si la note est 15 :
+> - La 1ère condition (note >= 16) est fausse
+> - La 2e condition (note >= 10) est vraie → on affiche "Moyen".
+> - La dernière n’est pas évaluée.
+
+---
+
+## Switch
+
+switch est une alternative à plusieurs if/else if, plus lisible quand on compare une seule variable à plusieurs valeurs possibles.
+
+```js
+let jour = "mardi";
+
+switch (jour) {
+  case "lundi":
+    console.log("Début de semaine");
+    break;
+  case "vendredi":
+    console.log("Bientôt le week-end");
+    break;
+  default:
+    console.log("Jour normal");
+}
+```
+
+> [!CAUTION] Attention
+> Sans break, l’exécution continue dans les cases suivantes (effet de "fallthrough").
+> Le default est exécuté si aucun case ne correspond.
+
+---
+
+## Comparaison rapide
+
+- If / Else : idéal pour tester des conditions complexes (age > 18 && permis === true).
+- Switch : plus lisible quand on teste une seule variable contre plusieurs valeurs fixes (jour === "lundi", jour === "mardi", etc.).
+
+
+---
+
+## Exemple pratique
+
+```js
+let role = "admin";
+
+if (role === "admin") {
+  console.log("Accès complet");
+} else if (role === "editeur") {
+  console.log("Accès limité : édition autorisée");
+} else {
+  console.log("Accès restreint : lecture seule");
+}
+```

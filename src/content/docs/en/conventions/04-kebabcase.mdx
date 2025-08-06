@@ -1,0 +1,30 @@
+---
+title: kebab-case
+description: "kebab-case convention in HTML and CSS."
+sidebar:
+  position: 4
+---
+
+## kebab-case
+
+**Example**: `main-container`, `btn-primary`
+
+### Why?
+- Suitable for **CSS and HTML**, as classes and IDs cannot contain spaces.
+- Highly readable within files.
+- Also used for **file names**.
+
+### Practical example
+
+```html
+<div class="main-container"></div>
+```
+
+```css
+.main-container {
+  padding: 20px;
+}
+```
+
+Advantages: readable, web-friendly.
+Disadvantage: cannot be used in JS (the `-` is interpreted as a subtraction operator).

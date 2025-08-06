@@ -1,0 +1,67 @@
+---
+title: "Borders"
+description: "This list of properties defines the characteristics of an element’s borders."
+sidebar:
+  position: 1
+---
+
+## CSS Border Properties
+
+In CSS, borders define the appearance of an element’s outline.  
+Here is a summary of **currently valid properties** and another for **deprecated ones**.
+
+---
+
+## Standard properties (to use in 2025)
+
+| Property | Description |
+| --- | --- |
+| `border` | Defines all border characteristics (style, color, width). |
+| `border-top` / `border-right` / `border-bottom` / `border-left` | Borders specific to each side. |
+| `border-color` | Defines the border color. |
+| `border-style` | Defines the border style (solid, dotted, dashed, etc.). |
+| `border-width` | Defines the border thickness. |
+| `border-radius` | Defines rounded corners. |
+| `border-image` | Defines an image as the border. |
+| `border-collapse` | Defines how table cell borders are displayed (for tables). |
+| `border-spacing` | Defines the space between two table cells (only if `border-collapse: separate`). |
+| `outline` | Defines an outline around the element (different from a border). |
+| `outline-color` / `outline-style` / `outline-width` | Variants of `outline`. |
+| `box-shadow` | Defines a shadow around an element. |
+
+---
+
+## Deprecated or browser-specific properties
+
+These properties were used **before standardization**, or remain supported only in certain browsers (mainly Safari / older Firefox).  
+They should only be used **for compatibility with very old browsers**.
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `-moz-border-radius` (and variants `-topleft`, `-bottomright`…) | Deprecated | Old prefix for `border-radius` (before standardization in Firefox). |
+| `-webkit-border-radius` (and variants) | Deprecated | Old prefix for `border-radius` (Chrome/Safari). |
+| `-webkit-border-image-*` | Deprecated | Old prefix for `border-image`. |
+| `-moz-outline-*` | Deprecated | Old experimental implementation of `outline`. |
+| `-webkit-box-shadow` | Deprecated | Old prefix for `box-shadow`. |
+| `-webkit-text-stroke` | Specific | Still used in Safari/Chrome to apply text stroke, but not standardized. |
+| `-webkit-box-reflect` | Safari-specific | Creates a reflection effect below an element (non-standard, WebKit-only). |
+
+---
+
+## Key takeaways
+
+- Always use **standard properties** (`border-radius`, `box-shadow`, `outline`, etc.).  
+- Prefixed versions `-moz-` and `-webkit-` are only useful if you need to support **very old browsers**.  
+- Some properties (`-webkit-text-stroke`, `-webkit-box-reflect`) are **Safari proprietary** and have no standardized equivalent.
+
+---
+
+## Quick modern usage example:
+
+```css
+.my-box {
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+```

@@ -1,0 +1,30 @@
+---
+title: Namespaces
+description: "Organizing code using namespaces."
+sidebar:
+  position: 7
+---
+
+## Namespaces
+
+**Example**: `App.Utils.Math`
+
+### Why?
+- Organizes code within **large projects**.
+- Avoids naming collisions.
+- Very common in Java, C#, and even JS (before ES6 modules).
+
+### Practical example
+
+```js
+const App = {
+  Utils: {
+    sum: (a, b) => a + b
+  }
+};
+
+console.log(App.Utils.sum(2, 3));
+```
+
+Advantages: well-structured code.
+Disadvantage: verbose, replaced in JS by `import/export`.  

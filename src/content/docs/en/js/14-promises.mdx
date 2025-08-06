@@ -1,0 +1,83 @@
+---
+title: Promesses
+description: "Utilisation des Promises pour gérer les opérations asynchrones en JavaScript."
+sidebar:
+  position: 13
+---
+
+## Qu'est-ce qu'une Promise ?
+
+Une **Promise** est un objet qui représente une opération **asynchrone** (qui prend du temps) et son résultat futur.  
+Elle peut être dans 3 états :
+
+- `pending` → en attente (promesse pas encore terminée)  
+- `fulfilled` → résolue avec succès (`resolve`)  
+- `rejected` → échouée (`reject`)  
+
+➡ Au lieu de bloquer le code, une Promise permet d’**attendre le résultat plus tard**.
+
+---
+
+## Créer une Promise
+
+```js
+let promesse = new Promise((resolve, reject) => {
+  let reussite = true;
+
+  if (reussite) {
+    resolve("Succès");
+  } else {
+    reject("Erreur");
+  }
+});
+
+promesse
+  .then(resultat => console.log(resultat))   // si succès
+  .catch(erreur => console.error(erreur))    // si erreur
+  .finally(() => console.log("Fin de la promesse")); // toujours exécuté
+```
+
+---
+
+## Exemple avec setTimeout
+
+```js
+function attendre(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+attendre(1000).then(() => console.log("1 seconde écoulée"));
+```
+
+---
+
+## Exemple concret : requête simulée
+
+```js
+function getUser() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let success = true;
+      if (success) {
+        resolve({ nom: "Alice", age: 25 });
+      } else {
+        reject("Impossible de récupérer l'utilisateur");
+      }
+    }, 2000);
+  });
+}
+
+getUser()
+  .then(user => console.log("Utilisateur :", user))
+  .catch(err => console.error("Erreur :", err));
+
+```
+
+---
+
+## Bonnes pratiques
+
+- Toujours gérer les erreurs avec **`.catch()`** (ou avec `try/catch` si tu utilises `async/await`).  
+- Utiliser **`.finally()`** pour exécuter du code **peu importe le résultat** (succès ou erreur).  
+- Préférer **`async/await`** pour un code plus lisible et facile à maintenir quand les promesses s’enchaînent.  
+

@@ -1,0 +1,40 @@
+---
+title: Undo and Fix
+description: "Fix mistakes with reset, revert, and stash."
+sidebar:
+  position: 6
+---
+
+## Undo changes
+
+```bash
+git checkout -- file.txt   # discard uncommitted changes
+```
+
+## Undo the last commit
+
+```bash
+git reset --soft HEAD~1   # keep files staged
+git reset --hard HEAD~1   # completely remove changes
+```
+
+## Roll back cleanly
+
+```bash
+git revert abc123
+```
+
+## Stash changes
+
+```bash
+git stash
+git stash apply
+```
+
+---
+
+## Best practices
+
+- Use `git reset` only locally (dangerous if shared).  
+- Prefer `git revert` to undo changes in a collaborative project.  
+- Use `stash` to pause ongoing work.  

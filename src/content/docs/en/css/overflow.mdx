@@ -1,0 +1,87 @@
+---
+title: "Overflow"
+description: "CSS properties used to control content overflow inside an element."
+sidebar:
+  position: 1
+---
+
+The **`overflow`** property controls how content that overflows an element’s box is handled (displayed, hidden, or scrollable).
+
+---
+
+## Main property
+
+| Property    | Description |
+|-------------|-------------|
+| `overflow`  | Defines the overall overflow behavior (both horizontal and vertical). |
+| `overflow-x`| Defines horizontal overflow behavior only. |
+| `overflow-y`| Defines vertical overflow behavior only. |
+
+---
+
+## Possible values
+
+| Value         | Description |
+|---------------|-------------|
+| `visible` (default) | Overflowing content remains visible. |
+| `hidden`     | Overflowing content is hidden (not accessible without scrolling). |
+| `scroll`     | Adds scrollbars (always visible, even if not needed). |
+| `auto`       | Adds scrollbars only when necessary. |
+| `clip`       | Clips content without scrollbars (stricter than `hidden`). |
+
+---
+
+## Example
+
+```css
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #333;
+  overflow: auto;
+}
+```
+Here, if the content overflows the box, a scrollbar is displayed automatically.
+
+```css
+.container {
+  width: 300px;
+  height: 150px;
+  overflow-x: scroll; /* forced horizontal scrollbar */
+  overflow-y: hidden; /* vertical content hidden */
+}
+```
+---
+
+## Special cases
+### 1. `overflow: clip`
+
+Clips the overflowing content without showing scrollbars.  
+Unlike `hidden`, it is not possible to scroll the content by other means (e.g., keyboard, programmatic scrolling).
+
+```css
+.box {
+  overflow: clip;
+}
+```
+---
+
+### 2. Interaction with scrollbars
+`overflow: auto` and `overflow: scroll` can display a custom scrollbar via `scrollbar-width` (Firefox) or `::-webkit-scrollbar` (Chrome/Safari/Edge).
+
+`overflow: hidden` or `clip` remove any scrollbar.
+
+---
+
+## Best practices
+- Prefer `overflow: auto` for natural behavior.  
+- Use `overflow: hidden` or `clip` only if you want to block access to overflowing content.  
+- Always test with dynamic content (long text, large images) to avoid unexpected clipping.  
+
+---
+
+## Key takeaways
+- `overflow` controls overflowing content by hiding, clipping, or enabling scrolling.  
+- `overflow-x` and `overflow-y` provide independent horizontal/vertical control.  
+- `clip` is a stricter version of `hidden`, with no scrolling possible.  
+- `overflow` is often combined with scrollbar customization.  

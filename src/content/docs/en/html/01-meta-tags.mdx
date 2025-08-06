@@ -1,0 +1,96 @@
+---
+title: META Tags
+description: "Marketing basics, strategies, and implementation tools."
+sidebar:
+  position: 2
+---
+
+## What are META Tags?
+
+META tags are HTML elements placed in the `<head></head>` of a web page.  
+They are not displayed directly on the screen, but provide essential information:
+
+- to browsers (encoding, mobile display, cache…),
+- to search engines (SEO, indexing),
+- to social networks (Open Graph previews, Twitter Cards),
+- to devices and applications (PWA, mobile, iOS/Android).
+
+In short, they describe the page and control its behavior for both users and bots.
+
+---
+
+## Standard tags (HTML & browser)
+
+| Tag          | Description                            | Example                                                                  |
+| ------------ | -------------------------------------- | ------------------------------------------------------------------------ |
+| `charset`    | Defines the document encoding          | `<meta charset="UTF-8">`                                                 |
+| `viewport`   | Controls zoom and mobile scaling       | `<meta name="viewport" content="width=device-width, initial-scale=1.0">` |
+| `description`| Page summary for SEO                   | `<meta name="description" content="Complete HTML course for beginners.">`|
+| `keywords`   | Keywords (SEO – rarely used today)     | `<meta name="keywords" content="html, web, tutorial">`                   |
+| `author`     | Document author                        | `<meta name="author" content="Baptiste Save">`                           |
+| `robots`     | Tells search engines whether to index  | `<meta name="robots" content="index, follow">`                           |
+| `generator`  | Software used to create the page       | `<meta name="generator" content="Notepad++">`                            |
+
+---
+
+## http-equiv tags (equivalent to HTTP headers)
+
+| Tag              | Description                                      | Example                                                               |
+| ---------------- | ------------------------------------------------ | --------------------------------------------------------------------- |
+| `refresh`        | Reloads or redirects the page                    | `<meta http-equiv="refresh" content="5; url=https://example.com">`    |
+| `content-type`   | Specifies the MIME type (often redundant with `charset`) | `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">` |
+| `default-style`  | Defines a default stylesheet                     | `<meta http-equiv="default-style" content="main">`                    |
+| `x-ua-compatible`| Forces an Internet Explorer version (deprecated) | `<meta http-equiv="X-UA-Compatible" content="IE=edge">`               |
+| `cache-control`  | Controls browser cache                           | `<meta http-equiv="cache-control" content="no-cache">`                |
+| `pragma`         | Another way to disable caching                   | `<meta http-equiv="pragma" content="no-cache">`                       |
+
+---
+
+## Open Graph (social networks – Facebook, LinkedIn...)
+
+| Tag             | Description                              | Example                                                                |
+| --------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| `og:title`      | Title displayed in previews              | `<meta property="og:title" content="Complete HTML Course">`            |
+| `og:description`| Description for shares                   | `<meta property="og:description" content="Learn the basics of HTML">`  |
+| `og:type`       | Content type (`website`, `article`, etc.)| `<meta property="og:type" content="website">`                          |
+| `og:url`        | Canonical page URL                       | `<meta property="og:url" content="https://my-site.com/html">`          |
+| `og:image`      | Preview image                            | `<meta property="og:image" content="https://my-site.com/img/html.jpg">`|
+
+---
+
+## Twitter Cards (Twitter previews)
+
+| Tag                   | Description                                  | Example                                                                 |
+| --------------------- | -------------------------------------------- | ----------------------------------------------------------------------- |
+| `twitter:card`        | Card type (`summary`, `summary_large_image`) | `<meta name="twitter:card" content="summary_large_image">`              |
+| `twitter:title`       | Title for the Twitter preview                | `<meta name="twitter:title" content="HTML in 5 minutes">`               |
+| `twitter:description` | Description                                  | `<meta name="twitter:description" content="A simple and quick course.">`|
+| `twitter:image`       | Image for Twitter                            | `<meta name="twitter:image" content="https://my-site.com/cover.jpg">`   |
+| `twitter:site`        | Twitter account name                         | `<meta name="twitter:site" content="@batsave">`                         |
+
+---
+
+## Other useful meta tags
+
+| Tag                                    | Description                                | Example                                                                            |
+| -------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- |
+| `theme-color`                          | Accent color (on mobile, browsers)         | `<meta name="theme-color" content="#6B2DD7">`                                      |
+| `copyright`                            | Legal information                          | `<meta name="copyright" content="© 2025 Baptiste Save">`                           |
+| `application-name`                     | Application name (PWA)                     | `<meta name="application-name" content="Trakrr">`                                  |
+| `apple-mobile-web-app-capable`         | Enables full-screen mode on iOS            | `<meta name="apple-mobile-web-app-capable" content="yes">`                         |
+| `apple-mobile-web-app-status-bar-style`| iOS status bar style                       | `<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">`  |
+
+---
+
+## Bonus: Recommended SEO meta tags
+
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="A simple and complete HTML guide for beginners."
+/>
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Baptiste Save" />
+```

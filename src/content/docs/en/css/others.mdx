@@ -1,0 +1,71 @@
+---
+title: "Miscellaneous"
+description: "Various CSS properties that don’t belong to a specific family."
+sidebar:
+  position: 1
+---
+
+This category groups several useful CSS properties that don’t directly fall under colors, text, or background families.
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `cursor` | Defines the appearance of the mouse cursor (e.g., `pointer`, `text`, `wait`). |
+| `filter` | Applies a modern graphical filter (e.g., `blur`, `grayscale`, `brightness`). |
+| `opacity` | Defines the element’s opacity/transparency (from `0` to `1`). |
+| `visibility` | Defines whether an element is visible (`visible`, `hidden`, `collapse`). |
+| `white-space` | Defines how spaces and line breaks are handled (`normal`, `nowrap`, `pre`, etc.). |
+| `!important` | Keyword that gives absolute priority to a CSS rule. |
+
+---
+
+## Deprecated or specific properties
+
+Some properties were used in older browsers (Internet Explorer, Netscape, old Mozilla).  
+They should not be used today.
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `filter` (old syntax) | Internet Explorer (deprecated) | Old version of CSS filters, replaced by the standard `filter` property. |
+| `-moz-opacity` | Mozilla (deprecated) | Old property for handling opacity, replaced by `opacity`. |
+| `scrollbar-base-color` | Internet Explorer (deprecated) | Defined the scrollbar’s main color. |
+| `scrollbar-face-color` | Internet Explorer (deprecated) | Defined the central area color of the scrollbar. |
+| `scrollbar-track-color` | Internet Explorer (deprecated) | Defined the track color of the scrollbar. |
+| `scrollbar-arrow-color` | Internet Explorer (deprecated) | Defined the color of scrollbar arrows. |
+| `scrollbar-shadow-color` | Internet Explorer (deprecated) | Defined the shadow color. |
+| `scrollbar-darkshadow-color` | Internet Explorer (deprecated) | Defined the outer dark shadow color. |
+| `scrollbar-highlight-color` | Internet Explorer (deprecated) | Defined the highlight color. |
+| `scrollbar-3dlight-color` | Internet Explorer (deprecated) | Defined the 3D edge highlight color of the scrollbar. |
+
+---
+
+## Key takeaways
+
+- Always use **standard versions**: `cursor`, `filter`, `opacity`, `visibility`, `white-space`.  
+- Avoid `!important` except as a last resort, since it complicates CSS maintenance.  
+- Properties related to Internet Explorer scrollbars and old browsers are **deprecated**.  
+- To style a scrollbar today, use:  
+
+```css
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #eee;
+}
+
+/* Chrome, Edge, Safari (WebKit) */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+```

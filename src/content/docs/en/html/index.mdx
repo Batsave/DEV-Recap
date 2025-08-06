@@ -1,0 +1,158 @@
+---
+title: Introduction to HTML
+description: "HTML (HyperText Markup Language) is a markup language used to create the structure of a web page."
+sidebar:
+  position: 1
+---
+
+## What is HTML?
+
+HTML (HyperText Markup Language) is a **markup language** used to create the **structure** of a web page.
+
+It doesn’t “do” anything on its own, but it allows you to **describe** what an element is: a **title**, a **paragraph**, an **image**, a **link**, etc.
+
+> [!CAUTION] Warning  
+> **It is not** a programming language, but a **descriptive language**.
+
+---
+
+## Basic structure of an HTML document
+
+Every HTML page starts with a **standard structure**:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My First HTML Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my site!</h1>
+    <p>This is my very first paragraph.</p>
+  </body>
+</html>
+```
+
+### Breakdown of parts:
+
+- `<!DOCTYPE html>` → tells the browser we’re using HTML5.  
+- `<html lang="en"></html>` → indicates the page language (English).  
+- `<head></head>` → information **invisible** to the user (title, encoding, etc.).  
+- `<body></body>` → the **visible content** of the page.  
+
+---
+
+## Essential HTML tags
+
+### Headings
+
+```html
+<h1>Main heading</h1>
+<h2>Subheading</h2>
+```
+
+There are 6 levels: `<h1>` (most important) to `<h6>`.
+
+### Paragraphs
+
+```html
+<p>This is a paragraph.</p>
+```
+
+### Rich text
+
+```html
+<strong>important</strong> → bold <em>emphasis</em> → italic
+```
+
+### Images
+
+```html
+<img src="image.jpg" alt="description" width="300" />
+```
+
+- `src` → path to the image  
+- `alt` → alternative text  
+- `width` → width in pixels  
+
+### Links
+
+```html
+<a href="https://google.com">Visit Google</a>
+```
+
+---
+
+## Lists
+
+### Unordered list (bullets)
+
+```html
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+```
+
+### Ordered list (numbered)
+
+```html
+<ol>
+  <li>Pizza</li>
+  <li>Pasta</li>
+</ol>
+```
+
+---
+
+## Buttons and attributes
+
+```html
+<button>Send</button> <button disabled>Unavailable</button>
+```
+
+> Attributes = extra information on a tag  
+> Examples: `href`, `src`, `alt`, `disabled`, `width`, etc.
+
+---
+
+## Types of tags
+
+| Type       | Examples            | Behavior                |
+| ---------- | ------------------- | ----------------------- |
+| **Block**  | `<h1>`, `<p>`       | Takes full width        |
+| **Inline** | `<strong>`, `<em>`  | Stays within the text   |
+
+---
+
+## Self-closing tags
+
+Some tags don’t contain content, they are **self-closing**:
+
+```html
+<br />
+<!-- line break -->
+<hr />
+<!-- horizontal line -->
+<img src="..." />
+```
+
+---
+
+## Comments
+
+```html
+<!-- This is a comment -->
+```
+
+Useful for keeping track in your code. Browsers ignore them.
+
+---
+
+## Linking multiple pages
+
+```html
+<a href="index.html">Home</a> <a href="about.html">About</a>
+```
+

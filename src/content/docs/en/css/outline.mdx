@@ -1,0 +1,67 @@
+---
+title: "Outline"
+description: "CSS properties used to define an outline around element content, often for accessibility."
+sidebar:
+  position: 1
+---
+
+While `border` properties define a border on the element itself,  
+**`outline`** properties add a frame around the **content** of the element.  
+
+Unlike `border`, `outline`:
+- does not affect the size or position of the element,
+- can extend outside the element’s box,
+- is often used by browsers by default to indicate **keyboard focus**.
+
+---
+
+## Main properties
+
+| Property | Description |
+| --- | --- |
+| `outline` | Shorthand property combining color, style, and width of the outline. |
+| `outline-color` | Defines the outline color. |
+| `outline-style` | Defines the outline style (`solid`, `dashed`, `dotted`, etc.). |
+| `outline-width` | Defines the outline thickness. |
+
+---
+
+## Simple example
+
+```css
+button:focus {
+  outline: 2px solid blue; /* Indicates keyboard focus */
+}
+input:focus {
+  outline-color: red; /* Changes the outline color on focus */
+}
+```
+---
+## Accessibility and best practices
+
+- `outline` is **fundamental for accessibility**: it allows users navigating with the keyboard (tab key) or people with low vision to see which element is active.  
+- **Never remove** default outlines (`outline: none`) **without replacing them with a visible equivalent** (for example with `box-shadow`).  
+
+### Correct example
+
+```css
+/* Bad: completely removes focus */
+button:focus {
+  outline: none;
+}
+
+/* Good: replaces it with a visible and accessible style */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.5);
+}
+```
+
+---
+
+## Key takeaways
+
+- `outline` frames the content without affecting the element’s size.  
+- Essential for indicating **keyboard focus** and ensuring accessibility.  
+- Never remove `outline` without providing a **visible equivalent alternative**.  
+- Use `outline` to improve **inclusive navigation** on your web pages.  

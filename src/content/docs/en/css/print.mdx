@@ -1,0 +1,68 @@
+---
+title: "CSS for printing"
+description: "CSS properties specific to printing, used to control page breaks, margins, and printed layout."
+sidebar:
+  position: 1
+---
+
+The following properties are only active when your visitors **print your web pages** or export them as **PDF** via the browser.  
+They allow you to control display, page breaks, and formatting specific to the `print` media type.
+
+---
+
+## Main properties
+
+| Property | Description |
+| --- | --- |
+| `marks` | Adds crop marks and alignment marks (professional printing). |
+| `orphans` | Defines the minimum number of lines of a paragraph to show at the bottom of a page before a break. |
+| `widows` | Defines the minimum number of lines of a paragraph to show at the top of a page after a break. |
+| `page-break-before` | Forces a page break before the element. |
+| `page-break-after` | Forces a page break after the element. |
+| `page-break-inside` | Controls page breaks inside an element (`auto`, `avoid`). |
+| `page` | Defines the page type or template to use. |
+| `size` | Defines the size and/or orientation of the page (`A4`, `letter`, `landscape`, etc.). |
+
+---
+
+## Usage example
+
+```css
+@media print {
+  /* Prevent splitting a table across pages */
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Force a page break before each heading */
+  h1 {
+    page-break-before: always;
+  }
+
+  /* Set page size to A4 in portrait orientation */
+  @page {
+    size: A4 portrait;
+    margin: 2cm;
+  }
+}
+```
+---
+
+## Why it matters today
+
+- **PDF generation**: Many web applications offer PDF export (invoices, tickets, reports).  
+  → These properties allow structuring the printed document properly.  
+- **Accessibility and reading comfort**: Controlling orphans and widows (`orphans`, `widows`) prevents poorly split paragraphs and improves readability.  
+- **Professional documents**: For reports, resumes, contracts, educational material… proper print rendering gives a more professional impression.  
+- **Compliance with standard formats**: `@page` and `size` make it possible to produce content directly adapted to A4, Letter, etc., useful in an international context.  
+- **Compatibility with modern browsers**: Chrome, Edge, Safari, and Firefox widely support these properties in their printing/PDF engines.  
+
+---
+
+## Key takeaways
+
+- Always include a `@media print` stylesheet if your site generates printable content.  
+- Use `page-break-inside: avoid` for tables, images, and important sections.  
+- Define `@page { size: A4; margin: ... }` to produce clean PDF output.  
+- The `orphans` and `widows` properties provide better typographic control.  
+- These tools are essential for any site that offers PDF export or high-quality printing.  

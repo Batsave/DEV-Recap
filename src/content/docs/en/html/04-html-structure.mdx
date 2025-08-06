@@ -1,0 +1,192 @@
+---
+title: HTML Structure
+description: "Most websites follow a similar structure: a header, navigation, main content, sections, articles, an aside (complementary content), and a footer."
+sidebar:
+  position: 5
+---
+
+Most websites follow a similar structure: a **header**, **navigation**, **main content**, **sections**, **articles**, an **aside** (complementary content), and a **footer**.
+
+## Why use semantic tags?
+
+- Improves **SEO (Search Engine Optimization)**
+- Makes pages **accessible** to screen readers
+- Clarifies code structure
+
+---
+
+## `<header>`
+
+Used for the visible header of a page, an article, or a section.
+
+> Do not confuse with `<head>`, which contains the technical metadata of the document.
+
+Example:
+
+```html
+<header>
+  <h1>Welcome to The World of Cats</h1>
+  <p>The first website about your favorite pets</p>
+</header>
+```
+
+---
+
+## `<nav>`
+
+Used for the site’s **main navigation**. Often placed inside the `<header>`.
+
+Example:
+
+```html
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+```
+
+---
+
+## `<main>`
+
+Contains the page’s **unique main content**. Only one `<main>` tag per page.
+
+Example:
+
+```html
+<main>
+  <h1>Blog</h1>
+  <section>
+    <h2>Recent Articles</h2>
+  </section>
+</main>
+```
+
+---
+
+## `<article>`
+
+Used for **standalone content**: blog post, product sheet, etc.
+
+Example:
+
+```html
+<article>
+  <header>
+    <h2>What are cats?</h2>
+  </header>
+  <p>
+    <strong>Cats</strong> are very popular domestic <em>felines</em>...
+  </p>
+</article>
+```
+
+---
+
+## `<section>`
+
+Container for **thematically grouped content**. Must contain a heading (`<h2>`, `<h3>`, etc.)
+
+Example:
+
+```html
+<section>
+  <h2>Poems about cats</h2>
+  <p>Here are some famous poems...</p>
+</section>
+```
+
+---
+
+## `<aside>`
+
+For **complementary or optional content**: ads, side notes, comments...
+
+Example:
+
+```html
+<aside>
+  <header>
+    <h2>Comments</h2>
+  </header>
+  <article>
+    <header><h3>Laurent</h3></header>
+    <p>I love cats!</p>
+  </article>
+</aside>
+```
+
+---
+
+## `<footer>`
+
+The footer of a document, an article, or a section.
+
+Global example:
+
+```html
+<footer>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <p>Contact: <a href="mailto:email@example.com">email@example.com</a></p>
+  <p>© 2025</p>
+</footer>
+```
+
+---
+
+## Other useful tags
+
+### `<br>`
+
+Line break **within a paragraph**:
+
+```html
+<p>Line 1<br />Line 2</p>
+```
+
+### `<hr>`
+
+Horizontal separator, useful to mark a **topic change**:
+
+```html
+<hr />
+```
+
+### `<div>` and `<span>`
+
+**Non-semantic containers**:
+
+- `<div>` = block (content group)
+- `<span>` = inline (short piece of text)
+
+Use them **as a last resort** if no other semantic tag fits.
+
+---
+
+## Recap
+
+| Tag              | Role                                  |
+| ---------------- | ------------------------------------- |
+| `<header>`       | Page, section, or article header      |
+| `<nav>`          | Navigation area                       |
+| `<main>`         | Unique main content                   |
+| `<article>`      | Standalone content                    |
+| `<section>`      | Part of content related to a theme    |
+| `<aside>`        | Secondary content (comments, ads)     |
+| `<footer>`       | Page footer                           |
+| `<br>`           | Line break                            |
+| `<hr>`           | Thematic separator                    |
+| `<div>` / `<span>` | Neutral containers (styled with CSS) |
+
+---
+
+> [!TIP] Tips  
+> **Best practice**: Always start with a good HTML structure before thinking about styling with CSS.

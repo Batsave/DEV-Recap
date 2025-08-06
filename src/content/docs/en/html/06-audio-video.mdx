@@ -1,0 +1,96 @@
+---
+title: "Audio and Video"
+description: "Properties and best practices for embedding accessible audio and video in a webpage."
+sidebar:
+  position: 1
+---
+
+Today, embedding audio and video is done through the HTML5 `<audio>` and `<video>` tags, combined with JavaScript APIs and accessibility best practices.
+
+---
+
+## `<audio>` tag
+
+```html
+<audio controls>
+  <source src="music.mp3" type="audio/mpeg">
+  <source src="music.ogg" type="audio/ogg">
+  Your browser does not support the audio tag.
+</audio>
+```
+
+### Important attributes
+
+- `controls`: displays the player controls.  
+- `autoplay`: starts automatically (**often blocked by browsers unless `muted` is set**).  
+- `loop`: repeats automatically.  
+- `muted`: starts muted (required for `autoplay`).  
+- `preload`: suggests how to load the media (`auto`, `metadata`, `none`).  
+
+---
+
+## `<video>` tag
+
+```html
+<video width="640" height="360" controls>
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
+  Your browser does not support the video tag.
+</video>
+```
+
+### Important attributes
+
+- `controls`: displays controls.  
+- `autoplay`: starts automatically (**often blocked without `muted`**).  
+- `loop`: replays the video continuously.  
+- `muted`: starts without sound (**required for `autoplay`**).  
+- `poster`: sets an image to display before playback.  
+- `<track>`: adds subtitles (in **WebVTT** format).  
+
+---
+
+## Accessibility
+
+- Subtitles: always provide a `.vtt` file with `<track>` for videos.  
+- Transcripts: provide a text version for audio content.  
+- Keyboard controls: ensure the player is usable without a mouse.  
+- ARIA: add attributes like `aria-label` to describe the media if necessary.  
+
+---
+
+## JavaScript API
+
+Both tags expose a common DOM API (HTMLMediaElement):
+
+Example of video control with JavaScript:
+
+```js
+const video = document.querySelector("video");
+
+// Play and pause
+video.play();
+video.pause();
+
+// Volume control
+video.volume = 0.5;
+
+// Jump ahead in the video
+video.currentTime = 30; // skips to 30s
+
+// Check if the video is playing
+if (!video.paused) {
+  console.log("Video is playing");
+}
+```
+
+--- 
+
+## Key takeaways
+
+- `play-during` and old CSS audio properties are **obsolete**.  
+- Use `<audio>` and `<video>` for **modern, accessible, cross-browser** support.  
+- Provide multiple formats (`.mp4`, `.webm`, `.ogg`) for compatibility.  
+- Always include **subtitles** and **transcripts** for accessibility.  
+- **JavaScript APIs** allow building custom players (controls, playlists, synchronization).  

@@ -1,0 +1,66 @@
+---
+title: "Position and dimensions"
+description: "CSS properties used to manage element layout and sizing."
+sidebar:
+  position: 1
+---
+
+*These properties are used to manage the layout of your site.*
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `position` | Defines the positioning mode (`static`, `relative`, `absolute`, `fixed`, `sticky`). |
+| `top` | Defines the vertical position of an element (top). |
+| `bottom` | Defines the vertical position of an element (bottom). |
+| `left` | Defines the horizontal position of an element (left). |
+| `right` | Defines the horizontal position of an element (right). |
+| `z-index` | Defines the stacking order of elements (foreground/background). |
+| `display` | Defines how an element is displayed (`block`, `inline`, `flex`, `grid`, etc.). |
+| `float` | Positions an element floating left or right (mostly replaced today by `flex` or `grid`). |
+| `clear` | Controls wrapping behavior around floated elements. |
+| `clip` | Defines the visible area of an element (deprecated, replaced by `clip-path`). |
+| `height` | Defines the height of an element. |
+| `min-height` | Defines the minimum height. |
+| `max-height` | Defines the maximum height. |
+| `width` | Defines the width of an element. |
+| `min-width` | Defines the minimum width. |
+| `max-width` | Defines the maximum width. |
+| `margin` | Defines the outer margins. |
+| `margin-top` | Defines the top outer margin. |
+| `margin-right` | Defines the right outer margin. |
+| `margin-bottom` | Defines the bottom outer margin. |
+| `margin-left` | Defines the left outer margin. |
+| `padding` | Defines the inner spacing. |
+| `padding-top` | Defines the top inner spacing. |
+| `padding-right` | Defines the right inner spacing. |
+| `padding-bottom` | Defines the bottom inner spacing. |
+| `padding-left` | Defines the left inner spacing. |
+| `text-align` | Defines horizontal text alignment inside an element. |
+| `vertical-align` | Defines vertical alignment of an element (mostly for inline elements and table cells). |
+| `overflow` | Defines how overflowing content is handled (`visible`, `hidden`, `scroll`, `auto`, `clip`). |
+
+---
+
+## Specific / deprecated properties
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `overflow-x` | Now standard | Handles horizontal overflow only. |
+| `overflow-y` | Now standard | Handles vertical overflow only. |
+| `clip` | Deprecated | Old property, replaced by `clip-path` to define visible areas. |
+
+---
+
+## Key takeaways
+
+- `position` and its related properties (`top`, `left`, `right`, `bottom`) define element placement.  
+- `z-index` controls stacking order.  
+- `margin` and `padding` manage outer and inner spacing respectively.  
+- `width`, `height`, `min/max-width`, `min/max-height` define dimensions.  
+- `overflow`, `overflow-x`, `overflow-y` control overflowing content.  
+- `float` and `clear` are inherited from old layout techniques: prefer `flex` or `grid` today.  
+- `clip` is deprecated — use `clip-path` instead.  

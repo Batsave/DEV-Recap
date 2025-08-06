@@ -1,0 +1,161 @@
+---
+title: Hyperlinks
+description: "A hyperlink allows navigation from one page to another by clicking on it."
+sidebar:
+  position: 4
+---
+
+## What is a hyperlink?
+
+A **hyperlink** allows you to **navigate from one page to another** by clicking on it.  
+It is one of the **foundations of the web**, making it possible to connect pages together.
+
+The term “hypertext” was introduced by Ted Nelson in 1965.
+
+HTML (HyperText Markup Language) is one of the first large-scale practical applications.
+
+---
+
+## The `<a>` tag
+
+To create a link, we use the `<a>` tag (short for “anchor”).
+
+### Simple example:
+
+```html
+<a href="page.html">Go to the page</a>
+```
+
+- **`href`**: defines the link address (the "path")  
+- The text between `<a>` and `</a>` is what’s clickable
+
+---
+
+## Types of links
+
+### 1. Link to an **internal** page:
+
+```html
+<a href="about.html">About</a>
+```
+
+### 2. Link to an **external** page:
+
+```html
+<a href="https://wildcodeschool.com">Wild Code School</a>
+```
+
+### 3. Link to a file in a **parent folder**:
+
+```html
+<a href="../home.html">Back to home</a>
+```
+
+### 4. Link from the **site root**:
+
+```html
+<a href="/pages/contact.html">Contact</a>
+```
+
+---
+
+## Anchor links (to a section of the page)
+
+### Step 1: give an `id` to the target element
+
+```html
+<h2 id="quote">Cat quote</h2>
+```
+
+### Step 2: create a link with `#id`
+
+```html
+<a href="#quote">See the quote</a>
+```
+
+---
+
+## Mail & Telephone
+
+### Link to send an **email**:
+
+```html
+<a href="mailto:bob@example.com">Send an email</a>
+```
+
+### Link to call a **phone number**:
+
+```html
+<a href="tel:+3361020304">Call now</a>
+```
+
+> Very useful on mobile: one click = a call or an email.
+
+---
+
+## Additional useful attributes
+
+### `title` → info on hover + accessibility
+
+```html
+<a href="..." title="Visit our Facebook page">Facebook Page</a>
+```
+
+> Screen readers can read this title to provide more context.
+
+---
+
+### `target="_blank"` → open in a **new tab**
+
+```html
+<a href="https://example.com" target="_blank">Visit the site</a>
+```
+
+---
+
+### `download` → **download** link
+
+```html
+<a href="cv.pdf" download="cv-bob-smith.pdf">Download my CV</a>
+```
+
+> The file will be downloaded with the specified name.
+
+---
+
+## Best practices
+
+### Link text = clear and descriptive
+
+Bad:
+
+```html
+<a href="...">Click here</a>
+```
+
+Better:
+
+```html
+<a href="...">Visit our Facebook page</a>
+```
+
+### Always check the correct usage of paths:
+
+- `.` → current folder  
+- `..` → go up one folder  
+- `/` → site root  
+
+---
+
+## Quick summary
+
+| Link type       | Syntax                                                   |
+| --------------- | -------------------------------------------------------- |
+| Internal page   | `<a href="page.html">Link</a>`                           |
+| External page   | `<a href="https://...">Link</a>`                         |
+| To a section    | `<a href="#id">Link</a>` + `<h2 id="id">Heading</h2>`    |
+| Mail            | `<a href="mailto:mail@example.com">Send an email</a>`   |
+| Telephone       | `<a href="tel:+33...">Call</a>`                          |
+| New tab         | `target="_blank"`                                        |
+| Download        | `download="filename"`                                    |
+| Hover info      | `title="Text"`                                           |

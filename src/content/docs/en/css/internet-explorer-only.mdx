@@ -1,0 +1,49 @@
+---
+title: "Internet Explorer only"
+description: "List of CSS properties specific to Internet Explorer, now obsolete or non-standard."
+sidebar:
+  position: 1
+---
+
+*The Mozilla/Firefox family represents more than 30% of browsers used worldwide. Be careful when using the following properties, as they were recognized only by Internet Explorer!*
+
+---
+
+## Obsolete properties (Internet Explorer only)
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `behavior` | Obsolete | Allowed attaching a script or ActiveX component to an element. |
+| `filter` (new style / old style) | Obsolete | Old IE syntax for applying graphical filters. Now replaced by the standard `filter` property. |
+| `ime-mode` | Obsolete | Managed input for Asian languages (Chinese, Japanese, Korean). |
+| `layout-flow` | Obsolete | Defined text flow in IE for Asian languages. |
+| `layout-grid`, `layout-grid-char`, `layout-grid-line`, `layout-grid-mode`, `layout-grid-type` | Obsolete | Set of properties for character grid handling in IE (Asian languages). |
+| `overflow-x`, `overflow-y` | Now standardized | First introduced in IE, now part of the CSS standard. |
+| `scrollbar-*` (base-color, track-color, arrow-color, etc.) | Obsolete | Modified scrollbar colors in IE. Now replaced by `scrollbar-width`, `scrollbar-color`, and the `::-webkit-scrollbar` pseudo-elements. |
+| `text-align-last` | Obsolete | Alignment of the last line of text. Only supported in IE. |
+| `text-autospace` | Obsolete | Automatic character spacing for Asian languages. |
+| `text-justify` | Obsolete | Text justification handling in IE. |
+| `text-kashida-space` | Obsolete | Adjustment for Arabic text in IE. |
+| `text-underline-position` | Partially supported | Defines underline position (useful in Japanese/Chinese). |
+| `unicode-bidi` | Now standard | Initially supported in IE, now part of the CSS standard for bidirectional text. |
+| `word-break` | Now standard | First introduced in IE, now part of the CSS standard for word breaking. |
+| `word-wrap` | Renamed `overflow-wrap` | Introduced by IE, now replaced by `overflow-wrap`. |
+| `writing-mode` | Now standard | Initially IE-specific, now part of the CSS standard for writing direction. |
+| `zoom` | Non-standard property | Allowed zooming into an element in IE. Supported in some browsers (Chrome), but still non-standard. |
+
+---
+
+## Why it matters today
+
+- These properties were **specific to Internet Explorer** and are **no longer recognized by modern browsers** (Firefox, Chrome, Safari, Edge Chromium).  
+- Some have been **integrated into the CSS standard** (e.g., `overflow-x/y`, `writing-mode`, `word-break`, `overflow-wrap`).  
+- Others are **completely obsolete** (`scrollbar-*`, `behavior`, `ime-mode`) and should no longer be used.  
+- Their usage can make your stylesheets **incompatible and hard to maintain**.  
+
+---
+
+## Key takeaways
+
+- Do not use these old IE properties, except for **legacy code**.  
+- Prefer **modern standardized properties** (`filter`, `overflow-wrap`, `writing-mode`, modern `scrollbar-*`).  
+- Keep in mind that IE has been officially **discontinued since 2022**: all current development should target modern browsers.  

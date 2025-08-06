@@ -1,0 +1,50 @@
+---
+title: "Colors"
+description: "This group includes all properties related to colors."
+sidebar:
+  position: 1
+---
+
+This group includes all properties related to colors.  
+In CSS, colors can be defined in different ways: color names (`red`), hexadecimal values (`#ff0000`), functions (`rgb()`, `hsl()`, etc.).
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `color` | Defines the text (foreground) color. |
+| `background-color` | Defines the background color. |
+| `border-color` | Defines the border color. |
+| `border-top-color` | Defines the top border color. |
+| `border-right-color` | Defines the right border color. |
+| `border-bottom-color` | Defines the bottom border color. |
+| `border-left-color` | Defines the left border color. |
+| `outline-color` | Defines the color of the element’s outline. |
+
+---
+
+## Deprecated or specific properties
+
+Some properties were only used in old browsers (Internet Explorer, Netscape) and should no longer be used.
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `layer-background-color` | Netscape 4 (deprecated) | Defined the background and border color in Netscape. |
+| `scrollbar-base-color` | Internet Explorer (deprecated) | Defined the main color of the scrollbar. |
+| `scrollbar-face-color` | Internet Explorer (deprecated) | Defined the color of the scrollbar face (center area). |
+| `scrollbar-track-color` | Internet Explorer (deprecated) | Defined the track color of the scrollbar. |
+| `scrollbar-arrow-color` | Internet Explorer (deprecated) | Defined the color of the scrollbar arrows. |
+| `scrollbar-shadow-color` | Internet Explorer (deprecated) | Defined the shadow color of the scrollbar. |
+| `scrollbar-darkshadow-color` | Internet Explorer (deprecated) | Defined the darker outer shadow of the scrollbar. |
+| `scrollbar-highlight-color` | Internet Explorer (deprecated) | Defined the highlight color of the scrollbar. |
+| `scrollbar-3dlight-color` | Internet Explorer (deprecated) | Defined the 3D edge highlight color of the scrollbar. |
+
+---
+
+## Key takeaways
+
+- Use only **standard properties** (`color`, `background-color`, `border-color`, `outline-color`).  
+- Properties related to scrollbars (`scrollbar-*`) or Netscape (`layer-background-color`) are **deprecated**.  
+- Today, to customize a **scrollbar**, use modern CSS pseudo-elements (`::-webkit-scrollbar`, `scrollbar-color`, `scrollbar-width`).  

@@ -1,0 +1,114 @@
+---
+title: Connect GitHub to VS Code
+description: "Set up GitHub and Git to work directly in Visual Studio Code."
+sidebar:
+  position: 8
+---
+
+## 1. Install Git and VS Code
+
+- Download **Git**: [git-scm.com](https://git-scm.com)  
+- Download **Visual Studio Code**: [code.visualstudio.com](https://code.visualstudio.com)  
+
+Check that Git is installed:  
+
+```bash
+git --version
+```
+
+---
+
+## 2. Configure Git
+
+Set your identity (same information as on GitHub):
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+```
+
+Set VS Code as the default editor:
+
+```bash
+git config --global core.editor "code"
+```
+
+---
+
+## 3. Generate an SSH key
+
+Create a new SSH key pair:
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+```
+
+You get two files in `~/.ssh/`:  
+- `id_rsa` → private key (keep it secret)  
+- `id_rsa.pub` → public key (share with GitHub)  
+
+---
+
+## 4. Add the key to GitHub
+
+1. Copy the public key:  
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+2. Go to GitHub → **Settings > SSH and GPG keys > New SSH Key**  
+3. Paste the key, give it a name, save.  
+
+---
+
+## 5. Enable the key locally
+
+Start the SSH agent and add the key:  
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+
+---
+
+## 6. Connect VS Code to GitHub
+
+- Open VS Code  
+- Install the **GitHub Pull Requests and Issues** extension  
+- Click bottom left on **Sign in to GitHub**  
+- Authorize access to your GitHub account  
+
+---
+
+## 7. Clone a GitHub repository
+
+In VS Code:  
+1. `Ctrl + Shift + P` → type **Git: Clone**  
+2. Paste the SSH URL of the repository:  
+
+```bash
+git@github.com:user/my-project.git
+```
+
+3. Choose a folder → VS Code opens the project automatically.  
+
+---
+
+## 8. Typical workflow in VS Code
+
+- **Source Control** tab (branch icon in the sidebar)  
+- Main steps:  
+  1. **Stage** (`+`) = `git add`  
+  2. **Commit** (message required) = `git commit -m "Message"`  
+  3. **Sync Changes** (`↑↓`) = `git push` / `git pull`  
+
+---
+
+## Best practices
+
+- Always create a **branch** per feature (`feature/login`, `fix/bug`).  
+- Make **frequent commits** with clear messages.  
+- Use a `.gitignore` to skip unnecessary files.  
+- Always **pull** before starting to code.  

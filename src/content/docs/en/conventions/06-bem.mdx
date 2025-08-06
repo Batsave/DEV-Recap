@@ -1,0 +1,32 @@
+---
+title: BEM
+description: "BEM (Block, Element, Modifier) convention in CSS."
+sidebar:
+  position: 6
+---
+
+## BEM
+
+**Example**: `.menu__item--active`
+
+### Why?
+- Introduced by **Yandex** to solve CSS styling conflicts.
+- Facilitates creating reusable and independent components.
+- Clear hierarchical structure: `Block` → `Element` → `Modifier`.
+
+### Practical example
+
+```html
+<nav class="menu">
+  <a class="menu__item menu__item--active">Home</a>
+  <a class="menu__item">Settings</a>
+</nav>
+```
+
+```css
+.menu__item { padding: 10px; }
+.menu__item--active { font-weight: bold; }
+```
+
+Advantages: maintainable, scalable for large projects.
+Disadvantage: verbose and lengthy class names.

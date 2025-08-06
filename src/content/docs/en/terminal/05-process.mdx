@@ -1,0 +1,32 @@
+---
+title: Processus
+description: "Lister et gérer les processus avec le terminal."
+sidebar:
+  position: 5
+---
+
+## Commandes principales
+
+| Commande | Description | Exemple |
+|----------|-------------|---------|
+| `ps aux` | Liste tous les processus | `ps aux` |
+| `top`    | Affiche les processus en temps réel | `top` |
+| `htop`   | Version améliorée et interactive | `htop` |
+| `kill`   | Termine un processus par son PID | `kill 1234` |
+| `kill -9`| Force l’arrêt immédiat d’un processus | `kill -9 1234` |
+
+---
+
+## Exemple pratique
+
+1. Lancer `top` pour voir l’activité.  
+2. Identifier le **PID** d’un processus.  
+3. Utiliser `kill PID` pour le fermer.  
+
+---
+
+## Bonnes pratiques
+
+- Préférer `kill` simple avant `kill -9`.  
+- Utiliser `htop` pour une gestion plus lisible.  
+- Vérifier deux fois le **PID** avant de tuer un processus.  

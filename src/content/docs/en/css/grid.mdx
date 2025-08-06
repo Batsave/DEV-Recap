@@ -1,0 +1,74 @@
+---
+title: CSS Grid
+description: "Overview and interactive demonstrations of the main CSS Grid properties."
+sidebar:
+  position: 1
+---
+
+import GridTemplate from "~/components/demos/GridTemplate.jsx";
+import GridAutoPlacement from "~/components/demos/GridAutoPlacement.jsx";
+import GridResponsive from "~/components/demos/GridResponsive.jsx";
+import GridPlacement from "~/components/demos/GridPlacement.jsx";
+import GridAlignSelf from "~/components/demos/GridAlignSelf.jsx";
+
+## Grid layout (2D layout system)
+
+`display: grid` transforms all direct children into cells of a two-dimensional grid.
+
+```css
+.container {
+  display: grid;
+}
+```
+---
+
+## Grid Template Columns & Rows
+
+Define column and row tracks, often using functions like `repeat()` or `minmax()`.
+
+<GridTemplate client:only="react"/>
+
+---
+
+## Auto-placement & Gap
+
+`grid-auto-flow`, `grid-auto-columns/rows`, and `gap` handle automatic item placement and spacing.
+
+<GridAutoPlacement client:only="react"/>
+
+---
+
+## Explicit placement: grid-column / grid-row / grid-area
+
+Exact positioning of elements in the grid using line numbers or named areas.
+
+<GridPlacement client:only="react"/>
+
+---
+
+## Alignment & Align-Self
+
+Alignment rules in Grid come from the Flexbox module, now shared (box‑alignment).
+
+<GridAlignSelf client:only="react"/>
+
+---
+
+## Responsive layout with Grid
+
+Advanced examples: fluid layout from 1 to 3 columns, 12‑column system, product auto-placement.
+
+<GridResponsive client:only="react"/>
+
+---
+
+## Quick summary
+
+| Concept                | Short description                                                            |
+|-------------------------|----------------------------------------------------------------------------|
+| `display: grid`         | Activates the two-dimensional grid for direct children                     |
+| `grid-template`         | Explicitly defines columns, rows, or areas with `repeat()` / `minmax()`    |
+| Auto-placement          | Automatically places items using `grid-auto-flow` and `gap`                |
+| Explicit placement      | `grid-column`, `grid-row`, `grid-area`: precise control of the grid layout |
+| Alignment               | `align-items`, `justify-items`, `align-self` shared with the Flexbox model |
+| Responsive/grid layout  | Adaptive grids, multi-column systems, named areas                          |

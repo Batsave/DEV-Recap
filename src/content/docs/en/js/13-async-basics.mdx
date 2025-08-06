@@ -1,0 +1,78 @@
+---
+title: Programmation Asynchrone
+description: "Introduction à la programmation asynchrone en JavaScript : setTimeout, setInterval, Promises, async/await."
+sidebar:
+  position: 12
+---
+
+## Qu'est-ce que l'asynchrone ?
+
+En JavaScript, le code est exécuté **ligne par ligne** (synchronement).  
+Mais certaines opérations (ex. attendre un délai, charger une ressource externe, faire une requête HTTP) prennent du temps.  
+
+> L’asynchrone permet de **ne pas bloquer le programme** pendant ces opérations.  
+Le reste du code continue de s’exécuter, et la tâche longue sera traitée plus tard quand elle est prête.
+
+---
+
+## setTimeout
+
+`setTimeout` exécute une fonction **une seule fois** après un délai donné (en millisecondes).
+
+```js
+console.log("Début");
+
+setTimeout(() => {
+  console.log("Exécuté après 2 secondes");
+}, 2000);
+
+console.log("Fin");
+```
+### Explication (setTimeout)
+
+- `console.log("Début")` → s’affiche immédiatement  
+- `setTimeout` est planifié pour **2000 ms (2s)**  
+- `console.log("Fin")` s’exécute **avant** le callback de `setTimeout`  
+- Après 2 secondes, la fonction dans `setTimeout` est exécutée  
+
+---
+
+## setInterval
+
+`setInterval` exécute une fonction **de manière répétée** à intervalles réguliers.
+
+```js
+let compteur = 0;
+
+let intervalle = setInterval(() => {
+  compteur++;
+  console.log("Compteur :", compteur);
+
+  if (compteur >= 5) {
+    clearInterval(intervalle); // stoppe la boucle
+  }
+}, 1000);
+```
+
+### Explication (setInterval)
+
+- La fonction est exécutée toutes les **1000 ms (1 seconde)**  
+- Le compteur est incrémenté à chaque exécution  
+- Quand `compteur` atteint **5**, on appelle `clearInterval` pour **arrêter la boucle**  
+
+---
+
+## Quand utiliser ?
+
+- **setTimeout** → exécuter une tâche **une seule fois après un délai**  
+  _(ex. afficher une notification après 5 secondes)_  
+- **setInterval** → exécuter une tâche **répétée**  
+  _(ex. mettre à jour une horloge en temps réel)_  
+
+---
+
+## Bonnes pratiques
+
+- Toujours nettoyer un `setInterval` avec **`clearInterval`** quand il n’est plus utile (éviter les boucles infinies).  
+- Éviter de mettre trop de `setTimeout` imbriqués → préférer des solutions plus modernes comme les **Promises** ou **async/await**.  
+- Utiliser l’asynchrone pour garder une application **fluide** (ne pas bloquer l’interface).  

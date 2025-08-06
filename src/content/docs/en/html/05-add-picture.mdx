@@ -1,0 +1,120 @@
+---
+title: Adding Images
+description: "To display an image in an HTML page, we use the self-closing <img/> tag."
+sidebar:
+  position: 6
+---
+
+## The `<img />` tag
+
+To display an image in an HTML page, we use the **self-closing** `<img />` tag.
+
+### Basic syntax:
+
+```html
+<img src="path/to/image.jpg" alt="image description" />
+```
+
+---
+
+## The `src` attribute
+
+To define the **source** of the image, you can use:
+
+### An **absolute URL**
+
+```html
+<img src="https://placekitten.com/408/287" alt="A cute gray cat" />
+```
+
+### A **root-relative URL** (starts with `/`)
+
+```html
+<img src="/images/my-favorite-cat.jpeg" alt="My favorite cat" />
+```
+
+### A **relative URL** to the current HTML file
+
+```html
+<img src="./pictures/my-avatar.png" alt="Profile avatar" />
+```
+
+---
+
+## The `alt` attribute (alternative text)
+
+Essential for:
+
+- [x] **Accessibility** (screen readers)  
+- [x] **SEO** (search engines)  
+- [x] When the image fails to load  
+
+### Best practices for `alt`:
+
+- Be **clear and precise**  
+- Describe the **content**, not the type (“image of…” → avoid)  
+- Don’t overload with **SEO keywords**  
+- If the image is **purely decorative**: `alt=""`  
+
+### Example:
+
+```html
+<img src="machu.jpg" alt="Machu Picchu in Peru at sunrise" />
+```
+
+---
+
+## Width and height
+
+You can define the **display size** of the image with `width` and `height`.
+
+### Example:
+
+```html
+<img src="photo.jpg" width="300" height="400" />
+```
+
+> [!CAUTION] Warning  
+> If you specify **only one** attribute, the other will be **calculated automatically**.  
+> Don’t change the original aspect ratio, otherwise the image will be **distorted**.
+
+### Tip:
+
+> Don’t load a 4000×3000 px image to display it at 300×200 px.  
+> Optimize your images to the **right size** before inserting them!
+
+---
+
+## Do you really need an image?
+
+- If it’s **purely decorative**, use CSS (e.g., `background-image`) instead of an `<img />` tag.  
+- HTML is meant for **structured information**.
+
+---
+
+## Complete example:
+
+```html
+<img
+  src="https://placekitten.com/300/300"
+  alt="Gray cat sitting in a basket"
+  width="300"
+/>
+```
+
+---
+
+## Quick summary
+
+| Element           | Role                                 |
+| ----------------- | ------------------------------------ |
+| `<img />`         | Display an image                     |
+| `src`             | Define the image source              |
+| `alt`             | Describe the image (accessibility + SEO) |
+| `width` / `height` | Define display size                 |
+| `alt=""`          | For decorative images                |
+
+---
+
+> [!TIP] Bonus tip  
+> To test easily, use services like `https://placekitten.com/` or `https://picsum.photos/` to generate temporary placeholder images.

@@ -1,0 +1,124 @@
+---
+title: Tableaux
+description: "Manipuler les tableaux en JavaScript : création, méthodes et parcours."
+sidebar:
+  position: 8
+---
+
+## Qu'est-ce qu'un tableau ?
+
+Un **tableau** (Array) est une **liste ordonnée** qui peut contenir plusieurs valeurs.  
+Chaque élément du tableau est identifié par un **index** (commence à 0).
+
+Exemple : `["pomme", "banane", "poire"]`  
+- `fruits[0]` → "pomme"  
+- `fruits[1]` → "banane"  
+
+
+---
+
+## Créer un tableau
+
+On peut créer un tableau avec des crochets `[]`.
+
+---
+
+## Méthodes principales
+
+| Méthode | Exemple | Résultat |
+|---------|---------|----------|
+| `push()` | `fruits.push("kiwi")` | Ajoute à la fin |
+| `pop()` | `fruits.pop()` | Retire le dernier élément |
+| `shift()` | `fruits.shift()` | Retire le premier élément |
+| `unshift()` | `fruits.unshift("fraise")` | Ajoute au début |
+| `map()` | `fruits.map(f => f.toUpperCase())` | Transforme les éléments |
+| `filter()` | `fruits.filter(f => f.startsWith("p"))` | Filtre les éléments |
+| `reduce()` | `[1,2,3].reduce((a,b)=>a+b)` | Réduit à une seule valeur |
+
+---
+
+## Parcourir un tableau
+
+### Avec un `for` classique
+On parcourt le tableau via ses **index** :
+
+```js
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+```
+--
+
+### Avec `for...of`
+
+Parcourt directement les valeurs (plus lisible) :
+
+```js
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+--
+
+### Avec `forEach`
+Appelle une fonction sur chaque élément :
+
+```js
+fruits.forEach(fruit => console.log(fruit));
+```
+
+
+---
+
+
+## Focus : la méthode `map()`
+
+La méthode **`map()`** crée un **nouveau tableau** en appliquant une fonction à **chaque élément** du tableau original.  
+> Important : `map()` ne modifie **pas** le tableau initial.
+
+Exemple : transformer tous les éléments en majuscules.
+
+```js
+let fruits = ["pomme", "banane", "poire"];
+let majuscules = fruits.map(fruit => fruit.toUpperCase());
+
+console.log(majuscules); // ["POMME", "BANANE", "POIRE"]
+console.log(fruits);     // ["pomme", "banane", "poire"] (inchangé)
+```
+
+Autre exemple : extraire une propriété d’un tableau d’objets.
+
+```js
+let utilisateurs = [
+  { nom: "Alice", age: 25 },
+  { nom: "Bob", age: 30 },
+  { nom: "Charlie", age: 35 }
+];
+
+let noms = utilisateurs.map(u => u.nom);
+console.log(noms); // ["Alice", "Bob", "Charlie"]
+```
+
+
+
+---
+
+## Exemple pratique
+
+Filtrer les nombres pairs d’un tableau :
+
+```js
+let nombres = [1, 2, 3, 4, 5];
+let pairs = nombres.filter(n => n % 2 === 0);
+console.log(pairs); // [2, 4]
+```
+
+---
+
+## Bonne pratiques
+
+- Utiliser `for...of` ou `forEach` pour plus de lisibilité.
+- Préférer `map`, `filter`, `reduce` pour écrire du code plus fonctionnel et concis.
+- Éviter de mélanger différents types dans un même tableau (meilleure lisibilité).
+

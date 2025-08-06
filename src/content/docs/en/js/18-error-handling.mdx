@@ -1,0 +1,94 @@
+---
+title: Gestion des erreurs
+description: "Gérer les erreurs en JavaScript avec try, catch et throw."
+sidebar:
+  position: 17
+---
+
+## Pourquoi gérer les erreurs ?
+
+En JavaScript, une erreur **interrompt l’exécution du code**.  
+Sans gestion, l’application peut s’arrêter brutalement.  
+
+➡ Avec `try...catch`, on intercepte l’erreur pour la traiter proprement, sans planter le programme.
+
+---
+
+## try...catch
+
+- **try** → contient le code à exécuter.  
+- **catch** → intercepte l’erreur si elle survient.  
+- **finally** → s’exécute toujours (qu’il y ait erreur ou non).  
+
+```js
+try {
+  let resultat = 10 / 0;
+  console.log(resultat);
+  throw new Error("Erreur personnalisée");
+} catch (erreur) {
+  console.error("Une erreur est survenue :", erreur.message);
+} finally {
+  console.log("Bloc finally exécuté");
+}
+```
+
+---
+
+## Créer et lancer une erreur
+
+Avec `throw`, on peut lancer une erreur manuellement.
+
+```js
+function division(a, b) {
+  if (b === 0) {
+    throw new Error("Division par zéro interdite");
+  }
+  return a / b;
+}
+
+try {
+  console.log(division(10, 0));
+} catch (e) {
+  console.error(e.message); // Division par zéro interdite
+}
+```
+
+---
+
+## Erreurs personnalisées
+On peut créer ses propres **classes d’erreurs** pour distinguer les cas.
+
+```js
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+function validerAge(age) {
+  if (age < 18) {
+    throw new ValidationError("Âge insuffisant");
+  }
+  return true;
+}
+
+try {
+  validerAge(15);
+} catch (e) {
+  if (e instanceof ValidationError) {
+    console.error("Erreur de validation :", e.message);
+  } else {
+    console.error("Autre erreur :", e);
+  }
+}
+```
+
+---
+
+## Bonnes pratiques
+
+- Toujours fournir un **message clair** dans les erreurs (`throw new Error("...")`).  
+- Utiliser **`finally`** pour libérer des ressources (fermer un fichier, arrêter une connexion…).  
+- Créer des **erreurs personnalisées** pour mieux catégoriser les problèmes.  
+- Ne pas abuser des **`try/catch`** → les utiliser seulement là où une erreur est probable.  

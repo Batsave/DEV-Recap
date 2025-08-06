@@ -1,0 +1,105 @@
+---
+title: Fonctions
+description: "Introduction aux fonctions en JavaScript : déclaration, fonctions fléchées, paramètres et valeurs de retour."
+sidebar:
+  position: 5
+---
+
+
+## Qu'est-ce qu'une fonction ?
+
+Une fonction est un **bloc de code réutilisable** qui exécute une tâche précise.  
+On l’appelle pour **éviter la répétition de code** et améliorer la lisibilité.
+
+En français, on peut lire ça comme :  
+➡ **« Donne un nom à une suite d’instructions, et réutilise-les quand tu veux »**.
+
+
+---
+
+## Déclaration de fonction
+
+```js
+function saluer(nom) {
+  return "Bonjour " + nom;
+}
+
+console.log(saluer("Alice")); // Bonjour Alice
+```
+
+> Ici, `saluer` est une **fonction déclarée**.
+Elle peut être appelée **avant sa définition** grâce au mécanisme de hoisting.
+
+---
+
+## Expressions de fonction
+
+On peut aussi stocker une fonction dans une variable.
+Dans ce cas, elle **ne peut pas être appelée avant sa définition**.
+
+```js
+const saluer = function(nom) {
+  return "Salut " + nom;
+};
+
+console.log(saluer("Bob")); // Salut Bob
+```
+
+---
+
+## Fonctions fléchées (arrow functions)
+
+Introduites avec ES6, elles offrent une syntaxe plus courte.
+Elles héritent automatiquement du `this` de leur contexte *(lexical this)*, ce qui les rend pratiques dans les callbacks.
+
+```js
+const saluer = (nom) => "Bonjour " + nom;
+
+console.log(saluer("Bob")); // Bonjour Bob
+```
+
+> Différence importante :
+> - Une fonction classique définit son propre this.
+> - Une fonction fléchée utilise le this du contexte où elle a été définie.
+
+---
+
+## Paramètres et valeurs par défaut
+
+Les paramètres peuvent avoir une valeur par défaut si aucun argument n’est fourni.
+
+```js
+function multiplier(a, b = 2) {
+  return a * b;
+}
+
+console.log(multiplier(5));    // 10
+console.log(multiplier(5, 3)); // 15
+```
+
+---
+
+## Retourner une valeur
+Une fonction peut renvoyer un résultat avec `return`.
+
+```js
+function addition(x, y) {
+  return x + y;
+}
+
+let resultat = addition(4, 6);
+console.log(resultat); // 10
+```
+
+---
+
+## Comparaison des syntaxes
+
+| Syntaxe       | Exemple                  | Particularité |
+|---------------|--------------------------|---------------|
+| Déclaration   | ```function nom() {}```  | Hoisting (appel avant définition possible) |
+| Expression    | ```const f = function() {}``` | Pas de hoisting |
+| Fléchée (ES6) | ```const f = () => {}``` | Syntaxe courte, `this` lexical |
+
+> [!NOTE] Astuce
+> Si jamais ton wiki rend encore mal les doubles backticks, tu peux échapper les accolades avec `{` et `}` pour forcer leur affichage.

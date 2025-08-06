@@ -1,0 +1,96 @@
+---
+title: Portée (Scope)
+description: "Comprendre la portée des variables en JavaScript : globale, fonction et bloc."
+sidebar:
+  position: 6
+---
+
+## Qu'est-ce que la portée ?
+
+La **portée** (scope) définit **où une variable est accessible** dans ton programme.  
+En JavaScript, il existe trois principaux types de portée :
+
+1. **Globale** : accessible partout.  
+2. **Fonction** : accessible uniquement à l'intérieur d'une fonction.  
+3. **Bloc** : accessible uniquement dans un bloc `{ }` (if, for, while…).  
+
+---
+
+## Portée globale
+
+Une variable déclarée **en dehors de toute fonction ou bloc** est dite **globale**.  
+Elle est accessible depuis n’importe où dans le programme.
+
+```js
+let variableGlobale = "Je suis globale";
+
+function afficherGlobale() {
+  console.log(variableGlobale);
+}
+
+afficherGlobale(); // Je suis globale
+```
+
+> [!CAUTION] Attention
+> Attention : trop de variables globales = code difficile à maintenir.
+
+---
+
+## Portée fonction
+
+Une variable déclarée dans une fonction n’existe que dans cette fonction.
+On dit qu’elle a une portée locale.
+
+```js
+function test() {
+  let variableLocale = "Dans la fonction";
+  console.log(variableLocale);
+}
+
+test();
+// console.log(variableLocale); // Erreur : non définie
+```
+
+---
+
+## Portée bloc
+
+Avec `let` et `const`, les variables sont limitées au bloc de code dans lequel elles sont définies.
+
+```js
+if (true) {
+  let variableBloc = "Dans le bloc";
+  console.log(variableBloc); // OK
+}
+
+// console.log(variableBloc); // Erreur : non définie
+```
+
+> Avec `var`, ce n’est pas le cas → `var` ignore la portée bloc et se comporte comme une variable fonction.
+
+```js
+if (true) {
+  var test = "Je sors du bloc";
+}
+console.log(test); // "Je sors du bloc"
+``` 
+
+
+---
+
+## Résumé des portées
+
+| Type de portée | Mot-clés concernés | Accessible où ? |
+|----------------|--------------------|-----------------|
+| **Globale**    | `var`, `let`, `const` | Partout dans le code (⚠️ à éviter trop de globales) |
+| **Fonction**   | `var`, `let`, `const` | Seulement à l'intérieur de la fonction |
+| **Bloc**       | `let`, `const`        | Seulement dans le bloc `{ }` (if, for, while...) |
+
+
+---
+
+## Bonnes pratiques 
+
+- Utiliser `const` par défaut, et `let` si la valeur doit changer.
+- Éviter `var` (ancien comportement, source de bugs).
+- Réduire au maximum les variables **globales** → privilégier les variables locales et les fonctions pour mieux organiser ton code.

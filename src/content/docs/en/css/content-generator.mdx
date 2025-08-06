@@ -1,0 +1,83 @@
+---
+title: "Content Generation"
+description: "CSS properties that allow adding generated content before or after HTML elements."
+sidebar:
+  position: 1
+---
+
+These CSS properties allow you to add **automatically generated content** (text, symbols, images) before or after HTML elements.  
+They are mainly used with the pseudo-elements `::before` and `::after`.
+
+---
+
+## Main properties
+
+| Property | Description |
+| --- | --- |
+| `content` | Adds generated content into the document (text, icons, images). |
+| `counter-increment` | Defines the increment step of a CSS counter. |
+| `counter-reset` | Defines the initial value or resets a CSS counter. |
+| `quotes` | Defines the characters used for quotation marks (opening/closing). |
+
+---
+
+## Simple example: adding content
+
+```css
+p::before {
+  content: "→ ";
+  color: gray;
+}
+```
+
+Result: each paragraph will display an arrow before its text.
+
+---
+
+## Example with counters
+
+```css
+h2 {
+  counter-increment: section; /* increments a counter for each h2 */
+}
+
+h2::before {
+  content: "Section " counter(section) ": ";
+}
+```
+
+Result:
+
+- First h2 → "Section 1: ..."
+- Second h2 → "Section 2: ..."
+
+
+
+---
+
+## Example with quotes
+
+```css
+q {
+  quotes: "«" "»" "‹" "›";
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+```
+
+Résult : a `<q>`element will automatically be displayed with French quotation marks (« ... »).
+
+---
+
+## Key takeaways
+
+- `content` is used with `::before` and `::after` to insert generated content.  
+- `counter-reset` initializes a counter, and `counter-increment` increases it.  
+- `quotes` allows defining custom quotation marks.  
+- These properties are useful for automatic numbering, adding icons, or customizing quotations.  

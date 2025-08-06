@@ -1,0 +1,63 @@
+---
+title: "Text & Characters"
+description: "Learn how to style text and characters in CSS."
+sidebar:
+  position: 1
+---
+
+This family groups together all the properties that allow you to control text, its font, size, spacing, alignment, and decorations.
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `color` | Defines the text color. |
+| `font` | Shorthand property grouping multiple values (`font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, `font-family`). |
+| `font-family` | Defines the font family (e.g., Arial, Verdana, Times New Roman). |
+| `font-size` | Defines the font size (px, em, rem, %). |
+| `font-style` | Defines the text style: normal, italic, oblique. |
+| `font-variant` | Enables small caps (`small-caps`). |
+| `font-weight` | Defines the font weight: normal, bold, 100 to 900. |
+| `letter-spacing` | Defines the spacing between letters. |
+| `line-height` | Defines the line height (leading). |
+| `text-align` | Defines horizontal alignment: left, right, center, justify. |
+| `text-decoration` | Defines text decorations: underline, overline, line-through. |
+| `text-overflow` | Defines how overflowing content is displayed: `ellipsis` adds ellipsis (…) |
+| `text-shadow` | Defines a shadow applied to the text. |
+| `text-transform` | Defines text transformation: uppercase, lowercase, capitalize. |
+| `vertical-align` | Defines vertical alignment (baseline, top, middle, bottom). |
+| `white-space` | Controls handling of spaces and line breaks: normal, nowrap, pre, pre-wrap. |
+| `word-break` | Defines word breaking: normal, break-all, keep-all. |
+| `word-wrap` / `overflow-wrap` | Forces line breaks if a word overflows. |
+| `word-spacing` | Defines spacing between words. |
+| `writing-mode` | Defines the writing mode: horizontal-tb, vertical-rl, vertical-lr. |
+| `direction` | Defines text direction: ltr (left → right), rtl (right → left). |
+| `unicode-bidi` | Defines bidirectional text behavior in combination with `direction`. |
+
+---
+
+## Specific or deprecated properties
+
+Some properties are tied to older browsers (Internet Explorer) or specific use cases (Asian languages). They are rarely used today.
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `font-size-adjust` | Rarely used | Adjusts the height of lowercase letters independently of `font-size`. |
+| `font-stretch` | Poorly supported | Defines font stretching or compression (condensed, expanded). |
+| `line-break` | Specific to Asian languages | Defines line breaking rules in Japanese and Chinese. |
+| `text-align-last` | Internet Explorer | Defines alignment of the last line specifically. |
+| `text-autospace` | Internet Explorer | Defines automatic spacing for Asian characters. |
+| `text-kashida-space` | Internet Explorer | Defines justification specific to Arabic text. |
+| `text-underline-position` | Specific to Asian languages | Defines the underline position (useful for Japanese and Chinese). |
+
+---
+
+## Key takeaways
+
+- The main properties cover **font** (`font-family`, `font-size`, `font-weight`, `font-style`),  
+  **spacing** (`line-height`, `letter-spacing`, `word-spacing`),  
+  and **text formatting** (`text-align`, `text-transform`, `text-decoration`).  
+- Deprecated properties like `text-autospace` or `text-kashida-space` should no longer be used.  
+- For Asian languages or Arabic, some specific properties (`line-break`, `writing-mode`, `unicode-bidi`) may still be useful.  

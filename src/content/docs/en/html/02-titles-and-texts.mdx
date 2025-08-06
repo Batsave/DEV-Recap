@@ -1,0 +1,158 @@
+---
+title: Headings and Text
+description: "Learn how to structure and highlight text with HTML tags."
+sidebar:
+  position: 3
+---
+
+## Heading tags (`<h1>` to `<h6>`)
+
+There are **6 levels of headings** in HTML, from `<h1>` to `<h6>`.
+
+- `<h1>` is used for the **main title** of the page
+- `<h2>` for **subtitles**
+- `<h3>` to `<h6>` for lower-level headings (subsections)
+
+### Example:
+
+```html
+<!-- Main title -->
+<h1>Learn HTML while having fun</h1>
+
+<!-- Chapter -->
+<h2>Chapter 1: Basic tags</h2>
+
+<!-- Subsection -->
+<h3>1.1 Different tags</h3>
+```
+
+### Rules to follow:
+
+- **Only one `<h1>`** per page.
+- **No skipping levels** (don’t jump from `<h1>` directly to `<h3>`).
+- Use a **logical hierarchy** to improve SEO and accessibility (especially for screen readers).
+
+---
+
+## Practice example:
+
+You can practice with this text about cats, structuring it with the correct tags:
+
+```html
+<h1>What are cats?</h1>
+<p>
+  <strong>Cats</strong> are members of the <em>feline</em> family,
+  sharing many characteristics with their cousins: lions, tigers, and panthers.
+</p>
+
+<h2>What is the history of cats?</h2>
+
+<h3>The first domestic cats</h3>
+<p>
+  Cats originated from Africa, Asia, and Europe, and were domesticated around 9,000 years ago...
+</p>
+
+<h3>The domestication of cats in Europe</h3>
+<p>Cats were introduced to Europe in the Middle Ages...</p>
+
+<h2>What are cats’ characteristics?</h2>
+<p>
+  They are <em>very flexible</em>, can jump up to five times their height,
+  and run at <abbr title="kilometers">km</abbr>/<abbr title="hour">h</abbr>.
+</p>
+```
+
+---
+
+## Emphasizing text
+
+### `<strong>` = importance (bold)
+
+To mark a word as **important**.
+
+```html
+<strong>cats</strong>
+```
+
+### `<em>` = emphasis (italic)
+
+To emphasize a word.
+
+```html
+<em>felines</em>
+```
+
+> [!INFO] Information  
+> These tags are semantic, so they are accessible and good for SEO.
+
+---
+
+## Tags to avoid for styling
+
+- `<b>` = bold
+- `<i>` = italic
+- `<u>` = underline
+
+> [!CAUTION] Warning  
+> These tags provide **no meaning** to the text. Use **CSS** instead to handle appearance (bold, italic, underline).
+
+---
+
+## Quotes
+
+### Blockquote:
+
+```html
+<blockquote cite="https://en.wikipedia.org/wiki/Cat">
+  Cats are members of the feline family...
+</blockquote>
+```
+
+---
+
+## Abbreviations
+
+Use `<abbr>` to display an explanation on hover:
+
+```html
+<abbr title="kilometers">km</abbr> <abbr title="hours">h</abbr>
+```
+
+---
+
+## Displaying code
+
+To display code in an HTML page:
+
+```html
+<pre>
+  <code>
+&lt;h1&gt;Hello, world&lt;/h1&gt;
+&lt;p&gt;Welcome to my website&lt;/p&gt;
+  </code>
+</pre>
+```
+
+> The `<pre></pre>` block preserves line breaks and spaces.  
+> The `<code></code>` block indicates that it is code.  
+> Special characters must be encoded:
+
+- `&` → `&amp;`
+- `<` → `&lt;`
+- `>` → `&gt;`
+- `"` → `&quot;`
+
+---
+
+## Recap
+
+| Action                         | Recommended tag               | To avoid              |
+| ------------------------------- | ----------------------------- | --------------------- |
+| Main title                      | `<h1>`                        | Never more than one   |
+| Subtitle                        | `<h2>` to `<h6>`              | Don’t skip levels     |
+| Semantic bold                   | `<strong>`                    | `<b>`                 |
+| Semantic italic                 | `<em>`                        | `<i>`                 |
+| Underline                       | ❌ via CSS only               | `<u>`                 |
+| Quote                           | `<blockquote>`                | -                     |
+| Abbreviation                    | `<abbr>`                      | -                     |
+| Visible HTML code               | `<pre><code>...</code></pre>` | -                     |

@@ -1,0 +1,98 @@
+---
+title: Closures
+description: "Introduction aux closures en JavaScript et leur utilité pour préserver un état."
+sidebar:
+  position: 7
+---
+
+## Qu'est-ce qu'une closure ?
+
+Une **closure** est créée lorsqu'une fonction interne **mémorise** les variables de son environnement extérieur, même après que la fonction externe ait fini son exécution.  
+
+En français, on peut dire :  
+> *« Une closure est une fonction qui se souvient de l’endroit où elle a été créée »*.
+
+
+---
+
+
+## Exemple concret : minuterie
+
+Une closure peut être utilisée pour créer un **timer** qui garde en mémoire le nombre de secondes écoulées.
+
+
+```js
+function startTimer() {
+  let secondes = 0;
+
+  return function() {
+    secondes++;
+    console.log("Temps écoulé :", secondes, "s");
+  };
+}
+
+const timer = startTimer();
+
+timer(); // Temps écoulé : 1 s
+timer(); // Temps écoulé : 2 s
+timer(); // Temps écoulé : 3 s
+```
+
+---
+
+## Utilisations pratiques des closures
+
+- **Préserver un état** entre plusieurs appels (ex. compteur, timer).  
+- Créer des **variables privées** non accessibles depuis l’extérieur.  
+- **Éviter les variables globales** → meilleur cloisonnement du code.  
+- Très utile dans les **callbacks** et en programmation fonctionnelle.
+
+
+---
+
+## Exemple : variables privées
+
+Une closure permet de protéger une donnée sensible (comme le solde d’un compte bancaire) en la rendant accessible uniquement via des méthodes dédiées.
+
+```js
+function createBankAccount() {
+  let balance = 0; // variable privée
+
+  return {
+    deposit(amount) {
+      balance += amount;
+      console.log("Nouveau solde :", balance);
+    },
+    withdraw(amount) {
+      if (amount <= balance) {
+        balance -= amount;
+        console.log("Retrait effectué, solde :", balance);
+      } else {
+        console.log("Fonds insuffisants");
+      }
+    }
+  };
+}
+
+const account = createBankAccount();
+account.deposit(100); // Nouveau solde : 100
+account.withdraw(30); // Retrait effectué, solde : 70
+// console.log(account.balance); ❌ impossible d'y accéder directement
+
+```
+
+---
+
+## Pièges à connaître
+
+- Trop de closures inutiles peuvent **consommer de la mémoire**.  
+- Elles peuvent créer des **références cachées** qui empêchent le *garbage collector* de libérer certaines variables.  
+- Bien utilisées, elles rendent le code plus sûr et mieux structuré.  
+
+
+---
+
+## En résumé
+
+Une closure = **une fonction + son environnement**.  
+C’est un des piliers de JavaScript moderne (utilisé dans les callbacks, les fonctions fléchées, les frameworks comme React, etc.).

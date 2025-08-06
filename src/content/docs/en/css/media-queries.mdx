@@ -1,0 +1,196 @@
+---
+title: Media Queries
+description: "A media query allows you to define CSS styles based on specific conditions."
+sidebar:
+  position: 1
+---
+
+## What is a Media Query?
+
+A **media query** allows you to **define specific CSS styles** based on conditions such as:
+
+- **screen size** (width/height),
+- **device type** (print, screen),
+- **resolution**,
+- **dark or light mode**, etc.
+
+It is a **fundamental tool of responsive design**, to adapt the layout to all devices: desktop, tablet, mobile.
+
+---
+
+## Basic syntax
+
+```css
+@media condition {
+  /* CSS styles here */
+}
+```
+
+---
+
+## Practical example (breakpoints)
+
+```css
+/* Style par défaut : Desktop */
+body {
+  background: white;
+  font-size: 18px;
+}
+
+/* Tablette : max-width 768px */
+@media (max-width: 768px) {
+  body {
+    background: #f0f0f0;
+    font-size: 16px;
+  }
+}
+
+/* Mobile : max-width 480px */
+@media (max-width: 480px) {
+  body {
+    background: #e0e0e0;
+    font-size: 14px;
+  }
+}
+```
+
+---
+
+## Common breakpoints (indicative)
+
+| Device        | Max width (`max-width`) |
+|---------------|--------------------------|
+| Mobile        | `480px` to `600px`       |
+| Tablet        | `768px` to `1024px`      |
+| Laptop        | `1024px` to `1440px`     |
+| Large desktop | `1440px+`                |
+
+---
+
+## Some useful conditions
+
+### 1. By screen width
+
+```css
+@media (min-width: 1024px) { ... }
+@media (max-width: 768px) { ... }
+```
+
+### 2. Portrait/Landscape orientation
+
+```css
+@media (orientation: portrait) { ... }
+@media (orientation: landscape) { ... }
+```
+
+### 3. Light/Dark mode
+
+```css
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+}
+```
+
+---
+
+## Tip: combining multiple conditions
+
+```css
+@media (min-width: 600px) and (max-width: 900px) {
+  /* Styles for screens between 600px and 900px */
+}
+```
+
+---
+
+## Best practices
+
+- Use **mobile-first** media queries: base styles for small screens, then `min-width` for larger ones.  
+- Avoid overloading everything in a single rule.  
+- Keep a **clear structure** (desktop / tablet / mobile).  
+- Use **fluid units** (`em`, `%`, `rem`) whenever possible.  
+
+---
+
+## Complete example
+
+```css
+.card {
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+```
+
+---
+
+## `@media` vs `@media screen`
+
+### 1. `@media`
+
+```css
+@media (max-width: 768px) {
+  /* styles here */
+}
+
+```
+
+This is the **most common form** and the one most used today.  
+
+By default, **`screen` is implied**, so you can safely **omit** `screen` in 99% of cases.  
+
+
+---
+
+### 2. `@media screen`
+
+```css
+@media screen and (max-width: 768px) {
+  /* styles here */
+}
+
+```
+
+Here you specify that the rules apply **only to screens** (and not to printing, for example).  
+
+---
+
+## Other media types
+
+
+| Type | Description |
+| --- | --- |
+| `all` | Tous les types de médias (défaut) |
+| `screen` | Écrans (ordinateurs, tablettes, etc.) |
+| `print` | Impression papier |
+| `speech` | Synthèse vocale (lecture d'écran) |
+
+---
+
+## Best practices
+
+- If you only target **screens**, you can simply **use `@media`** (shorter, more readable).  
+- If you want to **exclude `print` or `speech`**, explicitly use:  
+    
+    ```css
+    @media screen and (max-width: 768px) { ... }
+    
+    ```
+    
+
+---
+
+## Summary
+
+| Syntax                     | Recommended? | Notes                                    |
+|----------------------------|--------------|------------------------------------------|
+| `@media (...)`             | ✅ YES       | Enough in 99% of cases                   |
+| `@media screen and (...)`  | ✅ YES       | More explicit, useful if you also handle print |
+| `@media print`             | ✅ YES       | For print styles                         |

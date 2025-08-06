@@ -1,0 +1,55 @@
+---
+title: "Tables"
+description: "CSS properties specific to tables and their sub-elements."
+sidebar:
+  position: 1
+---
+
+These properties apply only to `<table>` elements and their sub-elements (`caption`, `th`, `td`, etc.).  
+They allow you to control the display, spacing, and layout of tables in CSS.
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `border-collapse` | Defines whether adjacent cell borders are separated (`separate`) or merged (`collapse`). |
+| `border-spacing` | Defines the spacing between cell borders (only if `border-collapse: separate`). |
+| `caption-side` | Defines the placement of the table caption (`top`, `bottom`). |
+| `empty-cells` | Defines whether empty cells display their border (`show`) or not (`hide`). |
+| `table-layout` | Defines how column widths are calculated: `auto` (default) or `fixed` (widths based on attributes/CSS values). |
+
+---
+
+## Specific / rarely used properties
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `speak-header` | Deprecated (CSS2, accessibility) | Defined how table headers were read by screen readers. Today replaced by **ARIA** solutions and good HTML practices (`scope`, `headers`, etc.). |
+
+---
+
+## Simple example
+
+```css
+table {
+  border-collapse: collapse; /* Merge borders */
+  table-layout: fixed;       /* Fixed column widths */
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #333;
+  padding: 8px;
+}
+```
+---
+
+## Key takeaways
+
+- `border-collapse` and `border-spacing` control the appearance of cell borders.  
+- `table-layout: fixed` is useful for fast-rendering tables with consistent column widths.  
+- `caption-side` positions the caption above or below the table.  
+- `empty-cells` can hide empty cells if needed.  
+- `speak-header` is deprecated: use semantic HTML and ARIA for accessibility.  

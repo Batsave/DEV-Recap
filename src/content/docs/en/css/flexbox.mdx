@@ -1,0 +1,173 @@
+---
+title: FlexBox
+description: "This is how you define a flex container: it is block by default or inline depending on the given value. This creates a flex context for all direct children."
+sidebar:
+  position: 0
+---
+
+import FlexDirection from "~/components/demos/FlexDirection.jsx";
+import FlexWrap from "~/components/demos/FlexWrap.jsx";
+import FlexFlow from "~/components/demos/FlexFlow.jsx";
+import JustifyContent from "~/components/demos/JustifyContent.jsx";
+import AlignItems from "~/components/demos/AlignItems.jsx";
+import AlignContent from "~/components/demos/AlignContent.jsx";
+import Gap from "~/components/demos/Gap.jsx";
+import Order from "~/components/demos/Order.jsx";
+import FlexGrow from "~/components/demos/FlexGrow.jsx";
+import FlexShrink from "~/components/demos/FlexShrink.jsx";
+import FlexBasis from "~/components/demos/FlexBasis.jsx";
+import AlignSelf from "~/components/demos/AlignSelf.jsx"
+
+A flex container is defined this way: it is **block** by default or **inline** depending on the value.  
+This creates a **flex context** for all direct children.
+
+---
+
+## Display
+
+| Property   | Value        | Description                                                                   |
+|------------|--------------|-------------------------------------------------------------------------------|
+| `display`  | `flex`       | Generates a block-level flex container inside the element.                   |
+|            | `inline-flex`| Generates an inline-level flex container inside the element.                  |
+
+---
+
+## Flex-Direction
+
+The `flex-direction` property establishes the main axis of the container.
+
+| Value           | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| `row`           | (default) Left to right (or right to left if RTL language).                 |
+| `row-reverse`   | Reverses the direction of `row`.                                            |
+| `column`        | Top to bottom.                                                             |
+| `column-reverse`| Same as `column`, but bottom to top.                                        |
+
+<FlexDirection client:only="react"/>
+
+---
+
+## Flex-Wrap
+
+Defines whether the container has a single line or multiple lines.
+
+| Value         | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `nowrap`      | (default) Single line, items may overflow the container.                    |
+| `wrap`        | Multi-line, items automatically wrap to the next line.                      |
+| `wrap-reverse`| Multi-line in reverse order (bottom to top or right to left).               |
+
+<FlexWrap client:only="react"/>
+
+---
+
+## Flex-Flow
+
+Shorthand combining `flex-direction` and `flex-wrap`.
+
+Default: `row nowrap`.
+
+<FlexFlow client:only="react"/>
+
+---
+
+## Justify-Content
+
+Defines alignment **along the main axis**.
+
+| Value          | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `flex-start`   | (default) Items grouped at the start of the line.                           |
+| `flex-end`     | Items grouped at the end of the line.                                       |
+| `center`       | Items centered on the line.                                                 |
+| `space-between`| Items distributed across the line (first at start, last at end).            |
+| `space-around` | Equal spacing around each item.                                             |
+
+<JustifyContent client:only="react"/>
+
+---
+
+## Align-Items
+
+Aligns items along the cross axis.
+
+| Value       | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| `flex-start`| Aligned at the start of the cross axis.                                     |
+| `flex-end`  | Aligned at the end of the cross axis.                                       |
+| `center`    | Centered on the cross axis.                                                 |
+| `baseline`  | Aligned along the text baseline.                                            |
+| `stretch`   | (default) Stretches items to fill the container.                            |
+
+<AlignItems client:only="react"/>
+
+---
+
+## Align-Content
+
+Aligns the **lines** of a flex container when there are multiple lines.  
+⚠️ Has no effect if the container has only one line.
+
+<AlignContent client:only="react"/>
+
+---
+
+## Gap
+
+The `gap` property defines the **spacing between items**.
+
+<Gap client:only="react"/>
+
+---
+
+## Order
+
+Controls the visual order of flex items independently of the DOM.
+
+<Order client:only="react"/>
+
+---
+
+## Flex-Grow
+
+Defines an item’s ability to **grow**.
+
+<FlexGrow client:only="react"/>
+
+---
+
+## Flex-Shrink
+
+Defines an item’s ability to **shrink**.
+
+<FlexShrink client:only="react"/>
+
+---
+
+## Flex-Basis
+
+Defines the **initial size** of an element before space distribution.
+
+<FlexBasis client:only="react"/>
+
+---
+
+## Align-Self
+
+Allows an **individual item** to override the `align-items` value.
+
+<AlignSelf client:only="react"/>
+
+---
+
+## Key takeaways
+
+- `display: flex` → creates a flex container.  
+- `flex-direction` → main axis (`row`/`column`).  
+- `flex-wrap` → line wrapping.  
+- `justify-content` → aligns along the main axis.  
+- `align-items` → aligns along the cross axis.  
+- `align-self` → overrides alignment for a single item.  
+- `flex-grow`, `flex-shrink`, `flex-basis` → control space distribution.  
+- `gap` → preferable to `margin` for handling spacing.  
+- `order` → changes visual order without modifying the DOM.  

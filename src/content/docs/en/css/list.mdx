@@ -1,0 +1,59 @@
+---
+title: "Lists"
+description: "CSS properties that define how to display <ul>, <ol>, <li> elements as well as definition lists (<dl>, <dt>, <dd>)."
+sidebar:
+  position: 1
+---
+
+These properties define the appearance of **lists** (`<ul>`, `<ol>`, `<li>`) as well as definition lists (`<dl>`, `<dt>`, `<dd>`).  
+They mainly control bullets (or numbers), their position, their type, and the option to replace them with an image.
+
+---
+
+## Standard properties (to use)
+
+| Property | Description |
+| --- | --- |
+| `list-style` | Shorthand property combining `list-style-type`, `list-style-position`, and `list-style-image`. Can also remove bullets with `none`. |
+| `list-style-type` | Defines the type of bullet or numbering (e.g., `disc`, `circle`, `square`, `decimal`, `lower-roman`, `none`). |
+| `list-style-position` | Defines whether the bullet is displayed **inside** (`inside`) or **outside** (`outside`) the content block. |
+| `list-style-image` | Defines an image as a custom bullet (`url(...)`). |
+
+---
+
+## Deprecated or specific properties
+
+| Property | Status | Explanation |
+| --- | --- | --- |
+| `marker-offset` | Deprecated | Defined the exact position of the bullet or number. Removed in CSS3, replaced by `list-style-position` and the `::marker` pseudo-element. |
+
+---
+
+## Simple example
+
+```css
+ul.custom {
+  list-style-type: square;          /* Square bullets */
+  list-style-position: inside;      /* Bullets inside the text */
+}
+
+ol.roman {
+  list-style-type: upper-roman;     /* Roman numeral numbering */
+}
+
+ul.image {
+  list-style-image: url("bullet.png"); /* Image as a custom bullet */
+}
+
+ul.none {
+  list-style: none;                 /* Removes bullets */
+}
+```
+--- 
+
+## Key takeaways
+
+- `list-style` lets you configure bullet type, position, and image in a single line.  
+- `list-style-type` is the most commonly used to change the shape or remove bullets.  
+- `list-style-image` allows graphic customization but is rarely used (prefer `::marker` or `::before`).  
+- `marker-offset` is deprecated and replaced by `list-style-position` or the `::marker` pseudo-element.  
