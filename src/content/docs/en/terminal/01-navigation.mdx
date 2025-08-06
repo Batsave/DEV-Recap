@@ -1,37 +1,37 @@
 ---
 title: Navigation
-description: "Se déplacer dans le système de fichiers avec le terminal."
+description: "Navigate the file system with the terminal."
 sidebar:
   position: 1
 ---
 
-## Se repérer dans les dossiers
+## Navigating Directories
 
-Chaque répertoire est représenté par un **chemin** :  
+Each directory is represented by a **path**:
 
-- `.` → le dossier courant  
-- `..` → le dossier parent  
-- `~` → le dossier utilisateur  
-- `/` → la racine du système  
-
----
-
-## Commandes principales
-
-| Commande | Description | Exemple |
-|----------|-------------|---------|
-| `ls`     | Lister le contenu d’un répertoire | `ls` |
-| `ls -l`  | Lister avec détails (droits, taille, date) | `ls -l` |
-| `ls -a`  | Inclure les fichiers cachés (commencent par .) | `ls -a` |
-| `pwd`    | Afficher le chemin complet du dossier courant | `pwd` |
-| `cd`     | Se déplacer dans un dossier | `cd Documents/` |
-| `cd ..`  | Revenir au dossier parent | `cd ..` |
-| `cd ~`   | Aller au dossier utilisateur | `cd ~` |
-| `cd /`   | Aller à la racine du système | `cd /` |
+- `.` → current directory  
+- `..` → parent directory  
+- `~` → user’s home directory  
+- `/` → root directory  
 
 ---
 
-## Exemple pratique
+## Main Commands
+
+| Command | Description                                             | Example         |
+|---------|---------------------------------------------------------|-----------------|
+| `ls`    | List the contents of a directory                        | `ls`            |
+| `ls -l` | List with details (permissions, size, date)             | `ls -l`         |
+| `ls -a` | Include hidden files (those starting with `.`)          | `ls -a`         |
+| `pwd`   | Print the full path of the current directory            | `pwd`           |
+| `cd`    | Change to a specified directory                         | `cd Documents/` |
+| `cd ..` | Move to the parent directory                            | `cd ..`         |
+| `cd ~`  | Change to the user’s home directory                     | `cd ~`          |
+| `cd /`  | Change to the root directory                            | `cd /`          |
+
+---
+
+## Practical Example
 
 ```bash
 cd ~
@@ -41,8 +41,8 @@ ls -la
 
 ---
 
-## Bonnes pratiques
+## Best Practices
 
-- Utiliser `ls -la` pour voir tous les fichiers, même cachés.  
-- Vérifier son emplacement avec `pwd` avant une commande sensible.  
-- Utiliser la touche **Tab** pour l’autocomplétion.  
+- Use `ls -la` to see all files, including hidden ones.  
+- Verify your location with `pwd` before running sensitive commands.  
+- Use the **Tab** key for autocompletion.  

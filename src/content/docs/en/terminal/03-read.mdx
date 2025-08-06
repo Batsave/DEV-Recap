@@ -1,31 +1,31 @@
 ---
-title: Lecture et édition
-description: "Lire et modifier des fichiers depuis le terminal."
+title: Reading and Editing
+description: "Read and modify files from the terminal."
 sidebar:
   position: 3
 ---
 
-## Lire des fichiers
+## Reading files
 
-| Commande | Description | Exemple |
-|----------|-------------|---------|
-| `cat`    | Affiche le contenu complet | `cat fichier.txt` |
-| `less`   | Lecture page par page | `less fichier.txt` |
-| `head`   | Affiche les 10 premières lignes | `head fichier.txt` |
-| `tail`   | Affiche les 10 dernières lignes | `tail fichier.txt` |
-| `tail -f`| Suit les changements en temps réel | `tail -f log.txt` |
-
----
-
-## Éditer des fichiers
-
-- `nano fichier.txt` → éditeur simple et intuitif.  
-- `vim fichier.txt` → éditeur avancé, puissant mais difficile à maîtriser.  
+| Command    | Description                 | Example            |
+|------------|-----------------------------|--------------------|
+| `cat`      | Display the full content    | `cat file.txt`     |
+| `less`     | Read page by page           | `less file.txt`    |
+| `head`     | Display the first 10 lines  | `head file.txt`    |
+| `tail`     | Display the last 10 lines   | `tail file.txt`    |
+| `tail -f`  | Follow changes in real time | `tail -f log.txt`  |
 
 ---
 
-## Bonnes pratiques
+## Editing files
 
-- Utiliser `less` plutôt que `cat` pour les fichiers longs.  
-- Avec `tail -f`, surveiller les **logs en direct**.  
-- Commencer par `nano` avant de se lancer dans `vim`.  
+- `nano file.txt` → simple, intuitive editor.  
+- `vim file.txt` → advanced, powerful editor with a steep learning curve.  
+
+---
+
+## Best Practices
+
+- Use `less` instead of `cat` for long files.  
+- Use `tail -f` to monitor **logs in real time**.  
+- Start with `nano` before diving into `vim`.  

@@ -1,32 +1,32 @@
 ---
-title: Processus
-description: "Lister et gérer les processus avec le terminal."
+title: Processes
+description: "List and manage processes with the terminal."
 sidebar:
   position: 5
 ---
 
-## Commandes principales
+## Main Commands
 
-| Commande | Description | Exemple |
-|----------|-------------|---------|
-| `ps aux` | Liste tous les processus | `ps aux` |
-| `top`    | Affiche les processus en temps réel | `top` |
-| `htop`   | Version améliorée et interactive | `htop` |
-| `kill`   | Termine un processus par son PID | `kill 1234` |
-| `kill -9`| Force l’arrêt immédiat d’un processus | `kill -9 1234` |
-
----
-
-## Exemple pratique
-
-1. Lancer `top` pour voir l’activité.  
-2. Identifier le **PID** d’un processus.  
-3. Utiliser `kill PID` pour le fermer.  
+| Command   | Description                                   | Example       |
+|-----------|-----------------------------------------------|---------------|
+| `ps aux`  | List all processes                            | `ps aux`      |
+| `top`     | Display real-time process activity            | `top`         |
+| `htop`    | Enhanced, interactive process viewer          | `htop`        |
+| `kill`    | Terminate a process by its PID                | `kill 1234`   |
+| `kill -9` | Force immediate termination of a process      | `kill -9 1234`|
 
 ---
 
-## Bonnes pratiques
+## Practical Example
 
-- Préférer `kill` simple avant `kill -9`.  
-- Utiliser `htop` pour une gestion plus lisible.  
-- Vérifier deux fois le **PID** avant de tuer un processus.  
+1. Run `top` to view activity.  
+2. Identify the **PID** of a process.  
+3. Use `kill <PID>` to terminate it.  
+
+---
+
+## Best Practices
+
+- Prefer a simple `kill` before using `kill -9`.  
+- Use `htop` for easier process management.  
+- Double-check the **PID** before killing a process.  

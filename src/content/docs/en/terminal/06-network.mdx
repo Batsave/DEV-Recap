@@ -1,22 +1,22 @@
 ---
-title: Réseau
-description: "Commandes réseau utiles dans le terminal."
+title: Network
+description: "Useful network commands in the terminal."
 sidebar:
   position: 6
 ---
 
-## Commandes principales
+## Main Commands
 
-| Commande | Description | Exemple |
-|----------|-------------|---------|
-| `ping`   | Tester la connexion à une adresse | `ping google.com` |
-| `curl`   | Faire une requête HTTP | `curl https://example.com` |
-| `wget`   | Télécharger un fichier | `wget https://example.com/fichier.zip` |
-| `ssh`    | Se connecter à un serveur distant | `ssh user@serveur.com` |
+| Command | Description                                   | Example                            |
+|---------|-----------------------------------------------|------------------------------------|
+| `ping`  | Test connectivity to an address               | `ping google.com`                  |
+| `curl`  | Perform an HTTP request                       | `curl https://example.com`         |
+| `wget`  | Download a file                               | `wget https://example.com/file.zip`|
+| `ssh`   | Connect to a remote server                    | `ssh user@server.com`              |
 
 ---
 
-## Exemple pratique
+## Practical Example
 
 ```bash
 ping -c 4 google.com
@@ -25,8 +25,8 @@ curl -I https://openai.com
 
 ---
 
-## Bonnes pratiques
+## Best Practices
 
-- Utiliser `ping -c nombre` pour limiter les essais.  
-- Vérifier les en-têtes HTTP avec `curl -I`.  
-- Utiliser `ssh-keygen` pour se connecter sans mot de passe.  
+- Use `ping -c <count>` to limit the number of attempts.  
+- Check HTTP headers with `curl -I`.  
+- Use `ssh-keygen` to set up key-based authentication for passwordless login.  

@@ -1,74 +1,74 @@
 ---
-title: Gestion des fichiers et dossiers
-description: "Créer, supprimer, copier et déplacer des fichiers avec le terminal."
+title: File and Directory Management
+description: "Create, delete, copy, and move files using the terminal."
 sidebar:
   position: 2
 ---
 
-## Créer un fichier
+## Creating a File
 
-`touch` permet de créer un fichier vide.  
-Si le fichier existe déjà, il met à jour sa date de modification.
+`touch` creates an empty file.  
+If the file already exists, it updates its modification timestamp.
 
 ```bash
-touch fichier.txt
+touch file.txt
 ```
 
 ---
 
-## Créer un dossier
+## Creating a Directory
 
 ```bash
-mkdir projet
-mkdir -p dossier1/dossier2/dossier3
+mkdir project
+mkdir -p folder1/folder2/folder3
 ```
 
 ---
 
-## Supprimer un fichier ou un dossier
+## Deleting a File or Directory
 
-- `rm fichier.txt` → supprime un fichier  
-- `rm -r dossier` → supprime un dossier et son contenu  
-- `rm -rf dossier` → supprime sans confirmation ⚠️
+- `rm file.txt` → delete a file  
+- `rm -r folder` → delete a directory and its contents  
+- `rm -rf folder` → force delete without confirmation ⚠️
 
 ---
 
-## Copier un fichier ou un dossier
+## Copying a File or Directory
 
 ```bash
-cp fichier.txt copie.txt
-cp -r dossier1 dossier2
+cp file.txt copy.txt
+cp -r folder1 folder2
 ```
 
 ---
 
-## Déplacer ou renommer un fichier
+## Moving or Renaming a File
 
 ```bash
-mv fichier.txt nouveau.txt
-mv fichier.txt Documents/
+mv file.txt newname.txt
+mv file.txt Documents/
 ```
 
 ---
 
-## Résumé des commandes
+## Command Summary
 
-| Commande  | Description | Exemple |
-|-----------|-------------|---------|
-| `touch`   | Créer un fichier vide | `touch fichier.txt` |
-| `mkdir`   | Créer un dossier | `mkdir projet` |
-| `mkdir -p`| Créer une arborescence complète | `mkdir -p a/b/c` |
-| `rm`      | Supprimer un fichier | `rm fichier.txt` |
-| `rm -r`   | Supprimer un dossier | `rm -r projet` |
-| `cp`      | Copier un fichier | `cp fichier.txt copie.txt` |
-| `cp -r`   | Copier un dossier | `cp -r dossier1 dossier2` |
-| `mv`      | Déplacer ou renommer | `mv fichier.txt nouveau.txt` |
+| Command    | Description                     | Example                    |
+|------------|---------------------------------|----------------------------|
+| `touch`    | Create an empty file            | `touch file.txt`           |
+| `mkdir`    | Create a directory              | `mkdir project`            |
+| `mkdir -p` | Create nested directories       | `mkdir -p a/b/c`           |
+| `rm`       | Delete a file                   | `rm file.txt`              |
+| `rm -r`    | Delete a directory              | `rm -r project`            |
+| `cp`       | Copy a file                     | `cp file.txt copy.txt`     |
+| `cp -r`    | Copy a directory                | `cp -r folder1 folder2`    |
+| `mv`       | Move or rename a file           | `mv file.txt newname.txt`  |
 
 ---
 
-## Bonnes pratiques
+## Best Practices
 
-- Vérifier avec `pwd` avant un `rm -r`.  
-- Utiliser `rm -i` pour demander confirmation.  
-- Préférer `mkdir -p` pour éviter les erreurs.  
-- Vérifier les résultats avec `ls`.  
+- Verify your location with `pwd` before running `rm -r`.  
+- Use `rm -i` to prompt for confirmation.  
+- Prefer `mkdir -p` to avoid errors.  
+- Check results with `ls`.  
