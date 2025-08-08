@@ -52,6 +52,13 @@ export default defineConfig({
         src: "/_vercel/insights/script.js",
       },
     },
+    {
+          tag: "script",
+          attrs: {
+            defer: true,
+            src: "/scripts/accessibility.js",
+          },
+        },
       ],
       defaultLocale: "fr",
       locales: {

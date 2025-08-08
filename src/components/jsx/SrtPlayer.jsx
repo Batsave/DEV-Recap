@@ -307,6 +307,7 @@ export default function SrtPlayer({
           }}
           className="srt-progress"
           style={{ "--progress": `${seekValue}%` }}
+          aria-label="Position dans l’audio"
         />
 
         <audio ref={audioRef} src={audioSrc} className="srt-audio" />
