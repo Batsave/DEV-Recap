@@ -23,6 +23,10 @@
     position: relative;
     z-index: 1;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 @keyframes rotateBg {
