@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import rehypeCallouts from "rehype-callouts";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import TableAccessibility from "./scripts/table-accessibility.js";
 
 export default defineConfig({
   site: "https://dev.batsave.tv",
@@ -12,7 +13,7 @@ export default defineConfig({
     dir: "./content",
   },
   markdown: {
-    rehypePlugins: [rehypeCallouts],
+    rehypePlugins: [rehypeCallouts, TableAccessibility],
   },
   integrations: [
     react(),
@@ -23,9 +24,6 @@ export default defineConfig({
       favicon: "/favicon.svg",
       logo: {
         src: "./public/assets/svg/logo.svg",
-      },
-      markdown: {
-        rehypePlugins: [rehypeCallouts],
       },
       social: [
         {
